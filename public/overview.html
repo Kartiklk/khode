@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shri khode</title>
+  <link rel="stylesheet" href="cs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body class="body">
+
+  <!-- navbar -->
+  <div class="nav">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="overview.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="myorders.html">My Orders</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
+        <div class="logo">
+          <img src="img/header.jpg" alt="Logo" height="60px" width="60px">
+        </div>
+        <form class="dd-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="btn-all">
+          <!-- log in -->
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
+            Login
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="login">Login now</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="Email" class="col-form-label">Email</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="col-form-label">Password</label>
+                      <input type="password" class="from-control" id="password">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-success">Login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- sing up -->
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#signup">
+            Sign up
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signup" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="signup">Sign up</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="name" class="col-form-label">Full Name</label>
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="Email" class="col-form-label">Email</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="col-form-label">Password</label>
+                      <input type="password" class="from-control" id="password">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-success">Sign UP</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- body -->
+
+  <!-- name -->
+  <div class="shop">
+    <div class="name">
+      <p>Shri khode kirani and genaral store</p>
+    </div>
+  </div>
+
+  <!-- card -->
+  <div class="card-cd">
+    <div class="card-first">
+      <div class="card" style="width: 18rem;">
+        <img src="img/card/general.jpg" class="card-img-top" alt="Genaral">
+        <div class="card-bd">
+          <h5 class="card-title">Genaral Items</h5>
+          <p class="card-text">Hurry Up <br> Book now and Get offer's</p>
+          <a href="itemslist.html" class="btn btn-primary">Order now</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-sec">
+      <div class="card" style="width: 18rem;">
+        <img src="img/card/drinks.jpg" class="card-img-top" alt="Drinks">
+        <div class="card-bd">
+          <h5 class="card-title">Drinks </h5>
+          <p class="card-text">Hurry Up <br> Book now and Get offer's</p>
+          <a href="#" class="btn btn-primary">Order now</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-thi">
+      <div class="card" style="width: 18rem;">
+        <img src="img/card/biscuits.jpg" class="card-img-top" alt="Biscuits">
+        <div class="card-bd">
+          <h5 class="card-title">Biscuits </h5>
+          <p class="card-text">Hurry Up <br> Book now and Get offer's</p>
+          <a href="#" class="btn btn-primary">Order now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer">
+      <h3>Developed By: <span>Kartik Khode</span></h3>
+      <div class="copy-right">
+        <h6>copy-right &copy; 2023</h6>
+      </div>
+    </div>
+    <div class="contact">
+      <h5 align="right">Contect Me:-</h5>
+      <ul class="socials">
+        <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+        <li><a href="https://twitter.com/kartikkhode21"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/Kartiklk"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/kartik-khode-32a7a325a/"><i class="fa fa-linkedin-square"></i></a></li>
+        <!-- <li><a href="#"><i class="fa fa-hashnode-square"></i></a></li>
+      </ul> -->
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

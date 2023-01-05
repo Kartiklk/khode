@@ -1,0 +1,25 @@
+html
+  head
+    link(rel='stylesheet', href='cs.css')
+  body
+    .container
+      nav.navbar.navbar-expand-lg.bg-dark
+        .container-fluid
+          a.navbar-brand(href='/') Home Page
+    .itemlist-container
+      each item in items 
+        .card-item(href=`/item/:itemId`)
+          .card-li.mb-3(style='max-width: 540px;')
+            .row.g-0
+              .col-md-3
+                img.img-fluid.rounded-start(src=`img/genaral/${item.photo}`, alt=`${item.name}`, height='150px', width='150px')
+              .col-md
+                .card-body
+                  h5.card-title=item.name
+                  p.card-text
+                    | This is a wider card with supporting text below as a natural lead-in to
+                    | additional content. This content is a little bit longer.
+                  p.card-text
+                    small.text-muted Last updated 3 mins ago
+          hr
+        
