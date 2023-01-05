@@ -1,0 +1,95 @@
+[
+    {
+        "name":"Ruchi Gold",
+        "price": 95,
+        "OriginalPrice": 110,
+        "discout":"5%",
+        "photo":"ruchi.jpg",
+        "quantity":"1 ltr",
+        "stock": 30,
+        "description": "Ruchi Gold Refined Palm Oil is rich in Vitamin E, a natural antioxidant that prevents cell deterioration. The goodness of natural vitamins makes it a nutritious and healthy option. Refined palmolein oil. Free from argemone oil."
+    },
+    {
+        "name":"Sun Rich",
+        "price": 150,
+        "OriginalPrice": 165,
+        "discout":"6%",
+        "photo":"sunrich.jpg",
+        "quantity":"1 ltr",
+        "stock": 30,
+        "description": "Patanjali Foods Ltd Sunrich Refined Sunflower Oil is made with high quality ingredients. It is a rich source of stearic acid, oleic acid, selenium, and linoleic acid. Sunflower oil is one of the healthiest oils for cooking and is preferred for its multiple health benefits. It is healthy and perfectly easy to digest"
+    },
+    {
+        "name":"Reb Label",
+        "price": 45,
+        "OriginalPrice": 50,
+        "discout":"5%",
+        "photo":"redlabel.jpg",
+        "quantity":"100 gm",
+        "stock": 30,
+        "description": "Johnnie Walker Red Label is crackling with spice and bursting with vibrant, smoky flavours. It's a blend that combines light whiskies from Scotland's East Coast and more peaty whiskies from the West, creating an extraordinary depth of flavour."
+    },
+    {
+        
+        "name":"Idli Rava",
+        "price": 40,
+        "OriginalPrice": 45,
+        "discout":"5%",
+        "photo":"idli.jpg",
+        "quantity":"1 KG",
+        "stock": 30,
+        "description": "Vijay Gold Idli Rava is a must-have for all Indian kitchens. This premium product not only helps you prepare pillowy, soft idlis but many more delicacies like dhokla, uttapams and upmas."
+    },
+    {
+        
+        "name":"Sugar",
+        "price": 38,
+        "OriginalPrice": 45,
+        "discout":"6%",
+        "photo":"sugar.jpg",
+        "quantity":"1 KG",
+        "stock": 50,
+        "description": "A sweet substance that is made up wholly or mostly of sucrose, is colorless or white when pure, is obtained from plants (as sugarcane or sugar beets), is a source of dietary carbohydrate, and is used as a sweetener and preservative of other foods."
+    },
+    {
+        "name":"Kesari Rava",
+        "price": 40,
+        "OriginalPrice": 45,
+        "discout":"5%",
+        "photo":"rava.jpg",
+        "quantity":"1 KG",
+        "stock": 50,
+        "description": "The Special Kesari Rava offered by us are of very good quality. Our in-depth knowledge and experience of procurement procedures with advance techniques applied in production processes ensures that our food product maintains highest standards."
+    },
+    {
+        "name":"Avalakki",
+        "price": 40,
+        "OriginalPrice": 45,
+        "discout":"5%",
+        "photo":"avalakki.jpg",
+        "quantity":"1 KG",
+        "stock": 50,
+        "description": "Pohaa, also known as pauwa, sira, chira, aval or avalakki, among many other names, is flattened rice originating from the Indian subcontinent. Rice is parboiled before flattening so that it can be consumed with very little to no cooking."
+    },
+    {
+        "name":"Aashirvad",
+        "price": 40,
+        "OriginalPrice": 45,
+        "discout":"5%",
+        "photo":"aashirvaad.jpg",
+        "quantity":"1 KG",
+        "stock": 50,
+        "description": "AASHIRVAAD Whole Wheat Atta is made from the grains which are heavy on the palm, golden amber in colour and hard in bite. It is carefully ground using modern 'chakki - grinding' process which ensures that AASHIRVAAD Atta contains 0% Maida and is 100% Sampoorna Atta."
+    },
+    {
+        "name":"MTR Sambar Powder",
+        "price": 45,
+        "OriginalPrice": 55,
+        "discout":"6%",
+        "photo":"sambar.jpg",
+        "quantity":"100 gm",
+        "stock": 50,
+        "description": "Sit back and savour the established flavor of home-made sambar. All with MTR Foods' signature recipe ended the real South Indian way. Pleasure your taste buds with this new variant of Sambar with an additional spice."
+    }
+
+]
