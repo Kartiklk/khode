@@ -1,63 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="cs.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eb3843e03c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="container">
-        <div class="navbar-it">
-            <nav class="navbar-dd bg-body-tertiary">
-                <div class="container-fluid">
-                    <div class="only">
-                        <a class="navbar-brand" href="overview.html">Home</a>
-                        <a class="navbar-brand" href="cart.html">Cart</a>
-                        <a class="navbar-brand" href="myorders.html">My Orders</a>
-                    </div>
-                    <form class="db-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </nav>
+    <!-- Navbar -->
+    <section id="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
         </div>
-
-        <!-- body -->
-
-        <div class="item-body">
-            <div class="photo">
-                <img src="img/genaral/ruchi.jpg" alt="" height="380px" width="380px">
-                <hr>
-            </div>
-            <div class="item-txt">
-                <h1>Ruchi Gold 1 ltr</h1>
-                <h3>In Stock</h3>
-                <p><span>110</span> Off 5% </p>
-                <h2> <span>MRP: </span> 100 <span>(Inc.all.tax) </span></h2>
-                <h5><span>Quantity:</span> 1 Ltr</h5>
-            </div>
-            <div class="cart-bt">
-                <button class="btn btn-outline-primary" type="submit">Add to cart</button>
-            </div>
-            <div class="desc">
-                <p><span>Description:-</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Unde sapiente vitae tempore dignissimos dolores nesciunt iure facere dolorem nostrum
-                    quisquam
-                    reprehenderit,
-                    praesentium similique doloribus illo aliquid ipsam aliquam laudantium molestiae. </p>
-            </div>
+        <ul>
+            <li><a href="overview.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="itemlist.html"><i class="fa-solid fa-shop"></i></i></a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="myorders.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+        </ul>
+        <div class="right">
+            <input type="text" id="search" placeholder="search" />
+            <button type="submit" class="btn">SEARCH</button>
+            <button type="submit" class="btn">LOGIN</button>
+            <button type="submit" class="btn">SIGN UP</button>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    </section>
+
+    <!-- Item Details -->
+    <section id="d1">
+        <img src="img/genaral/aashirvaad.jpg" alt="">
+        <hr>
+    </section>
+
+    <section id="d2">
+        <h1>Aashirvaad 1kg</h1>
+        <h2>Rs. 50</h2>
+        <h4>5% Off</h4>
+        <h3>In Stock</h3>
+        <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
+        <button type="button" onclick="toorder()">Order</button>
+    </section>
+    <hr>
+    <section id="desc">
+        <p><strong>Description:-</strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ex illum
+            tempore velit qui ipsa, magni dicta, suscipit enim quae, incidunt nisi consequuntur delectus voluptas.
+            Quisquam illum deleniti consequatur dignissimos!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="shop">
+            <img src="img/logo.png" alt="">
+
+            <h2>Shri Khode Kirani Store</h2>
+            <h3>Near APMC , Ron Road Gajendragad-582114</h3>
+            <h4>Dist: Gadag, karnataka</h4>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-hashnode"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h1>Links</h1>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Cart</a>
+            <a href="#">My orders</a>
+        </div>
+        <p>Copyright &copy 2023. Kartik Khode</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

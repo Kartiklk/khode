@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="cap">
+
+    <!-- Form -->
+    <section id="header">
+        <div class="overley" id="overley">
+            <form action=" overview.html" method="post">
+                <!-- Login Form -->
+                <div class="loginform" id="loginform">
+                    <h1>Login Now</h1>
+                    <label for="Email">Email</label><br>
+                    <input type="Email" id="email" placeholder="Enter Email" name="email"><br>
+                    <label for="Password">Password</label><br>
+                    <input type="password" id="password" placeholder="Enter Password" name="password"><br>
+                    <a href="#">Forget Password?</a><br>
+                    <button type="button" onclick="close1()">Close</button>
+                    <button type="submit" onclick="loginnow()">Login</button><br>
+                    <h2>You Don't have an account?<a href="#" onclick="tosignup()">Create Account</a></h2>
+                </div>
+                <!--Signup Form  -->
+                <div class="signupfrom" id="signupfrom">
+                    <h1>Create Account</h1>
+                    <label for="Name">Name</label><br>
+                    <input type="Email" id="email" placeholder="Enter Email" name="email"><br>
+                    <label for="Email">Email</label><br>
+                    <input type="Email" id="email" placeholder="Enter Email" name="email"><br>
+                    <label for="Password">Password</label><br>
+                    <input type="password" id="password" placeholder="Enter Password" name="password"><br>
+                    <a href="#">Terms & Conditions</a><br>
+                    <button type="button" onclick="close2()">Close</button>
+                    <button type="submit" onclick="signup()">Sign Up</button><br>
+                    <h2>You have an account?<a href="#" onclick="tologin()">Login Now</a></h2>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
