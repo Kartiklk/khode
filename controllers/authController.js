@@ -34,18 +34,6 @@ const createsendToken = (user, statuscode, res) => {
     });
 };
 
-// exports.signup = catchAsync(async (req, res, next) => {
-//   const newUser = await User.create(req.body);
-
-
-//   res.status(201).json({
-//     status:"success",
-//     data: {
-//       data: newUser
-//     }
-//   });
-// });
-
 exports.signup = catchAsync(async (req, res , next)=> {
     const newUser = await User.create(req.body);
 
@@ -83,4 +71,73 @@ exports.login = catchAsync(async (req, res, next) => {
     });
   };
 
+  exports.protect = catchAsync(async (req, res, next) => {
+    //getting token and check of its there
+    let token;
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith('Bearer')
+    ) {
+      token = req.headers.authorization.split(' ')[1];
+    } else if (req.cookies.jwt) {
+      token = req.cookies.jwt;
+    }
+  
+    if (!token) {
+      return next(
+        new AppError('you are not logged in! please log in to access.', 401)
+      );
+    }
+  
+    //verification token
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  
+    //check if user still exists
+    const currentUser = await User.findById(decoded.id);
+    if (!currentUser) {
+      return next(
+        new AppError('The user belonging to this token no longer exist.', 401)
+      );
+    }
+  
+    //check if user changed password after the token was issued
+    if (currentUser.changedPasswordAfter(decoded.iat)) {
+      return next(
+        new AppError('User recently changed password! please login again.', 401)
+      );
+    }
+    //grant access to protect route
+    req.user = currentUser;
+    res.locals.user = currentUser;
+    next();
+  });
+  
+  exports.isLoggedIn = async (req, res, next) => {
+    try {
+      if (req.cookies.jwt) {
+        //verification token
+        const decoded = await promisify(jwt.verify)(
+          req.cookies.jwt,
+          process.env.JWT_SECRET
+        );
+  
+        //check if user still exists
+        const currentUser = await User.findById(decoded.id);
+        if (!currentUser) {
+          return next();
+        }
+  
+        //check if user changed password after the token was issued
+        if (currentUser.changedPasswordAfter(decoded.iat)) {
+          return next();
+        }
+        //there is a logged in user
+        res.locals.user = currentUser;
+        return next();
+      }
+    } catch (err) {
+      return next();
+    }
+    next();
+  };
   

@@ -14,10 +14,8 @@ const orderSchema = new mongoose.Schema({
         ref:'Address'
     },
     orderDate: {
-        type: Date.now()
-    },
-    expectedOn: {
-        default: Date.now() + 7,
+        type: Date,
+        default:Date.now()
     },
     payment: {
         type: String,
@@ -26,12 +24,11 @@ const orderSchema = new mongoose.Schema({
 });
 
 orderSchema.pre(/^find/, function(next){
-    if(user.id === address.user) {
-        next();
-    }
-    else{
-        console.log('Give correct user address')
-    }
+    this.populate('item').populate({
+        path: 'user',
+        select: 'name'
+      });
+      next();
 });
 
 const Order = mongoose.model('Order', orderSchema);

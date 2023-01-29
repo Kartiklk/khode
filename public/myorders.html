@@ -6,18 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/eb3843e03c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="card w-50">
-            <div class="card-body" align="center" style="border-style:solid; width: 8cm; margin-left: 40%;">
-                <h2 class="card-title">Sorry For This</h2>
-                <p class="card-text">This section is under development.</p>
-                <a href="overview.html" class="btn btn-primary" style="text-decoration: none;">Back</a>
-            </div>
+    <!-- Navbar -->
+    <section id="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
         </div>
+        <ul>
+            <li><a href="overview.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="itemlist.html"><i class="fa-solid fa-shop"></i></i></a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="myorders.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+        </ul>
+        <div class="right">
+            <input type="text" id="search" placeholder="search" />
+            <button type="submit" class="btn">SEARCH</button>
+            <button type="button" class="btn" onclick="popUp()" id="backgroundblur">LOGIN</button>
+        </div>
+    </section>
+
+    <!-- Headline -->
+    <div class="headline">
+        <h1>My Orders</h1>
     </div>
+    <hr>
+
+    <!-- Order Items -->
+    <section id="c4">
+        <div class="cart-content">
+            <img src="img/genaral/ruchi.jpg" alt="">
+            <h1 class="name">Ruchi Gold 1Ltr</h1>
+            <h2 class="Price">Rs. 100</h2>
+            <a href="#"><i class="fa-solid fa-trash"></i></a>
+        </div>
+    </section>
+
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

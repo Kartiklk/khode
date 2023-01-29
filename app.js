@@ -2,6 +2,7 @@ const express = require('express');
 const itemRoute = require('./routes/itemRoute');
 const userRoute = require('./routes/userRoute');
 const addressRoute = require('./routes/addressRoute');
+const orderRoute = require('./routes/orderRoute');
 const AppError = require('./utils/appError');
 const viewRoute = require('./routes/viewRoute');
 const path = require('path');
@@ -36,10 +37,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', viewRoute)
+app.use('/', viewRoute);
 app.use('/api/v1/items', itemRoute);
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/address', addressRoute);
+app.use('/api/v1/order', orderRoute);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Address -->
+    <section id="o1">
+        <h1>Ordre Details</h1>
+        <hr>
+        <!-- Number Of items and Total Price -->
+        <div class="total_price">
+            <p><strong>Items :</strong> 1 <br> <strong>Total Price : </strong>Rs. 100</p>
+        </div>
+        <hr>
+        <table align="center">
+            <th colspan="2">
+                Address
+            </th>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name" maxlength="15"></td>
+            </tr>
+            <tr>
+                <td>Phone NO</td>
+                <td><input type="number" name="Phone" id="Phone, India" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="address" id="address" cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><select name="state" id="state" class="form-control">
+                        <option value="select" selected disabled>Select</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh, India</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands, India</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh, India</option>
+                        <option value="Assam">Assam, India</option>
+                        <option value="Bihar">Bihar, India</option>
+                        <option value="Chandigarh">Chandigarh, India</option>
+                        <option value="Chhattisgarh">Chhattisgarh, India</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli, India</option>
+                        <option value="Daman and Diu">Daman and Diu, India</option>
+                        <option value="Delhi">Delhi, India</option>
+                        <option value="Lakshadweep">Lakshadweep, India</option>
+                        <option value="Puducherry">Puducherry, India</option>
+                        <option value="Goa">Goa, India</option>
+                        <option value="Gujarat">Gujarat, India</option>
+                        <option value="Haryana">Haryana, India</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh, India</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir, India</option>
+                        <option value="Jharkhand">Jharkhand, India</option>
+                        <option value="Karnataka">Karnataka, India</option>
+                        <option value="Kerala">Kerala, India</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh, India</option>
+                        <option value="Maharashtra">Maharashtra, India</option>
+                        <option value="Manipur">Manipur, India</option>
+                        <option value="Meghalaya">Meghalaya, India</option>
+                        <option value="Mizoram">Mizoram, India</option>
+                        <option value="Nagaland">Nagaland, India</option>
+                        <option value="Odisha">Odisha, India</option>
+                        <option value="Punjab">Punjab, India</option>
+                        <option value="Rajasthan">Rajasthan, India</option>
+                        <option value="Sikkim">Sikkim, India</option>
+                        <option value="Tamil Nadu">Tamil Nadu, India</option>
+                        <option value="Telangana">Telangana, India</option>
+                        <option value="Tripura">Tripura, India</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh, India</option>
+                        <option value="Uttarakhand">Uttarakhand, India</option>
+                        <option value="West Bengal">West Bengal, India</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>City Pincode</td>
+                <td><input type="number" name="pincode" id="pincode"></td>
+            </tr>
+            <tr align="center">
+                <td><button type="reset">Clear</button></td>
+                <td><button type="submit">Add</button></td>
+            </tr>
+        </table>
+        <hr>
+    </section>
+    <!-- Delivery Address -->
+    <section id="o3">
+
+        <h1>Delivery Address</h1>
+        <P><strong>Kartik Khode,</strong><br>
+            Phone: 1234567890<br>
+            Near Bandi Garden , Gajendragad<br>
+            Karnataka ,<br> pincode: 582114
+        </P>
+        <hr>
+    </section>
+
+    <!-- Payment Method -->
+    <section id="o2">
+        <h1>Choose Payment Method</h1>
+        <table>
+            <tr>
+                <td><input class="form-check-input" type="radio" name="pay" id="googlepay"></td>
+                <td>GooglePay</td>
+            </tr>
+            <tr>
+                <td><input class="form-check-input" type="radio" name="pay" id="phonepay"></td>
+                <td>PhonePay</td>
+            </tr>
+            <tr>
+                <td><input class="form-check-input" type="radio" name="pay" id="sbicard"></td>
+                <td>SBI Card</td>
+            </tr>
+            <tr>
+                <td><input class="form-check-input" type="radio" name="pay" id="cod"></td>
+                <td>COD(Cash On Dilevery)</td>
+            </tr>
+        </table>
+        <hr>
+
+        <!-- footer button -->
+        <div class="order_footer">
+            <button type="submit" onclick="tback()">Back</button>
+            <button type="submit" onclick="next()">Order</button>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
