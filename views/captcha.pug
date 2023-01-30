@@ -1,0 +1,18 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  script(src='https://kit.fontawesome.com/eb3843e03c.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='style.css')
+// Captcha
+.captcha
+  h3 I&apos;m not a robot
+  input#val(type='text')
+  p
+    span#num
+    i.fa-solid.fa-arrows-rotate(onclick='refresh()')
+  button#check(type='submit') Submit
+  button(type='submit' onclick='back()') Back
+script(src='js/main.js')

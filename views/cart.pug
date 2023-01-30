@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  script(src='https://kit.fontawesome.com/eb3843e03c.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='style.css')
+// Navbar
+section#header
+  .logo
+    img(src='img/logo.png' alt='')
+  ul
+    li
+      a(href='overview.html')
+        i.fa-solid.fa-house
+    li
+      a(href='itemlist.html')
+        i.fa-solid.fa-shop
+    li
+      a(href='cart.html')
+        i.fa-solid.fa-cart-shopping
+    li
+      a(href='myorders.html')
+        i.fa-solid.fa-bag-shopping
+  .right
+    input#search(type='text' placeholder='search')
+    button.btn(type='submit') SEARCH
+    button#backgroundblur.btn(type='button' onclick='popUp()') LOGIN
+// Cart Items
+section#c1
+  h1 Cart Items
+  hr
+// If Empty
+section#c2
+  #empty
+// Cart Items
+section#c4
+  .cart-content
+    img(src='img/genaral/ruchi.jpg' alt='')
+    h1.name Ruchi Gold 1Ltr
+    h2.Price Rs. 100
+    a(href='#')
+      i.fa-solid.fa-trash
+// Total Price
+hr
+section#c3
+  .total
+    h1 Total Price
+    h2#Price Rs.100
+  a(href='#' onclick='order()') Order
+script(src='js/main.js')

@@ -1,0 +1,77 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  script(src='https://kit.fontawesome.com/eb3843e03c.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='style.css')
+// Navbar
+section#header
+  .logo
+    img(src='img/logo.png' alt='')
+  ul
+    li
+      a(href='overview.html')
+        i.fa-solid.fa-house
+    li
+      a(href='itemlist.html')
+        i.fa-solid.fa-shop
+    li
+      a(href='cart.html')
+        i.fa-solid.fa-cart-shopping
+    li
+      a(href='myorders.html')
+        i.fa-solid.fa-bag-shopping
+  .right
+    input#search(type='text' placeholder='search')
+    button.btn(type='submit') SEARCH
+    button.btn(type='submit') LOGIN
+    button.btn(type='submit') SIGN UP
+// Item Details
+section#d1
+  img(src='img/genaral/aashirvaad.jpg' alt='')
+  hr
+section#d2
+  h1 Aashirvaad 1kg
+  h2 Rs. 50
+  h4 5% Off
+  h3 In Stock
+  a(href='#')
+    i.fa-solid.fa-cart-plus
+  button(type='button' onclick='toorder()') Order
+hr
+section#desc
+  p
+    strong Description:-
+    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ex illum
+    |             tempore velit qui ipsa, magni dicta, suscipit enim quae, incidunt nisi consequuntur delectus voluptas.
+    |             Quisquam illum deleniti consequatur dignissimos!
+// Footer
+footer
+  .shop
+    img(src='img/logo.png' alt='')
+    h2 Shri Khode Kirani Store
+    h3 Near APMC , Ron Road Gajendragad-582114
+    h4 Dist: Gadag, karnataka
+    ul
+      li
+        a(href='#')
+          i.fa-brands.fa-twitter
+      li
+        a(href='#')
+          i.fa-brands.fa-github
+      li
+        a(href='#')
+          i.fa-brands.fa-hashnode
+      li
+        a(href='#')
+          i.fa-brands.fa-linkedin
+  .links
+    h1 Links
+    a(href='#') Home
+    a(href='#') Shop
+    a(href='#') Cart
+    a(href='#') My orders
+  p Khode&apos;s &amp;copy 2023. All right reserved
+script(src='js/main.js')

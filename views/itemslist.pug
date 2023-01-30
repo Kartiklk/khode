@@ -1,25 +1,139 @@
-html
-  head
-    link(rel='stylesheet', href='cs.css')
-  body
-    .container
-      nav.navbar.navbar-expand-lg.bg-dark
-        .container-fluid
-          a.navbar-brand(href='/') Home Page
-    .itemlist-container
-      each item in items 
-        .card-item(href=`/item/:itemId`)
-          .card-li.mb-3(style='max-width: 540px;')
-            .row.g-0
-              .col-md-3
-                img.img-fluid.rounded-start(src=`img/genaral/${item.photo}`, alt=`${item.name}`, height='150px', width='150px')
-              .col-md
-                .card-body
-                  h5.card-title=item.name
-                  p.card-text
-                    | This is a wider card with supporting text below as a natural lead-in to
-                    | additional content. This content is a little bit longer.
-                  p.card-text
-                    small.text-muted Last updated 3 mins ago
-          hr
-        
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  script(src='https://kit.fontawesome.com/eb3843e03c.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='style.css')
+// Navbar
+section#header
+  .logo
+    img(src='img/logo.png' alt='')
+  ul
+    li
+      a(href='overview.html')
+        i.fa-solid.fa-house
+    li
+      a(href='itemlist.html')
+        i.fa-solid.fa-shop
+    li
+      a(href='cart.html')
+        i.fa-solid.fa-cart-shopping
+    li
+      a(href='myorders.html')
+        i.fa-solid.fa-bag-shopping
+  .right
+    input#search(type='text' placeholder='search')
+    button.btn(type='submit') SEARCH
+    button#backgroundblur.btn(type='button' onclick='popUp()') LOGIN
+// Items List
+section#i1
+  .item
+    a(href='item.html')
+      img(src='img/genaral/aashirvaad.jpg' alt='')
+      ul
+        li Aashirvaad 1kg
+        li Rs.50 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/redlabel.jpg' alt='')
+      ul
+        li Reb Label 100gm
+        li Rs.45 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/ruchi.jpg' alt='')
+      ul
+        li Ruchi Gold 1Ltr
+        li Rs. 105 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/jaggery.jpg' alt='')
+      ul
+        li Jaggery 1kg
+        li Rs.40 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/sugar.jpg' alt='')
+      ul
+        li Sugar 1kg
+        li Rs.40 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/sunrich.jpg' alt='')
+      ul
+        li Sun Rich 1Ltr
+        li Rs.160 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/avalakki.jpg' alt='')
+      ul
+        li Avalakki 1kg
+        li Rs.40 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/rava.jpg' alt='')
+      ul
+        li Kesari Rava 1kg
+        li Rs.40 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/idli.jpg' alt='')
+      ul
+        li Idli Rava 1kg
+        li Rs.45 
+        li 5% off
+        li Hurry Up
+  .item
+    a(href='item.html')
+      img(src='img/genaral/sambar.jpg' alt='')
+      ul
+        li Sambar Powder 100gm
+        li Rs.40 
+        li 5% off
+        li Hurry Up
+// Footer
+footer
+  .shop
+    img(src='img/logo.png' alt='')
+    h2 Shri Khode Kirani Store
+    h3 Near APMC , Ron Road Gajendragad-582114
+    h4 Dist: Gadag, karnataka
+    ul
+      li
+        a(href='#')
+          i.fa-brands.fa-twitter
+      li
+        a(href='#')
+          i.fa-brands.fa-github
+      li
+        a(href='#')
+          i.fa-brands.fa-hashnode
+      li
+        a(href='#')
+          i.fa-brands.fa-linkedin
+  .links
+    h1 Links
+    a(href='#') Home
+    a(href='#') Shop
+    a(href='#') Cart
+    a(href='#') My orders
+  p Khode&apos;s &amp;copy 2023. All right reserved
+script(src='js/main.js')
