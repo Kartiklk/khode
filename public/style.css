@@ -10,6 +10,7 @@ button.btn{
     border-radius: 5px;
     border: 1px solid rgb(0, 0, 0);
     cursor: pointer;
+    margin: 0px 5px;
     transition: .5s ease;
 }
 #header{
@@ -43,10 +44,13 @@ button.btn{
     font-size: 25px;
     color: black;
     transition: .3s ease;
+    text-decoration: none;
+    font-weight: bold;
 }
 #header input{
     width: 50%;
     padding: 5px 10px;
+    margin: 0px 5px;
     margin-left: -90px;
     font-size: 15px;
     border-radius: 5px;
@@ -112,27 +116,31 @@ padding: 15px 0px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
 #s2 .card h4{
     font-size: .5cm;
     color: rgb(0, 0, 0);
     font-weight: bolder;
     text-align: center;
-    padding: 0px;
+    padding-bottom: 10px;
 }
 #s2 .card a{
-    font-size: .5cm;
+    margin-top: 10px;
+    font-size: .3cm;
     color: rgb(0, 0, 0);
     font-weight: bolder;
-    margin-left: 4.5cm;
-    margin-top: -1cm;
-    padding: 0px;
+    margin-left: 2cm;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px black;
+    border-style: solid;
     transition: .5s ease;
+
 }
 #s2 .card a:hover{
-    color: blue;
-    font-size: .6cm;
+    color: rgb(69, 69, 235);
+    font-size: .35cm;
 }
 
 #s3{

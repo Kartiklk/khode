@@ -3,144 +3,83 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Learn
-  script(src='https://kit.fontawesome.com/eb3843e03c.js' crossorigin='anonymous')
+  title Shri Khode
   link(rel='stylesheet' href='style.css')
-// navbar
-section#header
-  .logo
-    img(src='img/logo.png' alt='')
-  ul
-    li
-      a(href='overview.html')
-        i.fa-solid.fa-house
-    li
-      a(href='itemlist.html')
-        i.fa-solid.fa-shop
-    li
-      a(href='cart.html')
-        i.fa-solid.fa-cart-shopping
-    li
-      a(href='myorders.html')
-        i.fa-solid.fa-bag-shopping
-  .right
-    input#search(type='text' placeholder='search')
-    button.btn(type='submit') SEARCH
-    button#backgroundblur.btn(type='button' onclick='popUp()') LOGIN
-// Name
-section#s1
-  h1 SHRI KHODE KIRANI AND GENERAL STORE
-// Top cards
-section#s2(style='margin-left: 2cm;')
-  .card
-    img(src='img/card/general.jpg' alt='')
-    h3 General Items
-    h4 Buy Now
-    a(href='itemlist.html')
-      i.fa-solid.fa-cart-plus
-  .card
-    img(src='img/card/drinks.jpg' alt='')
-    h3 Soft Drinks
-    h4 Buy Now
-    a(href='itemlist.html')
-      i.fa-solid.fa-cart-plus
-  .card
-    img(src='img/card/biscuits.jpg' alt='')
-    h3 Becary Items
-    h4 Buy Now
-    a(href='itemlist.html')
-      i.fa-solid.fa-cart-plus
-// Offers name
-section#s3
-  h1 Ugadi Specal Deals
-  h2 Buy Now and Get Offers
-// Offer items
-section#s2
-  #card.card
-    img(src='img/genaral/ruchi.jpg' alt='')
-    h3.title Ruchi Gold 1Ltr
-    h4#itemprice Rs.100
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus.added
-  #card.card
-    img(src='img/genaral/ruchi.jpg' alt='')
-    h3.title Ruchi Gold 1Ltr
-    h4#itemprice Rs.100
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus.added
-  #card.card
-    img(src='img/genaral/ruchi.jpg' alt='')
-    h3.title Ruchi Gold 1Ltr
-    h4#itemprice Rs.100
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus.added
-  #card.card
-    img(src='img/genaral/jaggery.jpg' alt='')
-    h3.title Jaggery 1kg
-    h4#itemprice Rs.40
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus.added
-  #card.card
-    img(src='img/genaral/cola.jpg' alt='')
-    h3.title Coca-Cola 100ml
-    h4#itemprice Rs.20
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus
-  .card
-    img(src='img/genaral/goodday.jpg' alt='')
-    h3 Good-Day 50gm
-    h4 Rs.10
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus
-  .card
-    img(src='img/genaral/goodday.jpg' alt='')
-    h3 Good-Day 50gm
-    h4 Rs.10
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus
-  .card
-    img(src='img/genaral/goodday.jpg' alt='')
-    h3 Good-Day 50gm
-    h4 Rs.10
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus
-  .card
-    img(src='img/genaral/goodday.jpg' alt='')
-    h3 Good-Day 50gm
-    h4 Rs.10
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus
-  .card
-    img(src='img/genaral/goodday.jpg' alt='')
-    h3 Good-Day 50gm
-    h4 Rs.10
-    a(href='#')
-      i#addtocart.fa-solid.fa-cart-plus
-// Footer
-footer
-  .shop
-    img(src='img/logo.png' alt='')
-    h2 Shri Khode Kirani Store
-    h3 Near APMC , Ron Road Gajendragad-582114
-    h4 Dist: Gadag, karnataka
+body 
+  // navbar
+  section#header
+    .logo
+      img(src='img/logo.png' alt='')
     ul
       li
-        a(href='#')
-          i.fa-brands.fa-twitter
+        a(href='/') Home
       li
-        a(href='#')
-          i.fa-brands.fa-github
+        a(href='/itemslist') Items
       li
-        a(href='#')
-          i.fa-brands.fa-hashnode
+        a(href='/cart') Cart
       li
-        a(href='#')
-          i.fa-brands.fa-linkedin
-  .links
-    h1 Links
-    a(href='#') Home
-    a(href='#') Shop
-    a(href='#') Cart
-    a(href='#') My orders
-  p Khode&apos;s &amp;copy 2023. All right reserved
-script(src='js/main.js')
+        a(href='/myorders') My Order
+    .right
+      input#search(type='text' placeholder='search')
+      button.btn(type='submit') SEARCH
+      button#backgroundblur.btn(type='button' onclick='popUp()') LOGIN
+  // Name
+  section#s1
+    h1 SHRI KHODE KIRANI AND GENERAL STORE
+  // Top cards
+  section#s2(style='margin-left: 2cm;')
+    .card
+      img(src='img/card/general.jpg' alt='')
+      h3 General Items
+      h4 Buy Now
+      a(href='/itemslist') Add Cart
+    .card
+      img(src='img/card/drinks.jpg' alt='')
+      h3 Soft Drinks
+      h4 Buy Now
+      a(href='/itemslist') Add Cart
+    .card
+      img(src='img/card/biscuits.jpg' alt='')
+      h3 Becary Items
+      h4 Buy Now
+      a(href='/itemslist') Add Cart
+  // Offers name
+  section#s3
+    h1 Ugadi Specal Deals
+    h2 Buy Now and Get Offers
+  // Offer items
+  section#s2
+    each item in items
+      #card.card
+        img(src=`img/genaral/${item.photo}` alt='')
+        h3.title=item.name
+        h4#itempric=item.price
+        a(href='#') Add Cart
+  // Footer
+  footer
+    .shop
+      img(src='img/logo.png' alt='')
+      h2 Shri Khode Kirani Store
+      h3 Near APMC , Ron Road Gajendragad-582114
+      h4 Dist: Gadag, karnataka
+      ul
+        li
+          a(href='#')
+            i.fa-brands.fa-twitter
+        li
+          a(href='#')
+            i.fa-brands.fa-github
+        li
+          a(href='#')
+            i.fa-brands.fa-hashnode
+        li
+          a(href='#')
+            i.fa-brands.fa-linkedin
+    .links
+      h1 Links
+      a(href='#') Home
+      a(href='#') Shop
+      a(href='#') Cart
+      a(href='#') My orders
+    p Khode &copy 2023. All right reserved
+  script(src='js/main.js')

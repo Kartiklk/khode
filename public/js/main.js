@@ -137,7 +137,7 @@
 //     }
  
 function popUp() {
-    window.location.href="login.html";
+    window.location.href="login";
 }
 function tosignup() {
     document.querySelector('#loginform').style.display="none"

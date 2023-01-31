@@ -3,9 +3,11 @@ const Item = require('./../models/itemModel');
 
 
 exports.overview = catchAsync(async(req, res, next)=>{
+    const items = await Item.find();
     
     res.status(201).render('overview', {
-        title: 'overview'
+        title: 'overview',
+        items
     });
 });
 exports.itemList = catchAsync(async(req, res, next) => {
@@ -21,8 +23,13 @@ exports.itemList = catchAsync(async(req, res, next) => {
 });
 
 exports.item = catchAsync(async(req, res, next) => {
+    // get one data by id
+    let query = Item.findById(req.params.id);
+
+    const item = await query;
 
     res.status(201).render('item', {
-        title
+        title: "One item",
+        item
     })
 })
