@@ -5,6 +5,8 @@
 // }
 // var cart = document.querySelector('card');
 
+const { contentSecurityPolicy } = require("helmet");
+
 // function addtocart(){
 //    addEventListener('click', console.log('clicked') ) 
 // }
@@ -135,9 +137,12 @@
 //       cartitems.append(selecteditem);
 
 //     }
+
+Content-Security-Policy: script-src-attr 'none'
  
 function popUp() {
-    window.location.href="login";
+    INLI
+    window.location.href="/login";
 }
 function tosignup() {
     document.querySelector('#loginform').style.display="none"
@@ -149,26 +154,26 @@ function tologin() {
 }
 
 function close1() {
-    window.location.href="overview.html";
+    window.location.href="/";
 }
 function close2() {
-    window.location.href="overview.html";
+    window.location.href="/";
 }
 
 function order() {
-    window.location.href="orderdetails.html"
+    window.location.href="/orderdetail"
 }
 function toorder() {
     window.location.href="orderdetails.html"
 }
 function back() {
-    window.location.href="cart.html"
+    window.location.href="/cart"
 }
 function tback() {
-    window.location.href="cart.html"
+    window.location.href="/cart"
 }
 function next() {
-    window.location.href="captcha.html";
+    window.location.href="/captcha";
 }
 function refresh() {
     window.top.location.reload(true);
@@ -195,9 +200,9 @@ let number = num.innerText;
 
 check.addEventListener("click", ()=>{
 // let no = parseInt(number);
-// let res = parseInt(val.value);
+let res = val.value;
 
-    if(number == val.value){
+    if(number == res){
         alert("success");
         val.value = "";
         window.location.href="overview.html";

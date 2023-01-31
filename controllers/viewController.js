@@ -32,4 +32,11 @@ exports.item = catchAsync(async(req, res, next) => {
         title: "One item",
         item
     })
-})
+});
+
+exports.loginform = catchAsync(async(req, res, next)=>{
+
+    res.status(201).render('login', {
+        title: 'Login'
+    });
+});
