@@ -1,11 +1,14 @@
 
+// import axios from "axios";
+// import '@babel/polyfill';
+
 // addtocart.onclick = () => {
 //     var temp = document.getElementsByClassName("addtocart");
 //     console.log('clicked');
 // }
 // var cart = document.querySelector('card');
 
-const { contentSecurityPolicy } = require("helmet");
+// const { contentSecurityPolicy } = require("helmet");
 
 // function addtocart(){
 //    addEventListener('click', console.log('clicked') ) 
@@ -138,16 +141,29 @@ const { contentSecurityPolicy } = require("helmet");
 
 //     }
 
-Content-Security-Policy: script-src-attr 'none'
- 
-function popUp() {
-    INLI
+document.getElementById("popUp").addEventListener('click', login);
+function login(){
+    console.log('click')
     window.location.href="/login";
 }
-function tosignup() {
-    document.querySelector('#loginform').style.display="none"
-    document.querySelector('#signupfrom').style.display="block"
+document.getElementById("tosignup").addEventListener('click', signup);
+function signup(){
+    console.log('clicked');
+    // document.querySelector('#loginform').style.display="none"
+    // document.querySelector('#signupfrom').style.display="block"
 }
+document.getElementById("loginnow").addEventListener('click', lognow);
+function lognow(){
+    console.log('click')
+}
+// function login() {
+//     window.location.href="/login";
+// }
+// function signup() {
+//     console.log('click')
+//     document.querySelector('#loginform').style.display="none"
+//     document.querySelector('#signupfrom').style.display="block"
+// }
 function tologin() {
     document.querySelector('#loginform').style.display="block"
     document.querySelector('#signupfrom').style.display="none"

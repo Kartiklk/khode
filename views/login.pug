@@ -4,51 +4,52 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
-  link(rel='stylesheet' href='style.css')
-// Form
-section#header
-  #overley.overley
-    form(action=' overview.html' method='post')
-      // Login Form
-      #loginform.loginform
-        h1 Login Now
-        label(for='Email') Email
-        br
-        input#email(type='Email' placeholder='Enter Email' name='email')
-        br
-        label(for='Password') Password
-        br
-        input#password(type='password' placeholder='Enter Password' name='password')
-        br
-        a(href='#') Forget Password?
-        br
-        button(type='button' onclick='close1()') Close
-        button(type='submit' onclick='loginnow()') Login
-        br
-        h2
-          | You Don&apos;t have an account?
-          a(href='#' onclick='tosignup()') Create Account
-      // Signup Form
-      #signupfrom.signupfrom
-        h1 Create Account
-        label(for='Name') Name
-        br
-        input#email(type='Email' placeholder='Enter Email' name='email')
-        br
-        label(for='Email') Email
-        br
-        input#email(type='Email' placeholder='Enter Email' name='email')
-        br
-        label(for='Password') Password
-        br
-        input#password(type='password' placeholder='Enter Password' name='password')
-        br
-        a(href='#') Terms &amp; Conditions
-        br
-        button(type='button' onclick='close2()') Close
-        button(type='submit' onclick='signup()') Sign Up
-        br
-        h2
-          | You have an account?
-          a(href='#' onclick='tologin()') Login Now
-script(src='js/main.js')
+  link(rel="stylesheet" href="style.css")
+body 
+  // Form
+  section#header
+    #overley.overley
+      form(action='/' method='post')
+        // Login Form
+        #loginform.loginform
+          h1 Login Now
+          label(for='Email') Email
+          br
+          input#email(type='Email' placeholder='Enter Email' name='email')
+          br
+          label(for='Password') Password
+          br
+          input#password(type='password' placeholder='******' name='password')
+          br
+          a(href='#') Forget Password?
+          br
+          button(type='button' onclick='close1()') Close
+          button(type='button' id='loginnow') Login
+          br
+          h2
+            | You Don't have an account?
+            button.btn(type='button' id='tosignup') Create account.
+        // Signup Form
+        #signupfrom.signupfrom
+          h1 Create Account
+          label(for='Name') Name
+          br
+          input#email(type='Email' placeholder='Enter Email' name='email')
+          br
+          label(for='Email') Email
+          br
+          input#email(type='Email' placeholder='Enter Email' name='email')
+          br
+          label(for='Password') Password
+          br
+          input#password(type='password' placeholder='Enter Password' name='password')
+          br
+          a(href='#') Terms &amp; Conditions
+          br
+          button(type='button' onclick='close2()') Close
+          button(type='submit' onclick='signup()') Sign Up
+          br
+          h2
+            | You have an account?
+            a(href='#' onclick='tologin()') Login Now
+  script(src='js/main.js')

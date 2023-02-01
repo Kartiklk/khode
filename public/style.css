@@ -444,6 +444,15 @@ footer .links a{
     text-decoration: none;
     padding: 10px;
 }
+#header .loginform h2 button{
+    border: none;
+    padding: 0px;
+    font-weight: 600;
+}
+#header .loginform h2 button:hover{
+    transition: none;
+    color: #000000;
+}
 #header .signupfrom{
     background-color: transparent;
     color: black;
