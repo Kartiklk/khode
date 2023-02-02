@@ -23,7 +23,7 @@ body
           br
           a(href='#') Forget Password?
           br
-          button(type='button' onclick='close1()') Close
+          button(type='button' id='close1') Close
           button(type='button' id='loginnow') Login
           br
           h2
@@ -46,10 +46,10 @@ body
           br
           a(href='#') Terms &amp; Conditions
           br
-          button(type='button' onclick='close2()') Close
-          button(type='submit' onclick='signup()') Sign Up
+          button(type='button' id='close2') Close
+          button(type='submit' id='signup') Sign Up
           br
           h2
             | You have an account?
-            a(href='#' onclick='tologin()') Login Now
+            button.btn(type='button' id='tologin') Login Now
   script(src='js/main.js')

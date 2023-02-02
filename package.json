@@ -15,6 +15,7 @@
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "dotenv": "^16.0.3",
+    "ember-cli-content-security-policy": "^2.0.3",
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
     "helmet": "^6.0.1",

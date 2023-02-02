@@ -12,6 +12,14 @@ const helmet = require('helmet');
 
 const app = express();
 
+// app.use(function (req, res, next) {
+//   res.setHeader(
+//     'Content-Security-Policy-Report-Only',
+//     "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+//   );
+//   next();
+// });
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'))
 
