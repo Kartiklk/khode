@@ -125,6 +125,18 @@ padding: 15px 0px;
     text-align: center;
     padding-bottom: 10px;
 }
+#s2 .card a{
+    margin-top: 0px;
+    font-size: .3cm;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    margin-left: 2cm;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px black;
+    border-style: solid;
+    transition: .5s ease
+}
 #s2 .card button{
     margin-top: 0px;
     font-size: .3cm;
@@ -174,8 +186,10 @@ footer .shop ul li{
     list-style: none;
     padding: 10px 10px;
 }
-footer .shop ul li a{
+footer .shop ul li a img{
     color: white;
+    width: 25px;
+    height: 25px;
 }
 footer .shop ul li a:hover{
     color: blue;
@@ -416,13 +430,9 @@ footer .links a{
     font-size: .5cm;
     width: 6cm;
     border-radius: 3%;
-    border-radius: 15px 15px 15px 0px;
+    color: black;
     background-color: transparent;
-    transition: 1s ease;
-}
-#header .loginform input:hover{
-    box-shadow: none;
-    color: white;
+    border-radius: 2px 15px 15px 15px;
 }
 #header .loginform a{
     font-size: .5cm;
@@ -478,13 +488,10 @@ footer .links a{
     font-size: .5cm;
     width: 6cm;
     background-color: transparent;
-    border-radius: 15px 15px 0px 15px;
-    transition: 1s ease;
+    color: #000000;
+    border-radius: 2px 15px 15px 15px;
 }
-#header .signupfrom input:hover{
-    box-shadow: none;
-    color: white;
-}
+
 #header .signupfrom a{
     font-size: .5cm;
     color: black;
@@ -608,8 +615,10 @@ footer .links a{
     height: .8cm;
     padding: 10px;
     font-size: .5cm;
+    color: #000000;
     background-color: transparent;
     border-radius: 15px 4px 15px 4px;
+    
 }
 .captcha p{
     font-size: .7cm;

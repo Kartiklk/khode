@@ -1,3 +1,10 @@
+// document.addEventListener('DOMContentLoaded', ()=>{
+//     addcart.addEventListener('click', cart);
+//     function cart(){
+//         console.log('click')
+//     }
+    
+// })
 document.addEventListener('DOMContentLoaded', ()=>{
     popUp.addEventListener('click', log);
     function log(){
@@ -22,8 +29,9 @@ document.getElementById('close1').addEventListener('click', ()=>{
 document.getElementById('close2').addEventListener('click', ()=>{
     // console.log('click');
     window.location.href="/";
-})
-document.getElementsByClassName('addcart').addEventListener('click', ()=>{
+});
+document.getElementsByName('cart').addEventListener('click', ()=>{
     console.log('click');
     // window.location.href="/";
 })
+  

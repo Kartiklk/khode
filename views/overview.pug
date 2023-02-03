@@ -54,7 +54,7 @@ body
         img(src=`img/genaral/${item.photo}` alt='')
         h3.title=item.name
         h4#itempric=item.price
-        button.btn.addcart(type='button') Add Cart
+        button.btn(type='button' id='addcart' name='cart') Add Cart
   // Footer
   footer
     .shop
@@ -65,16 +65,16 @@ body
       ul
         li
           a(href='#')
-            i.fa-brands.fa-twitter
+            img(src="img/link/twitter.png", alt="Twitter", srcset="")
         li
           a(href='#')
-            i.fa-brands.fa-github
+            img(src="img/link/hashnode.png", alt="Hashnode", srcset="")
         li
           a(href='#')
-            i.fa-brands.fa-hashnode
+            img(src="img/link/github.png", alt="Github", srcset="")
         li
           a(href='#')
-            i.fa-brands.fa-linkedin
+            img(src="img/link/linked.png", alt="Linkedin", srcset="")
     .links
       h1 Links
       a(href='#') Home
