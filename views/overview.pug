@@ -54,7 +54,7 @@ body
         img(src=`img/genaral/${item.photo}` alt='')
         h3.title=item.name
         h4#itempric=item.price
-        a(href=`#` id=`tocart(${item.id})`) Add Cart
+        button.btn.tocart(type='submit') Add Cart
   // Footer
   footer
     .shop

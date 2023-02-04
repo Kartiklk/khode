@@ -1,5 +1,5 @@
 document.getElementById('tosignup').addEventListener('click', ()=>{
-    console.log('click');
+    // console.log('click');
     document.querySelector('#loginform').style.display="none"
     document.querySelector('#signupfrom').style.display="block"
 })
@@ -11,16 +11,27 @@ document.getElementById('tologin').addEventListener('click', ()=>{
 
  const cart = document.querySelector('.cart-content');
 
-//   var a = document.getElementById('tocart(id)');
-//   a.addEventListener('click', () => {
-//     console.log('clicked');
-//   })
-console.log(a);
- if (cart) 
- cart.addEventListener('submit', e => {
-   e.preventDefault();
-   console.log('click')
-//    const email = document.getElementById('email').value;
-//    const password = document.getElementById('password').value;
-//    login(email, password);
-});
+ document.getElementsByClassName('tocart').addEventListener('click', ()=>{
+  console.log('click');
+ })
+// console.log(a);
+//  if (cart) 
+//  cart.addEventListener('submit', e => {
+//    e.preventDefault();
+//    console.log('click')
+// //    const email = document.getElementById('email').value;
+// //    const password = document.getElementById('password').value;
+// //    login(email, password);
+// });
+
+
+var toadd = document.getElementsByClassName("tocart");
+        console.log(toadd);
+        for(var i=0 ; i < toadd.length; i++){
+            var button = toadd[i];
+            console.log(button)
+        // var title = document.getElementsByClassName("title")[i].innerText;
+        // console.log(title);
+        button.addEventListener("click", clicked)
+        // i++;
+        }

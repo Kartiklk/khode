@@ -12,21 +12,17 @@ section#header
     img(src='img/logo.png' alt='')
   ul
     li
-      a(href='overview.html')
-        i.fa-solid.fa-house
+      a(href='/') Home
     li
-      a(href='itemlist.html')
-        i.fa-solid.fa-shop
+      a(href='/itemslist') Items
     li
-      a(href='cart.html')
-        i.fa-solid.fa-cart-shopping
+      a(href='/cart') Cart
     li
-      a(href='myorders.html')
-        i.fa-solid.fa-bag-shopping
+      a(href='/myorders') My Order
   .right
     input#search(type='text' placeholder='search')
     button.btn(type='submit') SEARCH
-    button#backgroundblur.btn(type='button' onclick='popUp()') LOGIN
+    a(href='/login') LOGIN
 // Cart Items
 section#c1
   h1 Cart Items
