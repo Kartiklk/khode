@@ -1,17 +1,3 @@
-// document.addEventListener('DOMContentLoaded', ()=>{
-//     addcart.addEventListener('click', cart);
-//     function cart(){
-//         console.log('click')
-//     }
-    
-// })
-document.addEventListener('DOMContentLoaded', ()=>{
-    popUp.addEventListener('click', log);
-    function log(){
-        console.log('click');
-        window.location.href="/login";
-    }
-})
 document.getElementById('tosignup').addEventListener('click', ()=>{
     console.log('click');
     document.querySelector('#loginform').style.display="none"
@@ -22,16 +8,19 @@ document.getElementById('tologin').addEventListener('click', ()=>{
     document.querySelector('#loginform').style.display="block"
     document.querySelector('#signupfrom').style.display="none"
 })
-document.getElementById('close1').addEventListener('click', ()=>{
-    // console.log('click');
-    window.location.href="/";
-})
-document.getElementById('close2').addEventListener('click', ()=>{
-    // console.log('click');
-    window.location.href="/";
+
+ const cart = document.querySelector('.cart-content');
+
+//   var a = document.getElementById('tocart(id)');
+//   a.addEventListener('click', () => {
+//     console.log('clicked');
+//   })
+console.log(a);
+ if (cart) 
+ cart.addEventListener('submit', e => {
+   e.preventDefault();
+   console.log('click')
+//    const email = document.getElementById('email').value;
+//    const password = document.getElementById('password').value;
+//    login(email, password);
 });
-document.getElementsByName('cart').addEventListener('click', ()=>{
-    console.log('click');
-    // window.location.href="/";
-})
-  

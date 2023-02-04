@@ -37,9 +37,9 @@ section#c2
 // Cart Items
 section#c4
   .cart-content
-    img(src='img/genaral/ruchi.jpg' alt='')
-    h1.name Ruchi Gold 1Ltr
-    h2.Price Rs. 100
+    img(src=`img/genaral/${}` alt='')
+    h1.name=item.name
+    h2.Price=item.price
     a(href='#')
       i.fa-solid.fa-trash
 // Total Price

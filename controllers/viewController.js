@@ -40,3 +40,15 @@ exports.loginform = catchAsync(async(req, res, next)=>{
         title: 'Login'
     });
 });
+
+exports.cart = catchAsync(async(req, res, next) => {
+    // get one data by id
+    let query = Item.findById(req.params.id);
+
+    const item = await query;
+
+    res.status(201).render('cart', {
+        title: "Add Cart",
+        item
+    })
+});

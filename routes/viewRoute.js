@@ -7,5 +7,6 @@ router.get('/' ,viewController.overview);
 router.get('/itemslist', viewController.itemList);
 router.get('/item/:id', viewController.item);
 router.get('/login', viewController.loginform);
+router.get('/cart', viewController.cart);
 
 module.exports = router;
