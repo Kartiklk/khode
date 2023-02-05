@@ -52,9 +52,9 @@ body
     each item in items
       #card.card
         img(src=`img/genaral/${item.photo}` alt='')
-        h3.title=item.name
-        h4#itempric=item.price
-        button.btn.tocart(type='submit') Add Cart
+        h3#title=item.name
+        h4.itemprice=item.price
+        button.btn.tocart(type='submit' id) Add Cart
   // Footer
   footer
     .shop
