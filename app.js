@@ -5,6 +5,7 @@ const addressRoute = require('./routes/addressRoute');
 const orderRoute = require('./routes/orderRoute');
 const AppError = require('./utils/appError');
 const viewRoute = require('./routes/viewRoute');
+const cartRoute = require('./routes/cartRoute');
 const path = require('path');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -42,6 +43,7 @@ app.use('/api/v1/items', itemRoute);
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/address', addressRoute);
 app.use('/api/v1/order', orderRoute);
+app.use('/api/v1/cart', cartRoute);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
