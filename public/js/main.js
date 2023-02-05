@@ -45,9 +45,21 @@ var toadd = document.getElementsByClassName("tocart");
     function clicked(event){
             var button = event.target;
             var cartProducts = button.parentElement;
-            console.log(cartProducts);
-            var title = cartProducts.getElementsByClassName('title').innerText;
+            var check = cartProducts.innerText;
+            var title = check.split("\n")[0];
+            var price = check.split("\n")[1];
             console.log(title);
-            var price = cartProducts.getElementsByClassName('itemprice').value;
             console.log(price);
+            displaycart(title, price);
         }
+
+
+        function displaycart(title, price) {
+            
+            return(
+                `.cart-content
+                   h1.name=${title}
+                   h2.Price=${price}
+                   a(href='#') remove`
+            )
+        };
