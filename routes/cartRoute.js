@@ -5,11 +5,11 @@ const router = express.Router();
 
 router
    .route('/')
-//    .get(itemController.getAllItems)
+   .get(cartController.AllCartItem)
    .post(cartController.createCartItem);
 
-// router
-//    .route('/:id')
-//    .get(itemController.getoneItem);
+router
+   .route('/:id')
+   .get(cartController.OneCartItem);
 
 module.exports = router;

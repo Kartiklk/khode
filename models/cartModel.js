@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const User = require('./userModel');
 
 const cartSchema = new mongoose.Schema({
     title:{
@@ -8,6 +9,11 @@ const cartSchema = new mongoose.Schema({
     price:{
         type: String,
         required:[true, 'item price require']
+    },
+    user:{
+        type:mongoose.Schema.ObjectId,
+        ref:User,
+        required: [true, 'Cart Item must belong to User']
     }
 })
 
