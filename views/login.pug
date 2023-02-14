@@ -24,7 +24,7 @@ body.cap
           a(href='#') Forget Password?
           br
           a.close(href='/') Close
-          button(type='button' id='loginnow') Login
+          button(type='submit' id='loginnow') Login
           br
           h2
             | You Don't have an account?
@@ -34,15 +34,15 @@ body.cap
           h1 Create Account
           label(for='Name') Name
           br
-          input#email(type='Email' placeholder='Enter Email' name='email')
+          input#name(type='Name' placeholder='Enter Name' name='name')
           br
           label(for='Email') Email
           br
-          input#email(type='Email' placeholder='Enter Email' name='email')
+          input#signupemail(type='Email' placeholder='Enter Email' name='email')
           br
           label(for='Password') Password
           br
-          input#password(type='password' placeholder='••••••••' name='password')
+          input#signuppassword(type='password' placeholder='••••••••' name='password')
           br
           a(href='#') Terms &amp; Conditions
           br
@@ -52,6 +52,6 @@ body.cap
           h2
             | You have an account?
             button.btn(type='button' id='tologin') Login Now
-  script(src='js/main.js')
-  script(src='js/index.js')
-  script(src='js/login.js')
+  script(type='module' src='js/main.js')
+  script(type='module' src='js/index.js')
+  //- script(src='js/login.js')

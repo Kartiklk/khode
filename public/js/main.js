@@ -1,13 +1,13 @@
-// document.getElementById('tosignup').addEventListener('click', ()=>{
-//     // console.log('click');
-//     document.querySelector('#loginform').style.display="none"
-//     document.querySelector('#signupfrom').style.display="block"
-// })
-// document.getElementById('tologin').addEventListener('click', ()=>{
-//     // console.log('click');
-//     document.querySelector('#loginform').style.display="block"
-//     document.querySelector('#signupfrom').style.display="none"
-// })
+document.getElementById('tosignup').addEventListener('click', ()=>{
+    // console.log('click');
+    document.querySelector('#loginform').style.display="none"
+    document.querySelector('#signupfrom').style.display="block"
+})
+document.getElementById('tologin').addEventListener('click', ()=>{
+    // console.log('click');
+    document.querySelector('#loginform').style.display="block"
+    document.querySelector('#signupfrom').style.display="none"
+})
 
 //  const cart = document.querySelector('.cart-content');
 //  const card = document.querySelector('.card');
@@ -65,12 +65,12 @@
 //             )
 //         };
 
-        const id = document.getElementById('add');
-        console.log(id);
-        if(id){
-            console.log('on');
-            id.addEventListener('click', () =>{
-                console.log('clicked');
-            });
+        // const id = document.getElementById('add');
+        // console.log(id);
+        // if(id){
+        //     console.log('on');
+        //     id.addEventListener('click', () =>{
+        //         console.log('clicked');
+        //     });
             
-        }
+        // }

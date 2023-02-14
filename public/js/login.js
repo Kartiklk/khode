@@ -1,8 +1,11 @@
 /* eslint-disable*/
 import axios from 'axios';
+// const axios = require('axios');
 import { showAlert } from './alerts';
+// const showAlert = require('./alerts');
 
 export const login = async (email, password) => {
+    console.log('click');
     try {
         const res = await axios({
             method: 'POST',
