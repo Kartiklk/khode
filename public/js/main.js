@@ -81,41 +81,41 @@ document.getElementById('tologin').addEventListener('click', ()=>{
 
         // LOGIN PAGE
 
-        const loginForm = document.querySelector('.loginform');
+        // const loginForm = document.querySelector('.loginform');
 
-        if(loginForm){
-            document.getElementById('loginnow').addEventListener('click',  e => {
-                e.preventDefault();
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
-                login(email, password);
-            })
-        }
+        // if(loginForm){
+        //     document.getElementById('loginnow').addEventListener('click',  e => {
+        //         e.preventDefault();
+        //         const email = document.getElementById('email').value;
+        //         const password = document.getElementById('password').value;
+        //         login(email, password);
+        //     })
+        // }
 
-        exports.login = async (email, password) => {
-            // console.log(email);
-            // console.log(password);
-            try {
-                const res = await axios ({
-                    method: 'POST',
-                    url: 'http://127.0.0.1:3000/api/v1/users/login',
-                    data: {
-                        email,
-                        password
-                    }
-                });
-                // console.log(url);
-                console.log(email, password);
-                // console.log(res.data.status);
-                if (res.data.status === 'success') {
-                    console.log('success');
-                    // showAlert('Logged in successfully!');
-                    // window.setTimeout(() => {
-                    //     location.assign('/');
-                    // }, 1000);
-                }
-            } catch (err) {
-                console.log('error');
-                // showAlert(err.response.data.message);
-            }
-        };
+        // exports.login = async (email, password) => {
+        //     // console.log(email);
+        //     // console.log(password);
+        //     try {
+        //         const res = await axios ({
+        //             method: 'POST',
+        //             url: 'http://127.0.0.1:3000/api/v1/users/login',
+        //             data: {
+        //                 email,
+        //                 password
+        //             }
+        //         });
+        //         // console.log(url);
+        //         console.log(email, password);
+        //         // console.log(res.data.status);
+        //         if (res.data.status === 'success') {
+        //             console.log('success');
+        //             // showAlert('Logged in successfully!');
+        //             // window.setTimeout(() => {
+        //             //     location.assign('/');
+        //             // }, 1000);
+        //         }
+        //     } catch (err) {
+        //         console.log('error');
+        //         // showAlert(err.response.data.message);
+        //     }
+        // };
