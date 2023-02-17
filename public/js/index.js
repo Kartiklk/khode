@@ -1,16 +1,16 @@
 /* eslint-disable*/
 import '@babel/polyfill';
-import {login, logout} from "./login"
+import {login, logout} from "./login";
 // const {login, logot} = require('./login');
 
 //dom elements
 const loginForm = document.querySelector('.loginform');
 // const logOutBtn = document.querySelector('.nav__el--logout')
+console.log(loginForm);
 
 if (loginForm) 
-  // console.log(loginForm);
   loginForm.addEventListener('submit', e => {
-    window.location.href='/login'
+    // window.location.href='/'
     e.preventDefault();
     const email = document.getElementById('email').value;
     console.log(email);
