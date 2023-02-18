@@ -1,4 +1,4 @@
-import axios from "axios"
+// import axios from "axios"
 
 document.getElementById('tosignup').addEventListener('click', ()=>{
     // console.log('click');
