@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url /js",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url"
   },
   "author": "Kartik khode",
   "license": "ISC",

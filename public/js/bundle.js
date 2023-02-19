@@ -11993,9 +11993,8 @@ var login = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          console.log('click');
-          _context.prev = 1;
-          _context.next = 4;
+          _context.prev = 0;
+          _context.next = 3;
           return (0, _axios.axios)({
             method: 'POST',
             url: 'http://127.0.0.1:3000/api/v1/users/login',
@@ -12004,7 +12003,7 @@ var login = /*#__PURE__*/function () {
               password: password
             }
           });
-        case 4:
+        case 3:
           res = _context.sent;
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Logged in successfully!');
@@ -12012,17 +12011,18 @@ var login = /*#__PURE__*/function () {
               location.assign('/');
             }, 1000);
           }
-          _context.next = 11;
+          _context.next = 10;
           break;
-        case 8:
-          _context.prev = 8;
-          _context.t0 = _context["catch"](1);
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](0);
           (0, _alerts.showAlert)('error', _context.t0.response.data.message);
-        case 11:
+          // alert('error')
+        case 10:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 8]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return function login(_x, _x2) {
     return _ref.apply(this, arguments);
@@ -12182,16 +12182,18 @@ var _login = require("./login");
 
 //dom elements
 var loginForm = document.querySelector('.loginform');
+var log = document.querySelector('#loginnow');
 // const logOutBtn = document.querySelector('.nav__el--logout')
-// console.log(loginForm);
+// console.log(log);
 
-if (loginForm) loginForm.addEventListener('submit', function (e) {
+if (loginForm) log.addEventListener('click', function (e) {
+  // console.log(loginForm);
   // window.location.href='/'
   e.preventDefault();
   var email = document.getElementById('email').value;
-  console.log(email);
+  // console.log(email);
   var password = document.getElementById('password').value;
-  console.log(password);
+  // console.log(password);
   (0, _login.login)(email, password);
 });
 
@@ -12222,7 +12224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49654" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52279" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
@@ -12367,4 +12369,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/bundle.js.map
+//# sourceMappingURL=/js/bundle.js.map

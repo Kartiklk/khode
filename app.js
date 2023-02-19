@@ -21,7 +21,9 @@ app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
 //helmet
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 
 //Developmen logging
 if (process.env.NODE_ENV === 'development') {

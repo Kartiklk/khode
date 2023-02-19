@@ -7,17 +7,19 @@ import { login, logout } from "./login";
 
 //dom elements
 const loginForm = document.querySelector('.loginform');
+const log = document.querySelector('#loginnow');
 // const logOutBtn = document.querySelector('.nav__el--logout')
-// console.log(loginForm);
+// console.log(log);
 
 if (loginForm) 
-  loginForm.addEventListener('submit', e => {
+  log.addEventListener('click', e => {
+    // console.log(loginForm);
     // window.location.href='/'
     e.preventDefault();
     const email = document.getElementById('email').value;
-    console.log(email);
+    // console.log(email);
     const password = document.getElementById('password').value;
-    console.log(password);
+    // console.log(password);
     login(email, password);
 });
 

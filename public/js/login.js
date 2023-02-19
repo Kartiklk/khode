@@ -4,8 +4,9 @@ import { showAlert } from "./alerts";
 // const showAlert = require('./alerts');
 
 export const login = async (email, password) => {
-    console.log('click');
     try {
+        // console.log(email, password);
+        // console.log(data);
         const res = await axios({
             method: 'POST',
             url: 'http://127.0.0.1:3000/api/v1/users/login',
@@ -23,6 +24,7 @@ export const login = async (email, password) => {
         }
     } catch (err) {
         showAlert('error',err.response.data.message);
+        // alert('error')
     }
 };
 
