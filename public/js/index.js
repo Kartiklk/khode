@@ -1,8 +1,8 @@
 /* eslint-disable*/
-// import '@babel/polyfill';
-// import { login, logout } from "./login";
-require('@babel/polyfill');
-const { login, logout } = require('./login')
+import '@babel/polyfill';
+import { login, logout } from "./login";
+// require('@babel/polyfill');
+// const { login, logout } = require('./login')
 
 
 //dom elements

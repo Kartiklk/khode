@@ -12176,9 +12176,9 @@ require("core-js/modules/web.timers.js");
 require("core-js/modules/web.immediate.js");
 require("core-js/modules/web.dom.iterable.js");
 require("regenerator-runtime/runtime.js");
-var _require = require('./login'),
-  login = _require.login,
-  logout = _require.logout;
+var _login = require("./login");
+// require('@babel/polyfill');
+// const { login, logout } = require('./login')
 
 //dom elements
 var loginForm = document.querySelector('.loginform');
@@ -12192,7 +12192,7 @@ if (loginForm) loginForm.addEventListener('submit', function (e) {
   console.log(email);
   var password = document.getElementById('password').value;
   console.log(password);
-  login(email, password);
+  (0, _login.login)(email, password);
 });
 
 // if (logOutBtn)
@@ -12222,7 +12222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64978" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49654" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
