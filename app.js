@@ -9,6 +9,8 @@ const cartRoute = require('./routes/cartRoute');
 const path = require('path');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
 
 
 const app = express();
@@ -34,6 +36,10 @@ app.use((req, res, next) => {
   console.log('Hello from the middleware 👋');
   next();
 });
+
+app.use(mongoSanitize());
+
+app.use(xss());
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
