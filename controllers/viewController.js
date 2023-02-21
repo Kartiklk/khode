@@ -36,8 +36,8 @@ exports.item = catchAsync(async(req, res, next) => {
 
 exports.loginform = catchAsync(async(req, res, next)=>{
 
-    res.status(201).render('login', {
-        title: 'Login'
+    res.status(200).render('login', {
+        title: 'Login into your account'
     });
 });
 

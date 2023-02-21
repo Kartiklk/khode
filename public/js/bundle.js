@@ -11994,37 +11994,36 @@ var login = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
-          console.log('hi');
-          _context.next = 4;
+          _context.next = 3;
           return (0, _axios.axios)({
-            method: 'POST',
-            url: 'http://127.0.0.1:3000/api/v1/users/login',
-            data: {
-              email: email,
-              password: password
-            }
+            // method: 'POST',
+            // url: 'http://127.0.0.1:3000/api/v1/user/login',
+            // data:{
+            //     email,
+            //     password
+            // }
           });
-        case 4:
+        case 3:
           res = _context.sent;
-          console.log(email, password);
-          if (res.data.status === 'success') {
+          // console.log(email, password);
+          if (res) {
             (0, _alerts.showAlert)('success', 'Logged in successfully!');
             window.setTimeout(function () {
               location.assign('/');
             }, 1000);
           }
-          _context.next = 12;
+          _context.next = 10;
           break;
-        case 9:
-          _context.prev = 9;
+        case 7:
+          _context.prev = 7;
           _context.t0 = _context["catch"](0);
           // showAlert('error',err.response.data.message);
           alert('error');
-        case 12:
+        case 10:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return function login(_x, _x2) {
     return _ref.apply(this, arguments);
@@ -12033,7 +12032,7 @@ var login = /*#__PURE__*/function () {
 
 // export const logout = async () => {
 //     try {
-//         const res = await axios({
+//         const res = await Axios({
 //             method: 'GET',
 //             url: 'http://127.0.0.1:3000/api/v1/users/logout',
 //         });
@@ -12063,7 +12062,6 @@ var signup = /*#__PURE__*/function () {
         case 3:
           res = _context2.sent;
           // console.log(email, password);
-
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Logged in successfully!');
             window.setTimeout(function () {
@@ -12283,7 +12281,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54084" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59352" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,47 +1,26 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Document
-  link(rel='stylesheet' href='style.css')
-// Navbar
-section#header
-  .logo
-    img(src='img/logo.png' alt='')
-  ul
-    li
-      a(href='/') Home
-    li
-      a(href='/itemslist') Items
-    li
-      a(href='/cart') Cart
-    li
-      a(href='/myorders') My Order
-  .right
-    input#search(type='text' placeholder='search')
-    button.btn(type='submit') SEARCH
-    a(href='/login') LOGIN
-// Cart Items
-section#c1
-  h1 Cart Items
+extends base
+  
+block content 
+  // Cart Items
+  section#c1
+    h1 Cart Items
+    hr
+  // If Empty
+  //- section#c2
+  //-   #empty
+  //- // Cart Items
+  //- section#c4
+    .cart-content
+      img(src=`img/genaral/${}` alt='')
+      h1.name=item.name
+      h2.Price=item.price
+      a(href='#')
+        i.fa-solid.fa-trash
+  // Total Price
   hr
-// If Empty
-//- section#c2
-//-   #empty
-//- // Cart Items
-//- section#c4
-  .cart-content
-    img(src=`img/genaral/${}` alt='')
-    h1.name=item.name
-    h2.Price=item.price
-    a(href='#')
-      i.fa-solid.fa-trash
-// Total Price
-hr
-section#c3
-  .total
-    h1 Total Price
-    h2#Price Rs.100
-  a(href='#' onclick='order()') Order
-script(src='js/main.js')
+  section#c3
+    .total
+      h1 Total Price
+      h2#Price Rs.100
+    a(href='#' onclick='order()') Order
+//- script(src='js/main.js')

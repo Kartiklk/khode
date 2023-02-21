@@ -1,5 +1,5 @@
 /* eslint-disable*/
-import '@babel/polyfill';
+import '@babel/polyfill'
 import { login, logout, signup } from "./login";
 
 // require('@babel/polyfill');

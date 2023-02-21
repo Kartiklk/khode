@@ -1,29 +1,6 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title=item.name
-  link(rel='stylesheet' href='style.css')
-body 
-  // Navbar
-  section#header
-    .logo
-      img(src='img/logo.png' alt='')
-    ul
-      li
-        a(href='/') Home
-      li
-        a(href='/itemslist') Item
-      li
-        a(href='/cart') Cart
-      li
-        a(href='/myorders') My Order
-    .right
-      input#search(type='text' placeholder='search')
-      button.btn(type='submit') SEARCH
-      button.btn(type='submit') LOGIN
-      button.btn(type='submit') SIGN UP
+extends base
+  
+block content 
   // Item Details
   section#d1
     img(src=`img/genaral/${item.photo}` alt=item.name)
@@ -41,31 +18,4 @@ body
     p
       strong Description:-
       |=item.description
-  // Footer
-  footer
-    .shop
-      img(src='img/logo.png' alt='')
-      h2 Shri Khode Kirani Store
-      h3 Near APMC , Ron Road Gajendragad-582114
-      h4 Dist: Gadag, karnataka
-      ul
-        li
-          a(href='#')
-            i.fa-brands.fa-twitter
-        li
-          a(href='#')
-            i.fa-brands.fa-github
-        li
-          a(href='#')
-            i.fa-brands.fa-hashnode
-        li
-          a(href='#')
-            i.fa-brands.fa-linkedin
-    .links
-      h1 Links
-      a(href='#') Home
-      a(href='#') Shop
-      a(href='#') Cart
-      a(href='#') My orders
-    p Khode &copy 2023. All right reserved
-  script(src='js/main.js')
+  //- script(src='js/main.js')
