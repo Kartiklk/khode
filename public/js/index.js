@@ -11,8 +11,8 @@ const loginForm = document.querySelector('.loginform');
 const SignupForm = document.querySelector('.signupfrom');
 const log = document.querySelector('#loginnow');
 const sign = document.querySelector('#signup');
-// const logOutBtn = document.querySelector('.nav__el--logout')
-// console.log(log);
+const logOutBtn = document.querySelector('#logout')
+// console.log(logOutBtn);
 
 
 
@@ -40,6 +40,6 @@ if (SignupForm)
     signup(name, email, password);
 });
 
-// if (logOutBtn)
-//   logOutBtn.addEventListener('click', logout);
+if (logOutBtn)
+  logOutBtn.addEventListener('click', logout);
     

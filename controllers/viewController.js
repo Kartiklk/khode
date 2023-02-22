@@ -35,7 +35,12 @@ exports.item = catchAsync(async(req, res, next) => {
 });
 
 exports.loginform = catchAsync(async(req, res, next)=>{
-
+    // res
+    // .status(200)
+    // .set(
+    //   'Content-Security-Policy',
+    //   "connect-src 'self' https://cdnjs.cloudflare.com"
+    // )
     res.status(200).render('login', {
         title: 'Login into your account'
     });

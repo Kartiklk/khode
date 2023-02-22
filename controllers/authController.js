@@ -45,13 +45,6 @@ exports.signup = catchAsync(async (req, res , next)=> {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
-  // res.cookie('jwt', 'loggedout', {
-  //   expires: new Date(Date.now() + 10 * 1000),
-  //   httpOnly: true
-  // });
-  // res.status(200).json({
-  //   status: 'success'
-  // });
   const { email, password } = req.body;
   console.log(email, password);
     //check if email and password exist
@@ -64,7 +57,7 @@ exports.login = catchAsync(async (req, res, next) => {
     if (!user || !(await user.correctPassword(password, user.password))) {
       return next(new AppError('Incorrect email or password', 401));
     }
-  
+  console.log('success');
     //if everything ok,send token to client
     createsendToken(user, 200, res);
   });
