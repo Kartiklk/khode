@@ -31,7 +31,7 @@ block content
       #card.card
         img(src=`img/genaral/${item.photo}` alt='')
         h3#title=item.name
-        h4.itemprice=item.price
-        a(href='#' id=`item(${item.id})`) Add Cart
-        //- button.btn.tocart(type='submit' id=`add(${item.id})`) Add Cart
+        h4#itemprice=item.price
+        //- a.item(href='#') Add Cart
+        button.btn.tocart(type='button') Add Cart
   //- script(src='js/main.js')

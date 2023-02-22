@@ -53,7 +53,7 @@ app.use((req, res, next) => {
 
 app.use('/', viewRoute);
 app.use('/api/v1/items', itemRoute);
-app.use('/api/v1/user', userRoute);
+app.use('/api/v1/users', userRoute);
 app.use('/api/v1/address', addressRoute);
 app.use('/api/v1/order', orderRoute);
 app.use('/api/v1/cart', cartRoute);

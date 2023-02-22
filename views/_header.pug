@@ -13,5 +13,7 @@ section#header
   .right
     input#search(type='text' placeholder='search')
     button.btn(type='submit') SEARCH
-    a(href='/login') LOGIN
-    a#logout(href='#') Logout
+    if !user
+      a(href='/login') LOGIN
+    else 
+      a#logout(href='#') Logout
