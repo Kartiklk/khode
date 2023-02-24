@@ -12257,7 +12257,7 @@ var sign = document.querySelector('#signup');
 var logOutBtn = document.querySelector('#logout');
 var Item = document.querySelector('.card');
 var tocart = document.querySelector('.tocart');
-// console.log(Item);
+// console.log(tocart);
 
 if (loginForm) log.addEventListener('click', function (e) {
   // console.log(loginForm);
@@ -12290,22 +12290,27 @@ if (logOutBtn) logOutBtn.addEventListener('click', _login.logout);
 //     console.log(price);
 //   })
 
-// var toadd = document.getElementsByClassName("tocart");
-if (Item) for (var i = 0; i < tocart.length; i++) {
-  var button = tocart[i];
-  console.log(tocart);
-  button.addEventListener('click', function () {
-    console.log('clicked');
-  });
-  //     var button = event.target;
-  //     var cartProducts = button.parentElement;
-  //     console.log('clicked');
-  //     var title = cartProducts.getElementsByClassName("title").innerText;
-  //     var price = cartProducts.getElementById("itemprice").innerText;
-  //     console.log(title);
-  //     console.log(price);
-  // })
-}
+var toadd = document.getElementsByClassName("tocart").addEventListener('click', function () {
+  console.log('click');
+});
+// if (Item)
+// var car = Item.push(...categories(Item));
+// for(var i=0 ; i < tocart.length; i++){
+//     var button = tocart[i];
+//     console.log(tocart)
+//     button.addEventListener('click', ()=>{
+//       console.log('clicked')
+//     });
+//     var button = event.target;
+//     var cartProducts = button.parentElement;
+//     console.log('clicked');
+//     var title = cartProducts.getElementsByClassName("title").innerText;
+//     var price = cartProducts.getElementById("itemprice").innerText;
+//     console.log(title);
+//     console.log(price);
+// })
+
+// }
 
 // function clicked(event){
 //   console.log('clicked')
@@ -12343,7 +12348,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51742" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52266" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

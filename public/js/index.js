@@ -14,7 +14,7 @@ const sign = document.querySelector('#signup');
 const logOutBtn = document.querySelector('#logout');
 const Item = document.querySelector('.card');
 const tocart = document.querySelector('.tocart');
-// console.log(Item);
+// console.log(tocart);
 
 
 
@@ -54,14 +54,17 @@ if (logOutBtn)
 //     console.log(price);
 //   })
 
-// var toadd = document.getElementsByClassName("tocart");
-if (Item)
-  for(var i=0 ; i < tocart.length; i++){
-      var button = tocart[i];
-      console.log(tocart)
-      button.addEventListener('click', ()=>{
-        console.log('clicked')
-      });
+var toadd = document.getElementsByClassName("tocart").addEventListener('click', () => {
+  console.log('click');
+});
+// if (Item)
+  // var car = Item.push(...categories(Item));
+  // for(var i=0 ; i < tocart.length; i++){
+  //     var button = tocart[i];
+  //     console.log(tocart)
+  //     button.addEventListener('click', ()=>{
+  //       console.log('clicked')
+  //     });
       //     var button = event.target;
       //     var cartProducts = button.parentElement;
       //     console.log('clicked');
@@ -71,7 +74,7 @@ if (Item)
       //     console.log(price);
       // })
 
-}
+// }
 
 // function clicked(event){
 //   console.log('clicked')

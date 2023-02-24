@@ -102,11 +102,11 @@ exports.login = catchAsync(async (req, res, next) => {
     }
   
     //check if user changed password after the token was issued
-    if (currentUser.changedPasswordAfter(decoded.iat)) {
-      return next(
-        new AppError('User recently changed password! please login again.', 401)
-      );
-    }
+    // if (currentUser.changedPasswordAfter(decoded.iat)) {
+    //   return next(
+    //     new AppError('User recently changed password! please login again.', 401)
+    //   );
+    // }
     //grant access to protect route
     req.user = currentUser;
     res.locals.user = currentUser;
@@ -124,14 +124,15 @@ exports.login = catchAsync(async (req, res, next) => {
   
         //check if user still exists
         const currentUser = await User.findById(decoded.id);
+        console.log(currentUser);
         if (!currentUser) {
           return next();
         }
   
         //check if user changed password after the token was issued
-        if (currentUser.changedPasswordAfter(decoded.iat)) {
-          return next();
-        }
+        // if (currentUser.changedPasswordAfter(decoded.iat)) {
+        //   return next();
+        // }
         //there is a logged in user
         res.locals.user = currentUser;
         return next();
