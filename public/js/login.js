@@ -31,14 +31,14 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
     try {
-        const res = await Axios({
+        console.log('click')
+        const res = await axios({
             method: 'GET',
             url: '/api/v1/users/logout',
         });
         if (res.data.status = 'success') location.reload(true);
     } catch(err) {
-        // showAlert('error', 'Error Logging out! Try again later');
-        console.log(err);
+        showAlert('error', 'Error Logging out! Try again later');
     }
 };
 

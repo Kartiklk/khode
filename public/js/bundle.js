@@ -12039,26 +12039,26 @@ var logout = /*#__PURE__*/function () {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           _context2.prev = 0;
-          _context2.next = 3;
-          return (0, _axios.Axios)({
+          console.log('click');
+          _context2.next = 4;
+          return axios({
             method: 'GET',
             url: '/api/v1/users/logout'
           });
-        case 3:
+        case 4:
           res = _context2.sent;
           if (res.data.status = 'success') location.reload(true);
-          _context2.next = 10;
+          _context2.next = 11;
           break;
-        case 7:
-          _context2.prev = 7;
+        case 8:
+          _context2.prev = 8;
           _context2.t0 = _context2["catch"](0);
-          // showAlert('error', 'Error Logging out! Try again later');
-          console.log(_context2.t0);
-        case 10:
+          (0, _alerts.showAlert)('error', 'Error Logging out! Try again later');
+        case 11:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[0, 7]]);
+    }, _callee2, null, [[0, 8]]);
   }));
   return function logout() {
     return _ref2.apply(this, arguments);
@@ -12290,9 +12290,9 @@ if (logOutBtn) logOutBtn.addEventListener('click', _login.logout);
 //     console.log(price);
 //   })
 
-var toadd = document.getElementsByClassName("tocart").addEventListener('click', function () {
-  console.log('click');
-});
+// var toadd = document.getElementsByClassName("tocart").addEventListener('click', () => {
+//   console.log('click');
+// });
 // if (Item)
 // var car = Item.push(...categories(Item));
 // for(var i=0 ; i < tocart.length; i++){
@@ -12348,7 +12348,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52266" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54155" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

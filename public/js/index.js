@@ -54,9 +54,9 @@ if (logOutBtn)
 //     console.log(price);
 //   })
 
-var toadd = document.getElementsByClassName("tocart").addEventListener('click', () => {
-  console.log('click');
-});
+// var toadd = document.getElementsByClassName("tocart").addEventListener('click', () => {
+//   console.log('click');
+// });
 // if (Item)
   // var car = Item.push(...categories(Item));
   // for(var i=0 ; i < tocart.length; i++){

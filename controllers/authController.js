@@ -124,7 +124,6 @@ exports.login = catchAsync(async (req, res, next) => {
   
         //check if user still exists
         const currentUser = await User.findById(decoded.id);
-        console.log(currentUser);
         if (!currentUser) {
           return next();
         }

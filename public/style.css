@@ -64,6 +64,15 @@ button.btn{
     background-color: #000000;
     box-shadow: 2px 2px 2px white;
 }
+#header .right h3{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    padding: 7px;
+    margin-left: 7.1cm;
+    margin-top: -1cm;
+    text-overflow: ellipsis;
+}
 #header input{
     width: 50%;
     padding: 5px 10px;

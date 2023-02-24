@@ -16,4 +16,5 @@ section#header
     if !user
       a(href='/login') LOGIN
     else 
-      a#logout(href='#') Logout
+      button.btn(type='submit' id='logout') Logout
+      h3=user.name.split(' ')[0]
