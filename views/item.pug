@@ -10,12 +10,11 @@ block content
     h2=item.price
     h4=item.discount
     h3 In Stock
-    a(href='#')
-      i.fa-solid.fa-cart-plus
-    button(type='button' onclick='toorder()') Order
+    a(href='#') Add cart
+    button(type='button') Order
   hr
   section#desc
     p
       strong Description:-
-      |=item.description
+      //- =item.description
   //- script(src='js/main.js')

@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get('/' , authController.isLoggedIn, viewController.overview);
 router.get('/itemslist',authController.isLoggedIn, viewController.itemList);
-router.get('/item/:id', viewController.item);
+router.get('/item/:id', authController.isLoggedIn, viewController.item);
 router.get('/login', authController.isLoggedIn, viewController.loginform);
-router.get('/cart',authController.isLoggedIn, viewController.cart);
+// router.get('/cart',authController.isLoggedIn, viewController.cart);
 
 module.exports = router;
