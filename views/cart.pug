@@ -5,17 +5,21 @@ block content
   section#c1
     h1 Cart Items
     hr
-  // If Empty
+  //- // If Empty
   //- section#c2
-  //-   #empty
-  //- // Cart Items
-  //- section#c4
+  //-   if cart==null
+  //-     h1 Cart is Empty
+  // Cart Items
+  section#c4
     .cart-content
-      img(src=`img/genaral/${}` alt='')
-      h1.name=item.name
-      h2.Price=item.price
-      a(href='#')
-        i.fa-solid.fa-trash
+      each cart in carts
+        if cart==null
+          h1 Cart is Empty
+        else
+          img(src=`img/genaral/${cart.photo}` alt='')
+          h1.name=cart.name
+          h2.Price=cart.price
+          a(href='#') Remove
   // Total Price
   hr
   section#c3

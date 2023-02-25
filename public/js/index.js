@@ -1,6 +1,7 @@
 /* eslint-disable*/
 import '@babel/polyfill'
 import { login, logout, signup } from "./login";
+import { cart } from "./cart";
 
 // require('@babel/polyfill');
 // const { login, logout } = require('./login')
@@ -12,9 +13,9 @@ const SignupForm = document.querySelector('.signupfrom');
 const log = document.querySelector('#loginnow');
 const sign = document.querySelector('#signup');
 const logOutBtn = document.querySelector('#logout');
-const Item = document.querySelector('.card');
-const tocart = document.querySelector('.tocart');
-// console.log(tocart);
+const Item = document.querySelector('#d2');
+const Addcart = document.querySelector('#tocart');
+console.log(Item);
 
 
 
@@ -44,6 +45,20 @@ if (SignupForm)
 
 if (logOutBtn)
   logOutBtn.addEventListener('click', logout);
+
+  if(Item)
+    Addcart.addEventListener('click', e=>{
+      e.preventDefault();
+      const item = document.getElementById('it').innerText;
+      const userId = document.getElementById('us');
+      console.log(item, userId);
+      if(userId == null)
+        alert('Please Login')
+      else
+        var user = userId.innerText
+        // console.log(user);
+        cart(item, user)
+    })
 
 // if (Item)
 //   tocart.addEventListener('click', e => {

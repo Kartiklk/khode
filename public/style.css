@@ -301,10 +301,17 @@ footer .links a{
 #d2 button{
     font-size: .7cm;
     padding: 5px;
-    margin-left: 1cm;
-    margin-bottom: 10px;
+    margin-left: 5cm;
+    margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 5px;
     transition: 1s ease;
+}
+#d2 p{
+    display: none;
+}
+#d2 h1{
+    display: none;
 }
 #d2 button:hover{
     background-color: #000000;

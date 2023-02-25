@@ -1,24 +1,25 @@
-// import axios from "axios";
-// import { showAlert } from './alerts';
+import axios from "axios";
+import { showAlert } from './alerts';
 
-// export const addcart = async (title, price) => {
-//     try {
-//         const res = await axios({
-//             method: 'POST',
-//             url: 'http://127.0.0.1:3000/api/v1/users/login',
-//             data: {
-//                 email,
-//                 password
-//             }
-//         });
+export const cart = async (item, user) => {
+    try {
+        console.log(item, user);
+        const res = await axios({
+            method: 'POST',
+            url: '/api/v1/cart',
+            data: {
+                item,
+                user
+            }
+        });
         
-//         if (res.data.status === 'success') {
-//             showAlert('success','Logged in successfully!');
-//             window.setTimeout(() => {
-//                 location.assign('/');
-//             }, 1000);
-//         }
-//     } catch (err) {
-//         showAlert('error',err.response.data.message);
-//     }
-// };
+        if (res.data.status === 'success') {
+            showAlert('success','Added To Cart');
+            window.setTimeout(() => {
+                location.assign('/');
+            }, 1000);
+        }
+    } catch (err) {
+        showAlert('error',err.response.data.message);
+    }
+};

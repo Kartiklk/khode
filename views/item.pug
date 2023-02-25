@@ -3,18 +3,20 @@ extends base
 block content 
   // Item Details
   section#d1
-    img(src=`img/genaral/${item.photo}` alt=item.name)
+    img(src=`/img/genaral/${item.photo}` alt=item.name)
     hr
   section#d2
-    h1=item.name
+    //- h1=item.name
     h2=item.price
     h4=item.discount
     h3 In Stock
-    a(href='#') Add cart
-    button(type='button') Order
+    p#it=item.id
+    button#tocart(type='button') Add cart
+    if user
+      h1#us=user.id
   hr
   section#desc
     p
       strong Description:-
-      //- =item.description
+      =item.description
   //- script(src='js/main.js')

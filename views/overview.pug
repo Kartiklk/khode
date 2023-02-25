@@ -28,11 +28,11 @@ block content
   // Offer items
   section#s2
     each item in items
-      a(href=`/item/${item.id}`)
+      a(href=`/items/${item.id}`)
         #card.card
           img(src=`img/genaral/${item.photo}` alt='')
           h3#title=item.name
           h4#itemprice=item.price
           //- a.item(href='#') Add Cart
-          button.btn.tocart(type='button') Add Cart
+          button.btn(type='button') Add Cart
   //- script(src='js/main.js')
