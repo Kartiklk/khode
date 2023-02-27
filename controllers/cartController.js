@@ -24,9 +24,12 @@ exports.AllCartItem = catchAsync(async(req, res, next) => {
 });
 
 exports.OneCartItem = catchAsync(async(req, res, next) =>{
+
   const query = cart.findById(req.params.id);
 
+  
   const item = await query;
+  console.log(item);
 
   res.status(201).json({
     status: "success",

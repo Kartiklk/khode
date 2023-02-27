@@ -1,5 +1,7 @@
 const catchAsync = require('../utils/catchAsync');
 const Item = require('./../models/itemModel');
+const Cart = require('./../models/cartModel');
+const User = require('./../models/userModel');
 
 
 exports.overview = catchAsync(async(req, res, next)=>{
@@ -46,13 +48,10 @@ exports.loginform = catchAsync(async(req, res, next)=>{
 });
 
 exports.cart = catchAsync(async(req, res, next) => {
-    // get one data by id
-    let query = Item.findById(req.params.id);
-
-    const item = await query;
-
+    const cart = await Cart.findById({user:req.params.id});
+    console.log(cart);
     res.status(201).render('cart', {
-        title: "Add Cart",
-        item
-    })
+        title: 'cart',
+        cart
+    });
 });
