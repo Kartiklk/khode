@@ -10,13 +10,13 @@ block content
   //-   if cart==null
   //-     h1 Cart is Empty
   // Cart Items
-    each cart in carts.item
   section#c4
-    .cart-content
-      //- img(src=`img/genaral/${cart.}` alt='')
-      //- h1= cart.user
-      h2= cart.item
-      a(href='#') Remove
+    each item in items
+      .cart-content
+        img(src=`img/genaral/${item.photo}` alt='')
+        h1= item.name
+        h2=item.price
+        a(href='#') Remove
   // Total Price
   hr
   section#c3

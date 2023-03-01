@@ -13,6 +13,7 @@ router
 
 router
    .route('/:id')
-   .get(cartController.OneCartItem);
+   .get(authController.protect, cartController.OneCartItem)
+   .delete(authController.protect, cartController.deleteOne);
 
 module.exports = router;

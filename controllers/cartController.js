@@ -1,5 +1,6 @@
 const catchAsync = require('../utils/catchAsync');
 const cart = require('./../models/cartModel');
+const Item = require('./../models/itemModel');
 
 exports.createCartItem = catchAsync(async (req, res, next) => {
     const newCartItem = await cart.create(req.body);
@@ -25,16 +26,36 @@ exports.AllCartItem = catchAsync(async(req, res, next) => {
 
 exports.OneCartItem = catchAsync(async(req, res, next) =>{
 
-  const query = cart.findById(req.params.id);
+  // const query = cart.findById(req.params.id);
 
   
-  const item = await query;
-  console.log(item);
+  // const item = await query;
+  // console.log(item);
+  const cart = await cart.find({ user: req.user.id });
+
+  console.log(cart);
+  //find tours with the returned ids
+  const itemID = cart.map(el => el.item);
+  const items = await Item.find({ _id: { $in: itemID } });
 
   res.status(201).json({
     status: "success",
     data:{
-      data: item
+      data: items
     }
   });
 });
+
+
+exports.deleteOne = catchAsync(async (req, res, next) => {
+    const doc = await cart.findByIdAndDelete(req.params.id);
+
+    if (!doc) {
+      return next(new AppError('No document found with that ID', 404));
+    }
+
+    res.status(204).json({
+      status: 'success',
+      data:null
+    });
+  });

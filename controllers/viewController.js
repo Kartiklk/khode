@@ -41,17 +41,22 @@ exports.loginform = catchAsync(async(req, res, next)=>{
     // .set(
     //   'Content-Security-Policy',
     //   "connect-src 'self' https://cdnjs.cloudflare.com"
-    // )
+    // ) 
     res.status(200).render('login', {
         title: 'Login into your account'
     });
 });
 
-exports.cart = catchAsync(async(req, res, next) => {
-    const cart = await Cart.findById({user:req.params.id});
+exports.getMycart = catchAsync(async(req, res, next) => {
+    const cart = await Cart.find({ user: req.user.id });
+
     console.log(cart);
+    //find tours with the returned ids
+    const itemID = cart.map(el => el.item);
+    const items = await Item.find({ _id: { $in: itemID } });
+    // const cart = await Cart.findById({user:req.user.id});
     res.status(201).render('cart', {
         title: 'cart',
-        cart
+        items
     });
 });
