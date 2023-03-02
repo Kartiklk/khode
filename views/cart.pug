@@ -1,5 +1,5 @@
 extends base
-  
+
 block content 
   // Cart Items
   section#c1
@@ -13,15 +13,18 @@ block content
   section#c4
     each item in items
       .cart-content
-        img(src=`img/genaral/${item.photo}` alt='')
+        img(src=`img/genaral/${item.photo}` alt=item.name)
         h1= item.name
-        h2=item.price
-        a(href='#') Remove
+        h2.price=item.price
+        button.btn(type='button' onclick=`myFunction(${item.id})`) Remove
+    each cart in carts
+      p#ids=cart.id
   // Total Price
   hr
   section#c3
     .total
       h1 Total Price
-      h2#Price Rs.100
+      h2#total
     a(href='#' onclick='order()') Order
 //- script(src='js/main.js')
+

@@ -48,15 +48,16 @@ exports.loginform = catchAsync(async(req, res, next)=>{
 });
 
 exports.getMycart = catchAsync(async(req, res, next) => {
-    const cart = await Cart.find({ user: req.user.id });
+    const carts = await Cart.find({ user: req.user.id });
 
-    console.log(cart);
+    // console.log(cart);
     //find tours with the returned ids
-    const itemID = cart.map(el => el.item);
+    const itemID = carts.map(el => el.item);
     const items = await Item.find({ _id: { $in: itemID } });
     // const cart = await Cart.findById({user:req.user.id});
+    // console.log(carts);
     res.status(201).render('cart', {
         title: 'cart',
-        items
+       carts,items
     });
 });

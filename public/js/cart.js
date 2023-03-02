@@ -16,7 +16,7 @@ export const cart = async (item, user) => {
         if (res.data.status === 'success') {
             showAlert('success','Added To Cart');
             window.setTimeout(() => {
-                location.assign('/');
+                location.assign('/itemslist');
             }, 1000);
         }
     } catch (err) {

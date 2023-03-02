@@ -327,6 +327,8 @@ footer .links a{
 }
 #c1, #c2, #c3{
     text-align: center;
+}#c1 p{
+    display: none;
 }
 #c1{
     font-size: 1cm;
