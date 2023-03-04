@@ -2,6 +2,7 @@ const catchAsync = require('../utils/catchAsync');
 const Item = require('./../models/itemModel');
 const Cart = require('./../models/cartModel');
 const User = require('./../models/userModel');
+const Order = require('./../models/orderModel');
 
 
 exports.overview = catchAsync(async(req, res, next)=>{
@@ -61,3 +62,9 @@ exports.getMycart = catchAsync(async(req, res, next) => {
        carts,items
     });
 });
+
+exports.Orderdetails = catchAsync(async(req, res, next) =>{
+    res.status(201).render('orderdetails',{
+        title: 'Order Now'
+    });
+})

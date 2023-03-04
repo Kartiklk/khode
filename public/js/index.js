@@ -2,6 +2,7 @@
 import '@babel/polyfill'
 import { login, logout, signup } from "./login";
 import { cart } from "./cart";
+// import { remove } from "./main";
 
 // require('@babel/polyfill');
 // const { login, logout } = require('./login')
@@ -16,9 +17,9 @@ const logOutBtn = document.querySelector('#logout');
 const Item = document.querySelector('#d2');
 const Addcart = document.querySelector('#tocart');
 const total = document.querySelector('.price')
-const id = document.querySelector('#ids')
+// const id = document.querySelector('#myFunction(id)')
 // const remove = document.querySelector('#rm')
-// console.log(remove);
+// console.log(id);
 
 
 
@@ -69,6 +70,22 @@ if (logOutBtn)
 //     console.log('click');
 //   })
 
-function myFunction(id){
-  console.log(id)
+// const id = document.getElementById('myFunction(id)');
+// console.log(id)
+
+// var temp = function kartik(id){
+//     // const id = document.getElementById('myFunction(id)');
+//     console.log(id)
+// }
+
+function myFunction(p) {
+  console.log('click')
 }
+
+if(total)
+  var l = total.length
+  console.log(l)
+  // for(var)
+  total.addEventListener('click', e=> {
+    console.log(total.innerText)
+  })
