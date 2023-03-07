@@ -1,6 +1,6 @@
 // import axios from "axios"
 
-import { remove } from "./cart";
+// import { remove } from "./cart";
 
 document.getElementById('tosignup').addEventListener('click', ()=>{
     // console.log('click');
@@ -13,9 +13,9 @@ document.getElementById('tologin').addEventListener('click', ()=>{
     document.querySelector('#signupfrom').style.display="none"
 })
 
-function myFunction(id) {
-    remove(id)
-}
+// function myFunction(id) {
+//     remove(id)
+// }
 
 //  const cart = document.querySelector('.cart-content');
 //  const card = document.querySelector('.card');

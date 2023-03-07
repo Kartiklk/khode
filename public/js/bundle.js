@@ -12019,7 +12019,7 @@ var login = /*#__PURE__*/function () {
           _context.prev = 7;
           _context.t0 = _context["catch"](0);
           (0, _alerts.showAlert)('error', _context.t0.response.data.message);
-          // alert('error');
+          // alert(err);
           // console.log(err);
         case 10:
         case "end":
@@ -12366,7 +12366,7 @@ if (Item) Addcart.addEventListener('click', function (e) {
 //     console.log(id)
 // }
 
-function myFunction(p) {
+function myFunction(id) {
   console.log('click');
 }
 if (total) var l = total.length;
@@ -12400,7 +12400,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58180" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51911" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

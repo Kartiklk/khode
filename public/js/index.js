@@ -78,7 +78,7 @@ if (logOutBtn)
 //     console.log(id)
 // }
 
-function myFunction(p) {
+function myFunction(id) {
   console.log('click')
 }
 
