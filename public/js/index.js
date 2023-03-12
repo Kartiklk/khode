@@ -84,12 +84,13 @@ if (logOutBtn)
 
 if(remove)
   for(var i=0; i<remove.length; i++){
-    var button = remove[i];
+    var button = remove[i]
+    // console.log(button)
     button.addEventListener('click', ()=>{
       var temp = button.parentElement;
       console.log(temp);
-      var id = temp.getElementById('idof')[0].innerText;
-      console.log(id);
+      // var id = temp.getElementById('idof')[0].innerText;
+      // console.log(id);
     })
   }
   

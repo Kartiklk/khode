@@ -12372,11 +12372,12 @@ if (Item) Addcart.addEventListener('click', function (e) {
 
 if (remove) for (var i = 0; i < remove.length; i++) {
   var button = remove[i];
+  // console.log(button)
   button.addEventListener('click', function () {
     var temp = button.parentElement;
     console.log(temp);
-    var id = temp.getElementById('idof')[0].innerText;
-    console.log(id);
+    // var id = temp.getElementById('idof')[0].innerText;
+    // console.log(id);
   });
 }
 
