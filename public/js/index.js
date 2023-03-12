@@ -19,7 +19,7 @@ const Addcart = document.querySelector('#tocart');
 const total = document.querySelector('.price')
 // const id = document.querySelector('#myFunction(id)')
 const remove = document.querySelectorAll('.remove')
-console.log(remove);
+// console.log(remove);
 
 
 
@@ -78,14 +78,23 @@ if (logOutBtn)
 //     console.log(id)
 // }
 
-function myFunction(id) {
-  console.log('click')
-}
+// function myFunction(id) {
+//   console.log('click')
+// }
 
-if(total)
-  var l = total.length
-  console.log(l)
+if(remove)
+  for(var i=0; i<remove.length; i++){
+    var button = remove[i];
+    button.addEventListener('click', ()=>{
+      var temp = button.parentElement;
+      console.log(temp);
+      var id = temp.getElementById('idof')[0].innerText;
+      console.log(id);
+    })
+  }
+  
+    
   // for(var)
-  total.addEventListener('click', e=> {
-    console.log(total.innerText)
-  })
+  // remove.addEventListener('click', e=> {
+  //   console.log(total.innerText)
+  // })
