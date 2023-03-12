@@ -18,8 +18,8 @@ const Item = document.querySelector('#d2');
 const Addcart = document.querySelector('#tocart');
 const total = document.querySelector('.price')
 // const id = document.querySelector('#myFunction(id)')
-// const remove = document.querySelector('#rm')
-// console.log(id);
+const remove = document.querySelectorAll('.remove')
+console.log(remove);
 
 
 
