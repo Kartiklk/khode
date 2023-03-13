@@ -12426,6 +12426,7 @@ for (var i = 0; i < total.length; i++) {
 }
 console.log(tprice);
 document.getElementById('total').innerText = tprice;
+document.getElementById('tp').innerText = tprice;
 // for(var)
 // remove.addEventListener('click', e=> {
 //   console.log(total.innerText)

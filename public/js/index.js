@@ -102,6 +102,7 @@ if(total)
   }
   console.log(tprice);
   document.getElementById('total').innerText= tprice;
+  document.getElementById('tp').innerText= tprice;
   // for(var)
   // remove.addEventListener('click', e=> {
   //   console.log(total.innerText)
