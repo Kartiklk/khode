@@ -18,7 +18,8 @@ const Item = document.querySelector('#d2');
 const Addcart = document.querySelector('#tocart');
 const total = document.querySelectorAll('.price')
 const remove = document.querySelectorAll('.remove')
-// console.log(total);
+const ti = document.querySelector('#tp');
+// console.log(ti);
 
 
 
@@ -100,10 +101,16 @@ if(total)
     var price = total[i].innerText;
     tprice=parseInt(tprice)+parseInt(price);
   }
-  console.log(tprice);
   document.getElementById('total').innerText= tprice;
-  document.getElementById('tp').innerText= tprice;
+  it.innerText= `Total Amount: `
+  
+  
+  
+// const ti = document.querySelector('#tp');
+
   // for(var)
   // remove.addEventListener('click', e=> {
   //   console.log(total.innerText)
   // })
+// if(ti)
+//   console.log(ti);
