@@ -420,6 +420,9 @@ footer .links a{
     font-size: .5cm;
     transition: 1s ease;
 }
+#c4 p{
+    display: none;
+}
 #c4 a:hover{
     color: rgb(0, 0, 255);
     font-size: .6cm;

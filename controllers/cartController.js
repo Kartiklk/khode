@@ -1,6 +1,7 @@
 const catchAsync = require('../utils/catchAsync');
 const cart = require('./../models/cartModel');
 const Item = require('./../models/itemModel');
+const AppError = require('./../utils/appError');
 
 exports.createCartItem = catchAsync(async (req, res, next) => {
     const newCartItem = await cart.create(req.body);
@@ -54,8 +55,8 @@ exports.deleteOne = catchAsync(async (req, res, next) => {
       return next(new AppError('No document found with that ID', 404));
     }
 
-    res.status(204).json({
+    res.status(201).json({
       status: 'success',
-      data:null
+      data:'NO DATA'
     });
   });

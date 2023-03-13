@@ -12116,7 +12116,7 @@ exports.signup = signup;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cart = void 0;
+exports.removeId = exports.cart = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alerts = require("./alerts");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -12166,6 +12166,46 @@ var cart = /*#__PURE__*/function () {
   };
 }();
 exports.cart = cart;
+var removeId = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(id) {
+    var res;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.prev = 0;
+          console.log(id);
+          _context2.next = 4;
+          return (0, _axios.default)({
+            method: 'DELETE',
+            url: "/api/v1/cart/".concat(id),
+            data: {}
+          });
+        case 4:
+          res = _context2.sent;
+          if (res.data.status === 'success') {
+            (0, _alerts.showAlert)('success', 'Removed From Cart');
+            window.setTimeout(function () {
+              location.reload();
+            }, 1000);
+          }
+          _context2.next = 11;
+          break;
+        case 8:
+          _context2.prev = 8;
+          _context2.t0 = _context2["catch"](0);
+          // showAlert('error',err.response.data.message);
+          console.log(_context2.t0);
+        case 11:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[0, 8]]);
+  }));
+  return function removeId(_x3) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+exports.removeId = removeId;
 },{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -12316,10 +12356,9 @@ var sign = document.querySelector('#signup');
 var logOutBtn = document.querySelector('#logout');
 var Item = document.querySelector('#d2');
 var Addcart = document.querySelector('#tocart');
-var total = document.querySelector('.price');
-// const id = document.querySelector('#myFunction(id)')
+var total = document.querySelectorAll('.price');
 var remove = document.querySelectorAll('.remove');
-// console.log(remove);
+// console.log(total);
 
 if (loginForm) log.addEventListener('click', function (e) {
   // console.log(loginForm);
@@ -12372,15 +12411,21 @@ if (Item) Addcart.addEventListener('click', function (e) {
 
 if (remove) for (var i = 0; i < remove.length; i++) {
   var button = remove[i];
-  // console.log(button)
-  button.addEventListener('click', function () {
-    var temp = button.parentElement;
-    console.log(temp);
-    // var id = temp.getElementById('idof')[0].innerText;
-    // console.log(id);
-  });
+  button.addEventListener('click', clicked);
 }
-
+function clicked(event) {
+  var button = event.target;
+  var temp = button.parentElement;
+  var id = temp.querySelector('#idof').innerText;
+  (0, _cart.removeId)(id);
+}
+if (total) var tprice = 0;
+for (var i = 0; i < total.length; i++) {
+  var price = total[i].innerText;
+  tprice = parseInt(tprice) + parseInt(price);
+}
+console.log(tprice);
+document.getElementById('total').innerText = tprice;
 // for(var)
 // remove.addEventListener('click', e=> {
 //   console.log(total.innerText)
@@ -12410,7 +12455,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56444" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55308" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

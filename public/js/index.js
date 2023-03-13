@@ -1,7 +1,7 @@
 /* eslint-disable*/
 import '@babel/polyfill'
 import { login, logout, signup } from "./login";
-import { cart } from "./cart";
+import { cart, removeId } from "./cart";
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -16,10 +16,9 @@ const sign = document.querySelector('#signup');
 const logOutBtn = document.querySelector('#logout');
 const Item = document.querySelector('#d2');
 const Addcart = document.querySelector('#tocart');
-const total = document.querySelector('.price')
-// const id = document.querySelector('#myFunction(id)')
+const total = document.querySelectorAll('.price')
 const remove = document.querySelectorAll('.remove')
-// console.log(remove);
+// console.log(total);
 
 
 
@@ -83,18 +82,26 @@ if (logOutBtn)
 // }
 
 if(remove)
-  for(var i=0; i<remove.length; i++){
-    var button = remove[i]
-    // console.log(button)
-    button.addEventListener('click', ()=>{
-      var temp = button.parentElement;
-      console.log(temp);
-      // var id = temp.getElementById('idof')[0].innerText;
-      // console.log(id);
-    })
+  for(var i=0; i<remove.length;i++){
+  var button = remove[i];
+  button.addEventListener('click', clicked);
   }
   
-    
+  function clicked(event){
+    var button = event.target;
+    var temp = button.parentElement;
+    var id = temp.querySelector('#idof').innerText;
+    removeId(id);
+  }
+  
+if(total)
+  var tprice=0;
+  for(var i=0; i<total.length;i++){
+    var price = total[i].innerText;
+    tprice=parseInt(tprice)+parseInt(price);
+  }
+  console.log(tprice);
+  document.getElementById('total').innerText= tprice;
   // for(var)
   // remove.addEventListener('click', e=> {
   //   console.log(total.innerText)
