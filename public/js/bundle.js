@@ -12424,10 +12424,12 @@ if (total) var tprice = 0;
 for (var i = 0; i < total.length; i++) {
   var price = total[i].innerText;
   tprice = parseInt(tprice) + parseInt(price);
+  document.getElementById('total').innerText = tprice;
+  // order(tprice);
 }
-document.getElementById('total').innerText = tprice;
-it.innerText = "Total Amount: ";
 
+// if(ti)
+// console.log(ti.innerText=`${tprice}`)
 // const ti = document.querySelector('#tp');
 
 // for(var)
@@ -12461,7 +12463,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60568" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63467" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

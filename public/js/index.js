@@ -100,12 +100,13 @@ if(total)
   for(var i=0; i<total.length;i++){
     var price = total[i].innerText;
     tprice=parseInt(tprice)+parseInt(price);
+    document.getElementById('total').innerText= tprice;
+    // order(tprice);
   }
-  document.getElementById('total').innerText= tprice;
-  it.innerText= `Total Amount: `
-  
-  
-  
+
+
+// if(ti)
+  // console.log(ti.innerText=`${tprice}`)
 // const ti = document.querySelector('#tp');
 
   // for(var)
