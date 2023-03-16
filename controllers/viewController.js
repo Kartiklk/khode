@@ -65,13 +65,12 @@ exports.getMycart = catchAsync(async(req, res, next) => {
 });
 
 exports.Orderdetails = catchAsync(async(req, res, next) =>{
-    const address = await Address.find({ user:req.user.id });
+    const addresses = await Address.find({ user:req.user.id });
 
     res.status(201).render('orderdetails',{
         title: 'Order Now',
-        address
+        addresses
     });
-    console.log(address);
 })
 
 exports.myorders = catchAsync(async(req, res, next) =>{

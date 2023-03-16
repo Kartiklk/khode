@@ -1,29 +1,30 @@
 extends base
 
 block content 
-  // Cart Items
   section#c1
     h1 Cart Items
-    hr
-  //- // If Empty
-  //- section#c2
-  //-   if cart==null
-  //-     h1 Cart is Empty
-  // Cart Items
-  section#c4
-    each cart in carts
-      .cart-content
-        img(src=`img/genaral/${cart.item.photo}` alt=cart.item.name)
-        h1=cart.item.name
-        h2.price=cart.item.price
-        p#idof=cart.id
-        button.btn.remove(type='button') Remove
-  // Total Prices
   hr
-  section#c3
-    .total
-      h1 Total Price
-      h2#total
-    a(href='/order') Order
-  //- script(src='js/main.js')
+  each cart in carts
+    // Cart Items
+    if(!cart)
+      // If Empty
+      section#c2
+        h1 Cart is Empty
+    else
+      // Cart Items
+      section#c4
+        .cart-content
+          img(src=`img/genaral/${cart.item.photo}` alt=cart.item.name)
+          h1=cart.item.name
+          h2.price=cart.item.price
+          p#idof=cart.id
+          button.btn.remove(type='button') Remove
+    // Total Prices
+    hr
+    section#c3
+      .total
+        h1 Total Price
+        h2#total
+      a(href='/order') Order
+    //- script(src='js/main.js')
 
