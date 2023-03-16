@@ -15,10 +15,6 @@ const addressSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Fill the address']
     },
-    address2: {
-        type: String,
-        required: [true, 'Address must fill']
-    },
     city: {
         type: String,
         required: [true , 'A city name is required']
