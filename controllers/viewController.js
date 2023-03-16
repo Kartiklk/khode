@@ -3,6 +3,7 @@ const Item = require('./../models/itemModel');
 const Cart = require('./../models/cartModel');
 const User = require('./../models/userModel');
 const Order = require('./../models/orderModel');
+const Address = require('./../models/addressModel');
 
 
 exports.overview = catchAsync(async(req, res, next)=>{
@@ -64,7 +65,17 @@ exports.getMycart = catchAsync(async(req, res, next) => {
 });
 
 exports.Orderdetails = catchAsync(async(req, res, next) =>{
+    const address = await Address.find({ user:req.user.id });
+
     res.status(201).render('orderdetails',{
-        title: 'Order Now'
+        title: 'Order Now',
+        address
+    });
+    console.log(address);
+})
+
+exports.myorders = catchAsync(async(req, res, next) =>{
+    res.status(201).render('myorders',{
+        title: 'Your Orders'
     });
 })

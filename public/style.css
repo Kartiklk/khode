@@ -584,6 +584,9 @@ footer .links a{
     padding: 10px 0;
     font-weight: bold;
 }
+#o1 p{
+    display: none;
+}
 #o1 table{
     align-items: center;
     font-size: .6cm;

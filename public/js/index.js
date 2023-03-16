@@ -2,6 +2,7 @@
 import '@babel/polyfill'
 import { login, logout, signup } from "./login";
 import { cart, removeId } from "./cart";
+import { added } from "./address";
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -19,8 +20,9 @@ const Addcart = document.querySelector('#tocart');
 const total = document.querySelectorAll('.price')
 const remove = document.querySelectorAll('.remove')
 const ti = document.querySelector('#tp');
-// console.log(ti);
-
+const address = document.querySelector('.address');
+const add = document.querySelector('#Addaddress');
+// console.log(add);
 
 
 if (loginForm) 
@@ -104,6 +106,21 @@ if(total)
     // order(tprice);
   }
 
+if(address)
+  add.addEventListener('click', e=>{
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const addre = document.getElementById('addre').value;
+    const city = document.getElementById('city').value;
+    const state = document.getElementById('state').value;
+    const pincode = document.getElementById('pincode').value;
+    const user = document.getElementById('user').innerText;
+    // var value = state.value;
+    // var text = state.options[state.selectedIndex].text;
+    added(name, phone, addre, city, state, pincode, user);
+  })
+  
 
 // if(ti)
   // console.log(ti.innerText=`${tprice}`)

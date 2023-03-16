@@ -9,5 +9,6 @@ router.get('/items/:id', authController.isLoggedIn, viewController.item);
 router.get('/login', authController.isLoggedIn, viewController.loginform);
 router.get('/cart',authController.isLoggedIn, authController.protect, viewController.getMycart);
 router.get('/order',authController.protect, viewController.Orderdetails);
+router.get('/myorders',authController.protect, viewController.myorders);
 
 module.exports = router;
