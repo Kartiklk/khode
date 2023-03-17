@@ -71,6 +71,7 @@ exports.Orderdetails = catchAsync(async(req, res, next) =>{
         title: 'Order Now',
         addresses
     });
+    console.log(addresses);
 })
 
 exports.myorders = catchAsync(async(req, res, next) =>{

@@ -1,133 +1,133 @@
 extends base
   
 block content 
+  //- if(address=="NULL")
+  // Address
+  section#o1
+    h1 Ordre Details
+    //- hr
+    //- // Number Of items and Total Price
+    //- .total_price
+    //-   p#ti
+    //-     strong Items :
+    //-     |  
+    //-   p#tp
+    //-     strong Total Price : 
+    //-     |  
+    hr
+    p#user=user.id
+    .address
+      table(align='center')
+        th(colspan='2')
+          | Address
+        tr
+          td Name
+          td
+            input#name(type='text' name='name' maxlength='15')
+        tr
+          td Phone NO
+          td
+            input#phone(type='number' name='Phone' maxlength='10')
+        tr
+          td Address
+          td
+            textarea#addre(name='address' cols='30' rows='5')
+        tr
+          td City
+          td
+            input#city(type='city' name='city')
+        tr
+          td State
+          td
+            select#state.form-control(name='state')
+              option(value='select' selected='' disabled='') Select
+              option(value='Andhra Pradesh') Andhra Pradesh, India
+              option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands, India
+              option(value='Arunachal Pradesh') Arunachal Pradesh, India
+              option(value='Assam') Assam, India
+              option(value='Bihar') Bihar, India
+              option(value='Chandigarh') Chandigarh, India
+              option(value='Chhattisgarh') Chhattisgarh, India
+              option(value='Dadar and Nagar Haveli') Dadar and Nagar Haveli, India
+              option(value='Daman and Diu') Daman and Diu, India
+              option(value='Delhi') Delhi, India
+              option(value='Lakshadweep') Lakshadweep, India
+              option(value='Puducherry') Puducherry, India
+              option(value='Goa') Goa, India
+              option(value='Gujarat') Gujarat, India
+              option(value='Haryana') Haryana, India
+              option(value='Himachal Pradesh') Himachal Pradesh, India
+              option(value='Jammu and Kashmir') Jammu and Kashmir, India
+              option(value='Jharkhand') Jharkhand, India
+              option(value='Karnataka') Karnataka, India
+              option(value='Kerala') Kerala, India
+              option(value='Madhya Pradesh') Madhya Pradesh, India
+              option(value='Maharashtra') Maharashtra, India
+              option(value='Manipur') Manipur, India
+              option(value='Meghalaya') Meghalaya, India
+              option(value='Mizoram') Mizoram, India
+              option(value='Nagaland') Nagaland, India
+              option(value='Odisha') Odisha, India
+              option(value='Punjab') Punjab, India
+              option(value='Rajasthan') Rajasthan, India
+              option(value='Sikkim') Sikkim, India
+              option(value='Tamil Nadu') Tamil Nadu, India
+              option(value='Telangana') Telangana, India
+              option(value='Tripura') Tripura, India
+              option(value='Uttar Pradesh') Uttar Pradesh, India
+              option(value='Uttarakhand') Uttarakhand, India
+              option(value='West Bengal') West Bengal, India
+        tr
+          td City Pincode
+          td
+            input#pincode(type='number' name='pincode')
+        tr(align='center')
+          td
+            button(type='reset') Clear
+          td
+            button(type='submit' id='Addaddress') Add
+    hr
+  //- else
+  // Delivery Address
   each address in addresses
-    if(!address)
-      // Address
-      section#o1
-        h1 Ordre Details
-        //- hr
-        //- // Number Of items and Total Price
-        //- .total_price
-        //-   p#ti
-        //-     strong Items :
-        //-     |  
-        //-   p#tp
-        //-     strong Total Price : 
-        //-     |  
-        hr
-        p#user=user.id
-        .address
-          table(align='center')
-            th(colspan='2')
-              | Address
-            tr
-              td Name
-              td
-                input#name(type='text' name='name' maxlength='15')
-            tr
-              td Phone NO
-              td
-                input#phone(type='number' name='Phone' maxlength='10')
-            tr
-              td Address
-              td
-                textarea#addre(name='address' cols='30' rows='5')
-            tr
-              td City
-              td
-                input#city(type='city' name='city')
-            tr
-              td State
-              td
-                select#state.form-control(name='state')
-                  option(value='select' selected='' disabled='') Select
-                  option(value='Andhra Pradesh') Andhra Pradesh, India
-                  option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands, India
-                  option(value='Arunachal Pradesh') Arunachal Pradesh, India
-                  option(value='Assam') Assam, India
-                  option(value='Bihar') Bihar, India
-                  option(value='Chandigarh') Chandigarh, India
-                  option(value='Chhattisgarh') Chhattisgarh, India
-                  option(value='Dadar and Nagar Haveli') Dadar and Nagar Haveli, India
-                  option(value='Daman and Diu') Daman and Diu, India
-                  option(value='Delhi') Delhi, India
-                  option(value='Lakshadweep') Lakshadweep, India
-                  option(value='Puducherry') Puducherry, India
-                  option(value='Goa') Goa, India
-                  option(value='Gujarat') Gujarat, India
-                  option(value='Haryana') Haryana, India
-                  option(value='Himachal Pradesh') Himachal Pradesh, India
-                  option(value='Jammu and Kashmir') Jammu and Kashmir, India
-                  option(value='Jharkhand') Jharkhand, India
-                  option(value='Karnataka') Karnataka, India
-                  option(value='Kerala') Kerala, India
-                  option(value='Madhya Pradesh') Madhya Pradesh, India
-                  option(value='Maharashtra') Maharashtra, India
-                  option(value='Manipur') Manipur, India
-                  option(value='Meghalaya') Meghalaya, India
-                  option(value='Mizoram') Mizoram, India
-                  option(value='Nagaland') Nagaland, India
-                  option(value='Odisha') Odisha, India
-                  option(value='Punjab') Punjab, India
-                  option(value='Rajasthan') Rajasthan, India
-                  option(value='Sikkim') Sikkim, India
-                  option(value='Tamil Nadu') Tamil Nadu, India
-                  option(value='Telangana') Telangana, India
-                  option(value='Tripura') Tripura, India
-                  option(value='Uttar Pradesh') Uttar Pradesh, India
-                  option(value='Uttarakhand') Uttarakhand, India
-                  option(value='West Bengal') West Bengal, India
-            tr
-              td City Pincode
-              td
-                input#pincode(type='number' name='pincode')
-            tr(align='center')
-              td
-                button(type='reset') Clear
-              td
-                button(type='submit' id='Addaddress') Add
-        hr
-    else
-      // Delivery Address
-      section#o3
-        h1 Delivery Address
-        p
-          strong=address.name
-          br
-          =`Phone: ${address.phone}`
-          br
-          =address.address
-          br
-          =address.city
-          br
-          =address.state
-          br
-          =`Pincode: ${address.citycode}`
-        hr
-    // Payment Method
-    section#o2
-      h1 Choose Payment Method
-      table
-        tr
-          td
-            input#googlepay.form-check-input(type='radio' name='pay')
-          td GooglePay
-        tr
-          td
-            input#phonepay.form-check-input(type='radio' name='pay')
-          td PhonePay
-        tr
-          td
-            input#sbicard.form-check-input(type='radio' name='pay')
-          td SBI Card
-        tr
-          td
-            input#cod.form-check-input(type='radio' name='pay')
-          td COD(Cash On Dilevery)
+    section#o3
+      h1 Delivery Address
+      p
+        strong=address.name
+        br
+        =`Phone: ${address.phone}`
+        br
+        =address.address
+        br
+        =address.city
+        br
+        =address.state
+        br
+        =`Pincode: ${address.citycode}`
       hr
-      // footer button
-      .order_footer
-        button(type='submit' onclick='tback()') Back
-        button(type='submit' onclick='next()') Order
-    //- script(src='js/main.js')
+  // Payment Method
+  section#o2
+    h1 Choose Payment Method
+    table
+      tr
+        td
+          input#googlepay.form-check-input(type='radio' name='pay')
+        td GooglePay
+      tr
+        td
+          input#phonepay.form-check-input(type='radio' name='pay')
+        td PhonePay
+      tr
+        td
+          input#sbicard.form-check-input(type='radio' name='pay')
+        td SBI Card
+      tr
+        td
+          input#cod.form-check-input(type='radio' name='pay')
+        td COD(Cash On Dilevery)
+    hr
+    // footer button
+    .order_footer
+      button(type='submit' onclick='tback()') Back
+      button(type='submit' onclick='next()') Order
+  //- script(src='js/main.js')

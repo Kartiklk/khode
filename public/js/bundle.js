@@ -12500,8 +12500,6 @@ if (address) add.addEventListener('click', function (e) {
   var state = document.getElementById('state').value;
   var pincode = document.getElementById('pincode').value;
   var user = document.getElementById('user').innerText;
-  // var value = state.value;
-  // var text = state.options[state.selectedIndex].text;
   (0, _address.added)(name, phone, addre, city, state, pincode, user);
 });
 
@@ -12540,7 +12538,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63264" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50253" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

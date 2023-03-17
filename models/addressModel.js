@@ -29,7 +29,8 @@ const addressSchema = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        unique: true
     }
 });
 

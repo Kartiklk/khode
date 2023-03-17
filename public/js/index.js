@@ -116,8 +116,6 @@ if(address)
     const state = document.getElementById('state').value;
     const pincode = document.getElementById('pincode').value;
     const user = document.getElementById('user').innerText;
-    // var value = state.value;
-    // var text = state.options[state.selectedIndex].text;
     added(name, phone, addre, city, state, pincode, user);
   })
   
