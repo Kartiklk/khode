@@ -19,7 +19,6 @@ const Item = document.querySelector('#d2');
 const Addcart = document.querySelector('#tocart');
 const total = document.querySelectorAll('.price')
 const remove = document.querySelectorAll('.remove')
-const ti = document.querySelector('#tp');
 const address = document.querySelector('.address');
 const add = document.querySelector('#Addaddress');
 // console.log(add);
@@ -66,24 +65,6 @@ if (logOutBtn)
         cart(item, user)
     })
 
-// if(remove)
-//   remove.addEventListener('click', e=>{
-//     e.preventDefault();
-//     console.log('click');
-//   })
-
-// const id = document.getElementById('myFunction(id)');
-// console.log(id)
-
-// var temp = function kartik(id){
-//     // const id = document.getElementById('myFunction(id)');
-//     console.log(id)
-// }
-
-// function myFunction(id) {
-//   console.log('click')
-// }
-
 if(remove)
   for(var i=0; i<remove.length;i++){
   var button = remove[i];
@@ -119,14 +100,3 @@ if(address)
     added(name, phone, addre, city, state, pincode, user);
   })
   
-
-// if(ti)
-  // console.log(ti.innerText=`${tprice}`)
-// const ti = document.querySelector('#tp');
-
-  // for(var)
-  // remove.addEventListener('click', e=> {
-  //   console.log(total.innerText)
-  // })
-// if(ti)
-//   console.log(ti);

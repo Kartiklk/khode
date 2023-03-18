@@ -104,7 +104,11 @@ block content
         =address.state
         br
         =`Pincode: ${address.citycode}`
+      h1=address.id
       hr
+  h1=user.id 
+  each cart in carts
+    h1=cart.id
   // Payment Method
   section#o2
     h1 Choose Payment Method
