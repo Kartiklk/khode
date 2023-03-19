@@ -104,34 +104,35 @@ block content
         =address.state
         br
         =`Pincode: ${address.citycode}`
-      h1=address.id
       hr
-  h1=user.id 
-  each cart in carts
-    h1=cart.id
-  // Payment Method
-  section#o2
-    h1 Choose Payment Method
-    table
-      tr
-        td
-          input#googlepay.form-check-input(type='radio' name='pay')
-        td GooglePay
-      tr
-        td
-          input#phonepay.form-check-input(type='radio' name='pay')
-        td PhonePay
-      tr
-        td
-          input#sbicard.form-check-input(type='radio' name='pay')
-        td SBI Card
-      tr
-        td
-          input#cod.form-check-input(type='radio' name='pay')
-        td COD(Cash On Dilevery)
-    hr
-    // footer button
-    .order_footer
-      button(type='submit' onclick='tback()') Back
-      button(type='submit' onclick='next()') Order
+    // Payment Method
+    section#o2
+      .payment
+        h1 Choose Payment Method
+        table
+          tr
+            td
+              input#googlepay.form-check-input(type='radio' name='pay' value='Google Pay' checked)
+            td GooglePay
+          tr
+            td
+              input#phonepay.form-check-input(type='radio' name='pay' value='Phone Pay')
+            td PhonePay
+          tr
+            td
+              input#sbicard.form-check-input(type='radio' name='pay' value='SBI Card')
+            td SBI Card
+          tr
+            td
+              input#cod.form-check-input(type='radio' name='pay' value='Cash On Dilevery')
+            td COD(Cash On Dilevery)
+      hr
+      h1#addr=address.id
+      h1#user=user.id 
+      each cart in carts
+          h1#cart=cart.id
+      // footer button
+      .order_footer
+        button(type='submit' onclick='tback()') Back
+        button(type='submit' onclick='next()') Order
   //- script(src='js/main.js')

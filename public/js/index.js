@@ -21,7 +21,8 @@ const total = document.querySelectorAll('.price')
 const remove = document.querySelectorAll('.remove')
 const address = document.querySelector('.address');
 const add = document.querySelector('#Addaddress');
-// console.log(add);
+const order = document.querySelector('.payment');
+// console.log(order);
 
 
 if (loginForm) 
@@ -100,3 +101,9 @@ if(address)
     added(name, phone, addre, city, state, pincode, user);
   })
   
+if(order)
+  order.addEventListener('click', e => {
+    var temp = document.querySelector("input[type='radio'][name='pay'].checked");
+    // var temp = $("input[type='radio'][name='pay']:checked").value;
+    console.log(temp);
+  })
