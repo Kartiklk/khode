@@ -102,8 +102,10 @@ if(address)
   })
   
 if(order)
-  order.addEventListener('click', e => {
-    var temp = document.querySelector("input[type='radio'][name='pay'].checked");
-    // var temp = $("input[type='radio'][name='pay']:checked").value;
-    console.log(temp);
-  })
+  form-check-input.addEventListener('click', e => {
+    
+    })
+  // var temp = document.querySelector("input:radio[name=pay]:checked").val();
+  // var temp = $("input:radio[name=pay]:checked").val();
+  var temp = document.querySelector('.form-check-input:checked').value;
+  console.log(temp);
