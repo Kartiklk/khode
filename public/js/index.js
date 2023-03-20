@@ -3,6 +3,7 @@ import '@babel/polyfill'
 import { login, logout, signup } from "./login";
 import { cart, removeId } from "./cart";
 import { added } from "./address";
+import { noworder } from "./order";
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -114,14 +115,24 @@ if(order)
           console.log('sbi card');
         }
         else{
+          var payment = pay[i].value
           const cart = document.querySelectorAll('#cart');
+          var carts = new Array();
           for(var j=0; j<cart.length; j++){
-            var carts = new Array();
-            carts[j]=cart[j];
-            console.log(cart[j].innerText, user, address, pay[i].value);
+            cart[j]=cart[j];
+            // console.log(cart[j].innerText, user, address, pay[i].value);
+            // console.log(carts[0]);
           }
+          // return carts;
+          noworder(cart, user, address, payment);
         }
       }
     }
-    console.log()
+    // console.log(carts[0]);
   })
+
+  // function temp(carts){
+  //   for(var j=0; j<carts.length; j++){
+  //     console.log(carts[j]);
+  //   }
+  // }
