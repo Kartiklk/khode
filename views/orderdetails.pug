@@ -112,12 +112,12 @@ block content
         table
           tr
             td
-              input#googlepay.form-check-input(type='radio' name='pay' value='Google Pay')
+              input#googlepay.form-check-input(type='radio' name='pay' value='Google Pay' disabled)
             td GooglePay
           tr
             td
-              input#phonepay.form-check-input(type='radio' name='pay' value='Phone Pay')
-            td PhonePay
+              input#phonepay.form-check-input(type='radio' name='pay' value='Phone Pay' disabled)
+            td PhonePay 
           tr
             td
               input#sbicard.form-check-input(type='radio' name='pay' value='SBI Card')
@@ -133,6 +133,6 @@ block content
           h1#cart=cart.id
       // footer button
       .order_footer
-        button(type='submit' onclick='tback()') Back
-        button(type='submit' onclick='next()') Order
+        button(type='submit') Back
+        button(type='submit' id='order') Order
   //- script(src='js/main.js')

@@ -22,7 +22,8 @@ const remove = document.querySelectorAll('.remove')
 const address = document.querySelector('.address');
 const add = document.querySelector('#Addaddress');
 const order = document.querySelector('.payment');
-// console.log(order);
+const ordernow = document.querySelector('#order');
+// console.log(ordernow);
 
 
 if (loginForm) 
@@ -102,10 +103,25 @@ if(address)
   })
   
 if(order)
-  form-check-input.addEventListener('click', e => {
-    
-    })
-  // var temp = document.querySelector("input:radio[name=pay]:checked").val();
-  // var temp = $("input:radio[name=pay]:checked").val();
-  var temp = document.querySelector('.form-check-input:checked').value;
-  console.log(temp);
+  ordernow.addEventListener('click', e=>{
+    e.preventDefault();
+    const user = document.getElementById('user').innerText;
+    const address = document.getElementById('addr').innerText;
+    var pay = document.getElementsByName('pay');
+    for(var i=0; i<pay.length; i++){
+      if(pay[i].checked){
+        if(pay[i].value === 'SBI Card'){
+          console.log('sbi card');
+        }
+        else{
+          const cart = document.querySelectorAll('#cart');
+          for(var j=0; j<cart.length; j++){
+            var carts = new Array();
+            carts[j]=cart[j];
+            console.log(cart[j].innerText, user, address, pay[i].value);
+          }
+        }
+      }
+    }
+    console.log()
+  })
