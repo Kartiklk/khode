@@ -12286,8 +12286,10 @@ var noworder = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _context.prev = 0;
-          _context.next = 3;
+          // console.log(carts[0], user, address, payment);
+          console.log(carts);
+          _context.prev = 1;
+          _context.next = 4;
           return (0, _axios.default)({
             method: 'POST',
             url: '/api/v1/order',
@@ -12298,7 +12300,7 @@ var noworder = /*#__PURE__*/function () {
               payment: payment
             }
           });
-        case 3:
+        case 4:
           res = _context.sent;
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Ordered Successfully');
@@ -12306,17 +12308,17 @@ var noworder = /*#__PURE__*/function () {
               location.reload();
             }, 1000);
           }
-          _context.next = 10;
+          _context.next = 11;
           break;
-        case 7:
-          _context.prev = 7;
-          _context.t0 = _context["catch"](0);
+        case 8:
+          _context.prev = 8;
+          _context.t0 = _context["catch"](1);
           (0, _alerts.showAlert)('error', _context.t0.response.data.message);
-        case 10:
+        case 11:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 7]]);
+    }, _callee, null, [[1, 8]]);
   }));
   return function noworder(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -12599,7 +12601,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49803" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54361" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
