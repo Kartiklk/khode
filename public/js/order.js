@@ -1,15 +1,15 @@
 import axios from "axios";
 import { showAlert } from './alerts';
 
-export const noworder = async (cart, user, address, payment) => {
+export const noworder = async (carts, user, address, payment) => {
     // console.log(carts[0], user, address, payment);
+    // console.log(carts);
     try {
-        // console.log(item, user);
         const res = await axios({
             method: 'POST',
             url: '/api/v1/order',
             data: {
-                cart[],
+                carts,
                 user, 
                 address,
                 payment

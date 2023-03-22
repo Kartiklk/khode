@@ -119,12 +119,13 @@ if(order)
           const cart = document.querySelectorAll('#cart');
           var carts = new Array();
           for(var j=0; j<cart.length; j++){
-            cart[j]=cart[j];
+            carts[j]=cart[j];
             // console.log(cart[j].innerText, user, address, pay[i].value);
             // console.log(carts[0]);
           }
           // return carts;
-          noworder(cart, user, address, payment);
+          // console.log(carts);
+          noworder(carts, user, address, payment);
         }
       }
     }
