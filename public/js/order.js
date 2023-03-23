@@ -3,6 +3,7 @@ import { showAlert } from './alerts';
 
 export const noworder = async (carts, user, address, payment) => {
     // console.log(carts[0], user, address, payment);
+    carts = concat(carts);
     console.log(carts);
     try {
         const res = await axios({

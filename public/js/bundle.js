@@ -12287,9 +12287,10 @@ var noworder = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           // console.log(carts[0], user, address, payment);
+          carts = concat(carts);
           console.log(carts);
-          _context.prev = 1;
-          _context.next = 4;
+          _context.prev = 2;
+          _context.next = 5;
           return (0, _axios.default)({
             method: 'POST',
             url: '/api/v1/order',
@@ -12300,7 +12301,7 @@ var noworder = /*#__PURE__*/function () {
               payment: payment
             }
           });
-        case 4:
+        case 5:
           res = _context.sent;
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Ordered Successfully');
@@ -12308,17 +12309,17 @@ var noworder = /*#__PURE__*/function () {
               location.reload();
             }, 1000);
           }
-          _context.next = 11;
+          _context.next = 12;
           break;
-        case 8:
-          _context.prev = 8;
-          _context.t0 = _context["catch"](1);
+        case 9:
+          _context.prev = 9;
+          _context.t0 = _context["catch"](2);
           (0, _alerts.showAlert)('error', _context.t0.response.data.message);
-        case 11:
+        case 12:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 8]]);
+    }, _callee, null, [[2, 9]]);
   }));
   return function noworder(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -12601,7 +12602,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54361" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54751" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
