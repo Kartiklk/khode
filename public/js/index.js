@@ -119,7 +119,7 @@ if(order)
           const cart = document.querySelectorAll('#cart');
           var carts = new Array();
           for(var j=0; j<cart.length; j++){
-            carts[j]=cart[j];
+            carts[j]=cart[j].innerText;
             // console.log(cart[j].innerText, user, address, pay[i].value);
             // console.log(carts[0]);
           }

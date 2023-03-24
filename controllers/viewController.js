@@ -76,7 +76,13 @@ exports.Orderdetails = catchAsync(async(req, res, next) =>{
 })
 
 exports.myorders = catchAsync(async(req, res, next) =>{
+    const orders = await Order.find({user:req.user.id});
+    const cartID = orders.map(el => el.carts);
+    const carts = await Cart.find({ _id: { $in: cartID } });
+    console.log(carts)
+
     res.status(201).render('myorders',{
-        title: 'Your Orders'
+        title: 'Your Orders',
+        orders,carts
     });
 })

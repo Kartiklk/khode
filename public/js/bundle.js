@@ -12286,11 +12286,8 @@ var noworder = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          // console.log(carts[0], user, address, payment);
-          carts = concat(carts);
-          console.log(carts);
-          _context.prev = 2;
-          _context.next = 5;
+          _context.prev = 0;
+          _context.next = 3;
           return (0, _axios.default)({
             method: 'POST',
             url: '/api/v1/order',
@@ -12301,7 +12298,7 @@ var noworder = /*#__PURE__*/function () {
               payment: payment
             }
           });
-        case 5:
+        case 3:
           res = _context.sent;
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Ordered Successfully');
@@ -12309,17 +12306,17 @@ var noworder = /*#__PURE__*/function () {
               location.reload();
             }, 1000);
           }
-          _context.next = 12;
+          _context.next = 10;
           break;
-        case 9:
-          _context.prev = 9;
-          _context.t0 = _context["catch"](2);
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](0);
           (0, _alerts.showAlert)('error', _context.t0.response.data.message);
-        case 12:
+        case 10:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[2, 9]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return function noworder(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -12559,7 +12556,7 @@ if (order) ordernow.addEventListener('click', function (e) {
         var _cart = document.querySelectorAll('#cart');
         var carts = new Array();
         for (var j = 0; j < _cart.length; j++) {
-          carts[j] = _cart[j];
+          carts[j] = _cart[j].innerText;
           // console.log(cart[j].innerText, user, address, pay[i].value);
           // console.log(carts[0]);
         }
@@ -12602,7 +12599,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54751" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52436" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

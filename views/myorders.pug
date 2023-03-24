@@ -6,10 +6,11 @@ block content
     h1 My Orders
   hr
   // Order Items
-  section#c4
-    .cart-content
-      img(src='img/genaral/ruchi.jpg' alt='')
-      h1.name Ruchi Gold 1Ltr
-      h2.Price Rs. 100
-      a(href='#')
-        i.fa-solid.fa-trash
+  each cart in carts
+    section#c4
+      .cart-content
+        img(src='img/genaral/ruchi.jpg' alt='')
+        h1.name=cart.item.name
+        h2.Price Rs. 100
+        a(href='#')
+          i.fa-solid.fa-trash
