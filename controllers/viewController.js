@@ -77,12 +77,14 @@ exports.Orderdetails = catchAsync(async(req, res, next) =>{
 
 exports.myorders = catchAsync(async(req, res, next) =>{
     const orders = await Order.find({user:req.user.id});
-    const cartID = orders.map(el => el.carts);
-    const carts = await Cart.find({ _id: { $in: cartID } });
-    console.log(carts)
+    // const temp = orders.populate('carts');
+    // // const cartID = orders.map(el => el.carts);
+    // // const carts = await Cart.find ({ _id: cartID });
+    const doc = orders.popuplate('carts');
+    console.log(doc)
 
     res.status(201).render('myorders',{
         title: 'Your Orders',
-        orders,carts
+        orders
     });
 })
