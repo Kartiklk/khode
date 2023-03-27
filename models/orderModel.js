@@ -24,10 +24,10 @@ const orderSchema = new mongoose.Schema({
 });
 
 orderSchema.pre(/^find/, function(next){
-    this.populate('carts').populate({
-        path: 'user',
-        select: 'name'
-      });
+    this.populate({
+        path:"carts",
+       select: "name"
+    });
       next();
 });
 

@@ -1,0 +1,17 @@
+extends baseEmail
+
+block content
+  p Hi ,
+  p Order is Successfull 🎉🙏
+  p You order is successfull placed, Order more items.
+  table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+    tbody
+      tr
+        td(align='left')
+          table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+            tbody
+              tr
+                td
+                  a(href='/myorders', target='_blank') My Orders
+  p If you need any help with Order Items, please don't hesitate to contact me!
+  p - Kartik Khode, CEOs
