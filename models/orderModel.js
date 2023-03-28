@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
     carts: {
         type: [mongoose.Schema.ObjectId],
-        ref: 'Cart'
+        ref: 'Item'
     },
     user: {
         type: mongoose.Schema.ObjectId,
@@ -25,10 +25,7 @@ const orderSchema = new mongoose.Schema({
 
 orderSchema.pre(/^find/, function(next){
     this.populate({
-        path:"carts",
-        populate:{
-            path:"item"
-        }
+        path:"carts"
     });
       next();
 });
