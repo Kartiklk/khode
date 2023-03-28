@@ -30,7 +30,7 @@ export const noworder = async (carts, user, address, payment) => {
         if (res.data.status === 'success') {
             showAlert('success','Ordered Successfully');
             window.setTimeout(() => {
-                location.window('/myorders');
+                location.assign('/myorders');
             }, 1000);
         }
     } catch (err) {

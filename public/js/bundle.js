@@ -12303,7 +12303,7 @@ var noworder = /*#__PURE__*/function () {
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Ordered Successfully');
             window.setTimeout(function () {
-              location.window('/myorders');
+              location.assign('/myorders');
             }, 1000);
           }
           _context.next = 10;
