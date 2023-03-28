@@ -76,20 +76,25 @@ exports.Orderdetails = catchAsync(async(req, res, next) =>{
 })
 
 exports.myorders = catchAsync(async(req, res, next) =>{
-    const orders = await Order.find({user:req.user.id});
-    for(var i=0; i<(orders.carts).lenght; i++){
-        console.log(orders.carts[i])
-    }
-    const carts = await Cart.findById(orders.carts);
+    const orders = Order.find({user:req.user.id}).populate({
+        path:"carts"
+    });
+    // const carts = orders.carts;
+    // for(var i=0; i<carts.lenght; i++){
+        //     console.log(orders.carts[i])
+        // }
         // const temp = orders.populate('carts');
-        // // const cartID = orders.map(el => el.carts);
-        // // const carts = await Cart.find ({ _id: cartID });
+        // const cartID = orders.map(el => el.carts);
+        // const cart = cartID.map(el => el.item);
+        // const cart = await Cart.findById({ carts: });
+        // const carts = await Cart.find ({ _id: cartID });
         // const doc = orders.popuplate('');
-        console.log(carts, orders)
-        // console.log();
+        console.log(orders);
+        // console.log(orders);
+        const doc = await orders;
 
     res.status(201).render('myorders',{
         title: 'Your Orders',
-        orders
+        doc
     });
 })
