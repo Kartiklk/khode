@@ -28,7 +28,7 @@ exports.getAllOrder = catchAsync(async(req, res, next) => {
         status:'success',
         result:order.length,
         data:{
-            data: order
+             order
         }
     });
 });

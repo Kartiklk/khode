@@ -57,7 +57,7 @@ exports.getMycart = catchAsync(async(req, res, next) => {
     const itemID = carts.map(el => el.item);
     const items = await Item.find({ _id: { $in: itemID } });
     // const cart = await Cart.findById({user:req.user.id});
-    // console.log(carts);
+    // console.log(itemID);
     res.status(201).render('cart', {
         title: 'cart',
        carts,items
@@ -85,10 +85,12 @@ exports.myorders = catchAsync(async(req, res, next) =>{
         const items = orders.map(el => el.carts);
         // const cart = cartID.map(el => el.item);
         // const cart = await Cart.findById(items);
+        const temp = items;
+        // console.log(items.name)
         // const carts = await Item.find({ _id: { $in: items } });
         // const doc = orders.popuplate('');
-        console.log(items.name);
-        // console.log(orders);
+        // console.log(items.name);
+        console.log(temp.name);
         // const doc = await orders;
 
     res.status(201).render('myorders',{
