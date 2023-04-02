@@ -193,6 +193,7 @@ padding: 15px 0px;
 }
 
 footer{
+    /* margin-top: 4.5cm; */
     background-color: black;
     display: flex;
     align-items: center;
@@ -328,9 +329,12 @@ footer .links a{
 #c1, #c2, #c3{
     text-align: center;
 }
-/* #c1 p{
-    display: none;
-} */
+#c1 h2{
+    /* margin-left: 0cm; */
+    font-size: 1cm;
+    font-weight: bold;
+    padding: .7cm 0cm;
+}
 #c1{
     font-size: 1cm;
 }
@@ -721,4 +725,17 @@ footer .links a{
   .alert--error {
     background-color: #eb4d4b;
   }
-  
+  .my-order-footer{
+    margin-left: 15cm;
+    padding: .8cm;
+    
+  }
+  .my-order-footer button{
+    font-size: .7cm;
+  }
+  .no-orders h1{
+    margin-left: 15cm;
+    font-size: 1cm;
+    font-weight: bold;
+    padding: .7cm 0cm;
+  }

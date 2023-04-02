@@ -6,16 +6,21 @@ block content
     h1 My Orders
   hr
   // Order Items
-  each item in items
-    h1=item.name
-    section#c4
+  .no-orders
+    if(carts.length === 0)
+      h1 No more your orders
+  section#c4
+    each cart in carts
       .cart-content
-        img(src='img/genaral/ruchi.jpg' alt='')
-        h1.name=item.name
-        h2.Price Rs. 100
-        a(href='#')
-          i.fa-solid.fa-trash
-  each order in orders 
-    h1=order.carts.name
+        img(src=`img/genaral/${cart.photo}` alt=cart.name)
+        h1.name=cart.name
+        h2.Price=`Rs. ${cart.price}`
+
+  hr
+  .my-order-footer 
+    button.btn.details(type='button') Details
+    button.btn.cancel(type='button') Cancel Order
+  //- each order in orders
+  //-   h1=order.carts.name
   //- each cart in carts 
   //-   h1=cart.name

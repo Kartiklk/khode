@@ -2,19 +2,6 @@ import axios from "axios";
 import { showAlert } from './alerts';
 
 export const noworder = async (carts, user, address, payment) => {
-    // console.log(carts[0], user, address, payment);
-    // for(var i=0; i<carts.length; i++){
-    //     var carts = carts[i].innerText;
-    //     return carts;
-    // }
-    // const temp = carts.map(function(element){
-    //   for(var i=0; i<carts.length; i++){
-    //     var tp = element[i];
-    //     console.log(tp);
-    //   }
-    // })
-    // console.log(carts);
-    // console.log(carts);
     try {
         const res = await axios({
             method: 'POST',

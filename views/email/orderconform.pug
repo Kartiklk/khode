@@ -1,7 +1,7 @@
 extends baseEmail
 
 block content
-  p Hi ,
+  p Hi #{firstName},
   p Order is Successfull 🎉🙏
   p You order is successfull placed, Order more items.
   table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
@@ -12,6 +12,6 @@ block content
             tbody
               tr
                 td
-                  a(href='/myorders', target='_blank') My Orders
+                  a(href='http://localhost:3000/myorders') My Orders
   p If you need any help to Order Items, please don't hesitate to contact me!
   p - Kartik Khode, CEOs

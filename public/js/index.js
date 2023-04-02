@@ -24,7 +24,9 @@ const address = document.querySelector('.address');
 const add = document.querySelector('#Addaddress');
 const order = document.querySelector('.payment');
 const ordernow = document.querySelector('#order');
-// console.log(ordernow);
+const no = document.querySelector('#empty')
+const next = document.querySelector('#next')
+console.log(next);
 
 
 if (loginForm) 
@@ -112,7 +114,7 @@ if(order)
     for(var i=0; i<pay.length; i++){
       if(pay[i].checked){
         if(pay[i].value === 'SBI Card'){
-          console.log('sbi card');
+          console.log(pay[i].value);
         }
         else{
           var payment = pay[i].value
@@ -137,3 +139,15 @@ if(order)
   //     console.log(carts[j]);
   //   }
   // }
+
+  if(next){
+    next.addEventListener('click', e=>{
+      if(!no){
+        e.preventDefault();
+        window.location.assign('/orderdetails')
+      }
+      else{
+        window.alert('Please Add Items to Cart for Order')
+      }
+    })
+  }

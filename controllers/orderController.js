@@ -6,10 +6,10 @@ const Email = require('./../utils/email');
 exports.CreateOrder = catchAsync(async(req, res, next) => {
     const newOrder = await Order.create(req.body);
     const user = await User.findById(newOrder.user)
-    const url = `${req.protocol}://${req.get('host')}/myorders`;
+    // const url = `${req.protocol}://${req.get('host')}/myorders`;
     // const user = newOrder.populate("user");
     // const query = await Order.find();
-    console.log(user, url)
+    // console.log(user, url)
     await new Email(user).orderConform();
 
 
