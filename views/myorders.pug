@@ -9,6 +9,8 @@ block content
   .no-orders
     if(carts.length === 0)
       h1 No more your orders
+      hr
+      br
   section#c4
     each cart in carts
       .cart-content
@@ -16,11 +18,11 @@ block content
         h1.name=cart.name
         h2.Price=`Rs. ${cart.price}`
 
-  hr
-  .my-order-footer 
-    button.btn.details(type='button') Details
-    button.btn.cancel(type='button') Cancel Order
-  //- each order in orders
-  //-   h1=order.carts.name
+      hr
+      .my-order-footer 
+        button.btn.details(type='button') Details
+        button.btn.cancel(type='button') Cancel Order
+  each order in orders
+    h1=order.id
   //- each cart in carts 
-  //-   h1=cart.name
+  //- h1=orders.id

@@ -79,25 +79,45 @@ exports.myorders = catchAsync(async(req, res, next) =>{
     const orders = await Order.find({user:req.user.id});
     // const carts = orders.carts;
     // for(var i=0; i<carts.lenght; i++){
-        //     console.log(orders.carts[i])
+            // console.log(orders[0])
         // }
         // const temp = orders.populate('carts');
-        const items = orders.map(el => el.carts);
         // const cart = cartID.map(el => el.item);
+        const temp = new Array();
+        for(var i=0; i<orders.length; i++){
+             temp[i] = orders[i];
+            // console.log(temp);
+        }
+        const items = temp.map(el => el.carts);
+        //    console.log(items.length);
         // console.log(items.length)
         // console.log(items.length != 0)
         const carts = new Array();
         if(items.length != 0){
-           console.log(items[0][1]);
-          for(var i=0; i<items[0].length; i++){
-            carts[i] = await Item.findById(items[0][i]);
+        //    console.log(items[0][1]);
+        //   for(var i=0; i<items[0].length; i++){
+        //     carts[i] = await Item.findById(items[0][i]);
+            
+        //    }
+        // console.log(items[0][1])
+        var a=0;
+        // console.log(items[1]);
+           for(var j=0; j<items.length; j++){
+            // carts[carts.length+1] = await Item.findById(items[j][]);
+            //   console.log(j);
+              for(var i=0; i<items[j].length; i++){
+                // console.log(i)
+                carts[a++] = await Item.findById(items[j][i]);
+               }
            }
+        // console.log(items[1][1]);
         }
+        console.log(orders)
         // const temp = items;
         // console.log(items.name)
         // const carts = await Item.find({ _id: { $in: orders.carts } });
         // const doc = orders.popuplate('');
-        // console.log(items.name);
+        // console.log(orders);
         // console.log(carts.length === 0);
         // const doc = await orders;
 
