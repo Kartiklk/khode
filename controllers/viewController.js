@@ -126,3 +126,40 @@ exports.myorders = catchAsync(async(req, res, next) =>{
         orders,carts
     });
 })
+
+exports.myorderdetails = catchAsync(async(req, res, next)=>{
+    const orders = await Order.findById(req.params.id);
+
+    // for(var i=0; i<orders.length; i++){
+    //      temp[i] = orders[i];
+    //     // console.log(temp);
+    // }
+    // const items = orders.map(el => el.carts);
+    //    console.log(items.length);
+    // console.log(orders.carts.length)
+    // console.log(items.length != 0)
+    const carts = new Array();
+    if(orders.carts.length != 0){
+    //    console.log(items[0][1]);
+    //   for(var i=0; i<items[0].length; i++){
+    //     carts[i] = await Item.findById(items[0][i]);
+        
+    //    }
+    // console.log(items[0][1])
+    // console.log(items[1]);
+        // carts[carts.length+1] = await Item.findById(items[j][]);
+        //   console.log(j);
+          var total=0;
+          for(var i=0; i<orders.carts.length; i++){
+            carts[i] = await Item.findById(orders.carts[i]);
+            total=total + carts[i].price;
+       }
+    }
+    const address = await Address.findById(orders.address);
+
+    console.log(total)
+    res.status(201).render('myorderdetails',{
+        title:'My Order Details',
+        carts, address, orders, total
+    })
+})

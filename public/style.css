@@ -739,3 +739,59 @@ footer .links a{
     font-weight: bold;
     padding: .7cm 0cm;
   }
+  .heading{
+    text-align: center;
+    font-size: 1cm;
+    font-weight: bold;
+}
+#m1 h1{
+    text-align: center;
+    font-size: .9cm;
+    font-weight: bold;
+}
+#m1 .mybody{
+    /* align-items; */
+    display: grid;
+    grid-template-columns:auto auto auto auto auto;
+}
+#m1 .item{
+    width: 5cm;
+    height: 7cm;
+    border-radius: 5px;
+    margin: 1cm;
+    transition: .5s ease;
+}
+#m1 .item:hover{
+    box-shadow: 0px 0px 0px 4px rgb(172, 161, 161);
+}
+#m1 .item img{
+    width: 100%;
+    height: 5cm;
+    border: 1px black;
+    border-style: solid;
+    border-radius: 5px;
+}
+#m1 .item a{
+    text-decoration: none;
+}
+#m1 .item a ul li{
+    list-style: none;
+    font-size: .5cm;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 10px;
+    color: black;
+    margin-left: 10px;
+}
+#m1 .details{
+    text-align: center;
+    font-size: .5cm;
+}
+#m1 .myfoote{
+    text-align: center;
+    padding: 10px;
+}
+#m1 .myfoote button{
+    font-size: .5cm;
+    font-weight: bold;
+    padding: 10px;
+}

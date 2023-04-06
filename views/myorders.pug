@@ -12,11 +12,13 @@ block content
       hr
       br
   section#c4
-    each cart in carts
+    each order in orders
       .cart-content
-        img(src=`img/genaral/${cart.photo}` alt=cart.name)
-        h1.name=cart.name
-        h2.Price=`Rs. ${cart.price}`
+        //- h1=order.id
+        a(href=`myorderdetails/${order.id}`) hello 
+      //- img(src=`img/genaral/${cart.photo}` alt=cart.name)
+      //- h1.name=cart.name
+      //- h2.Price=`Rs. ${cart.price}`
 
       hr
       .my-order-footer 

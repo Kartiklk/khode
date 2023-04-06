@@ -1,0 +1,39 @@
+extends base
+  
+block content 
+  .heading
+    h1 My Order Details
+  hr
+  section#m1
+    h1 Your Order Items
+    .mybody
+      each cart in carts
+        .item
+          a(href='item')
+            img(src=`/img/genaral/${cart.photo}` alt=cart.name)
+            ul
+              li=cart.name
+              li=cart.price
+    hr
+    h1=orders.id
+    .details
+      h1 Order Details
+      p
+        strong Address:-
+        =address.name
+        br
+        =`Phone: ${address.phone}`
+        br
+        =address.address
+        br
+        =address.city
+        br
+        =address.state
+        br
+        =`Pincode: ${address.citycode}`
+      h4=`Total Price:- ${total}`
+      h3=`Payment Method:- ${orders.payment}`
+    hr
+    .myfoote
+      button Back
+      button Cancel Order
