@@ -11,20 +11,12 @@ block content
       h1 No more your orders
       hr
       br
-  section#c4
+  section#my1
     each order in orders
-      .cart-content
-        //- h1=order.id
-        a(href=`myorderdetails/${order.id}`) hello 
+      a(href=`myorderdetails/${order.id}`)
+        .my-content
+          h1 Your Order
+          h1=`${order.carts.length} Items`
       //- img(src=`img/genaral/${cart.photo}` alt=cart.name)
-      //- h1.name=cart.name
       //- h2.Price=`Rs. ${cart.price}`
-
-      hr
-      .my-order-footer 
-        button.btn.details(type='button') Details
-        button.btn.cancel(type='button') Cancel Order
-  each order in orders
-    h1=order.id
-  //- each cart in carts 
-  //- h1=orders.id
+  hr

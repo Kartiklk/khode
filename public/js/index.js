@@ -3,7 +3,8 @@ import '@babel/polyfill'
 import { login, logout, signup } from "./login";
 import { cart, removeId } from "./cart";
 import { added } from "./address";
-import { noworder } from "./order";
+import { noworder, cancelorder } from "./order";
+import { card } from "./stripe";
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -26,7 +27,8 @@ const order = document.querySelector('.payment');
 const ordernow = document.querySelector('#order');
 const no = document.querySelector('#empty')
 const next = document.querySelector('#next')
-console.log(next);
+const cancel = document.querySelector('#cancel')
+// console.log(cancel);
 
 
 if (loginForm) 
@@ -114,7 +116,13 @@ if(order)
     for(var i=0; i<pay.length; i++){
       if(pay[i].checked){
         if(pay[i].value === 'SBI Card'){
-          console.log(pay[i].value);
+          var payment = pay[i].value
+          const cart = document.querySelectorAll('#cart');
+          var carts = new Array();
+          for(var j=0; j<cart.length; j++){
+            carts[j]=cart[j].innerText;
+          }
+          card(carts, user, address, payment);
         }
         else{
           var payment = pay[i].value
@@ -151,3 +159,10 @@ if(order)
       }
     })
   }
+
+if(cancel){
+  cancel.addEventListener('click', e=>{
+    const id = document.getElementById('orderid').innerText;
+    cancelorder(id);
+  })
+}

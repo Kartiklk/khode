@@ -127,10 +127,10 @@ block content
               input#cod.form-check-input(type='radio' name='pay' value='Cash On Dilevery')
             td COD(Cash On Dilevery)
       hr
-      h1#addr=address.id
-      h1#user=user.id 
+      h6#addr=address.id
+      h6#user=user.id 
       each cart in carts
-          h1#cart=cart.item.id
+          h6#cart=cart.item.id
       // footer button
       .order_footer
         button(type='submit') Back

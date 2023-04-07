@@ -9,13 +9,13 @@ block content
     .mybody
       each cart in carts
         .item
-          a(href='item')
+          a(href=`/items/${cart.id}`)
             img(src=`/img/genaral/${cart.photo}` alt=cart.name)
             ul
               li=cart.name
               li=cart.price
     hr
-    h1=orders.id
+    h1#orderid=orders.id
     .details
       h1 Order Details
       p
@@ -31,9 +31,11 @@ block content
         =address.state
         br
         =`Pincode: ${address.citycode}`
+        br
+        hr
       h4=`Total Price:- ${total}`
       h3=`Payment Method:- ${orders.payment}`
     hr
     .myfoote
-      button Back
-      button Cancel Order
+      button.btn(type='submit' id='back') Back
+      button.btn(type='submit' id='cancel') Cancel Order
