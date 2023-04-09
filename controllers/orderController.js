@@ -1,5 +1,6 @@
 const Order = require('./../models/orderModel');
 const User = require('./../models/userModel');
+const Item = require('./../models/itemModel');
 const catchAsync = require('./../utils/catchAsync');
 const Email = require('./../utils/email');
 const AppError = require('./../utils/appError');
@@ -10,31 +11,40 @@ exports.payment= catchAsync(async(req, res, next)=>{
 
     const stripe = Stripe(process.env.STRIPE_SECERT_KEY);
 
-    console.log(req.body);
+    const temp = req.body;
+    console.log(temp.carts.length)
+       var total=0;
+       const carts = new Array();
+        for(var i=0; i<temp.carts.length; i++){
+            carts[i] = await Item.findById(temp.carts[i]);
+            total=total + carts[i].price;
+         }
+       const user = await User.findById(temp.user)
+       console.log(carts, total, user)
 
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         success_url: `${req.protocol}://${req.get('host')}/myorders`,
         cancel_url: `${req.protocol}://${req.get('host')}/cart`,
-        customer_email: 'kartik@gmail.com',
-        // client_reference_id: req.params.tourId,
+        customer_email: user.email,
+        client_reference_id: carts.id,
         mode: 'payment',
         line_items: [
         {
             quantity: 1,
             price_data: {
             currency: 'inr',
-            unit_amount: 100 * 100,
+            unit_amount: total * 100,
             product_data: {
-                name: 'kartik',
-                description: 'kartik is good',
-                // images: [`https://www.natours.dev/img/tours/${tour.imageCover}`]
+                name: `${carts.name}`,
+                description: carts.name,
+                images: [`img/general/${carts.photo}`]
             }
           }
         }
       ]
     });
-    console.log(session);
+    // console.log(session);
 
     res.status(200).json({
         status: 'success',

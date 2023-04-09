@@ -8,14 +8,20 @@ export const card = async(carts, user, address, payment)=>{
     console.log(carts, user, address, payment);
     try{
         const session = await axios({
-            method: 'POST',
+            method: 'Post',
             url: '/api/v1/order/payment',
+            data:{
+                carts,
+                user,
+                address,
+                payment
+            }
     });
     console.log(session);
     //create checkout form + chanre credit card
-        await stripe.redirectToCheckout({
-            sessionId: session.data.session.id
-        });
+        // await stripe.redirectToCheckout({
+        //     sessionId: session.data.session.id
+        // });
     } catch (err) {
         console.log(err);
         showAlert('error', err);

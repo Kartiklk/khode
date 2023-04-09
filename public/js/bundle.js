@@ -68790,30 +68790,34 @@ var card = /*#__PURE__*/function () {
           _context.prev = 1;
           _context.next = 4;
           return (0, _axios.default)({
-            method: 'POST',
-            url: '/api/v1/order/payment'
+            method: 'Post',
+            url: '/api/v1/order/payment',
+            data: {
+              carts: carts,
+              user: user,
+              address: address,
+              payment: payment
+            }
           });
         case 4:
           session = _context.sent;
           console.log(session);
           //create checkout form + chanre credit card
-          _context.next = 8;
-          return stripe.redirectToCheckout({
-            sessionId: session.data.session.id
-          });
-        case 8:
-          _context.next = 14;
+          // await stripe.redirectToCheckout({
+          //     sessionId: session.data.session.id
+          // });
+          _context.next = 12;
           break;
-        case 10:
-          _context.prev = 10;
+        case 8:
+          _context.prev = 8;
           _context.t0 = _context["catch"](1);
           console.log(_context.t0);
           (0, _alerts.showAlert)('error', _context.t0);
-        case 14:
+        case 12:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 10]]);
+    }, _callee, null, [[1, 8]]);
   }));
   return function card(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -69050,7 +69054,7 @@ if (order) ordernow.addEventListener('click', function (e) {
   var pay = document.getElementsByName('pay');
   for (var i = 0; i < pay.length; i++) {
     if (pay[i].checked) {
-      if (pay[i].value === 'SBI Card') {
+      if (pay[i].value === 'Card') {
         var payment = pay[i].value;
         var _cart = document.querySelectorAll('#cart');
         var carts = new Array();
@@ -69123,7 +69127,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54191" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50637" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

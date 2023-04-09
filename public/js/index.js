@@ -115,7 +115,7 @@ if(order)
     var pay = document.getElementsByName('pay');
     for(var i=0; i<pay.length; i++){
       if(pay[i].checked){
-        if(pay[i].value === 'SBI Card'){
+        if(pay[i].value === 'Card'){
           var payment = pay[i].value
           const cart = document.querySelectorAll('#cart');
           var carts = new Array();
