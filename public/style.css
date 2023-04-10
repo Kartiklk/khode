@@ -21,7 +21,7 @@ button.btn{
     right: 0;
     align-items: center;
     justify-content: space-between;
-    background-color:  #f1f1f1;
+    background-color:  #f7f7f7;
     transition: 1s ease;
     opacity: 100%;
 }

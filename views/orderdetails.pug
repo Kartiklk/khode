@@ -1,5 +1,8 @@
 extends base
   
+block append head 
+  //- script(src='https://js.stripe.com/v3/')
+
 block content 
   //- if(address=="NULL")
   // Address
@@ -121,7 +124,7 @@ block content
           tr
             td
               input#sbicard.form-check-input(type='radio' name='pay' value='Card')
-            td SBI Card
+            td Card
           tr
             td
               input#cod.form-check-input(type='radio' name='pay' value='Cash On Dilevery')

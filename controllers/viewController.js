@@ -112,7 +112,7 @@ exports.myorders = catchAsync(async(req, res, next) =>{
            }
         // console.log(items[1][1]);
         }
-        console.log(orders)
+        // console.log(orders)
         // const temp = items;
         // console.log(items.name)
         // const carts = await Item.find({ _id: { $in: orders.carts } });
@@ -157,7 +157,7 @@ exports.myorderdetails = catchAsync(async(req, res, next)=>{
     }
     const address = await Address.findById(orders.address);
 
-    console.log(total)
+    // console.log(total)
     res.status(201).render('myorderdetails',{
         title:'My Order Details',
         carts, address, orders, total

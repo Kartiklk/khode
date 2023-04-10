@@ -68782,13 +68782,12 @@ var stripe = (0, _stripe.default)('pk_test_51Mu9cFSCn4YtsyNNr0HxUOLQlSAC0K0LRXf3
 
 var card = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(carts, user, address, payment) {
-    var session;
+    var session, res;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          console.log(carts, user, address, payment);
-          _context.prev = 1;
-          _context.next = 4;
+          _context.prev = 0;
+          _context.next = 3;
           return (0, _axios.default)({
             method: 'Post',
             url: '/api/v1/order/payment',
@@ -68799,25 +68798,32 @@ var card = /*#__PURE__*/function () {
               payment: payment
             }
           });
-        case 4:
+        case 3:
           session = _context.sent;
-          console.log(session);
+          res = window.location = session.data.url;
+          console.log(res);
           //create checkout form + chanre credit card
           // await stripe.redirectToCheckout({
           //     sessionId: session.data.session.id
           // });
+          // if (session.data.status === 'success') {
+          //     showAlert('success','Ordered Successfully');
+          //     window.setTimeout(() => {
+          //         location.assign('/cart');
+          //     }, 1000);
+          // }
           _context.next = 12;
           break;
         case 8:
           _context.prev = 8;
-          _context.t0 = _context["catch"](1);
+          _context.t0 = _context["catch"](0);
           console.log(_context.t0);
           (0, _alerts.showAlert)('error', _context.t0);
         case 12:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 8]]);
+    }, _callee, null, [[0, 8]]);
   }));
   return function card(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -69127,7 +69133,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50637" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57609" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
