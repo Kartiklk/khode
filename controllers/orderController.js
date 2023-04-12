@@ -140,18 +140,34 @@ exports.createOne = Model =>
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 const endpointSecret = "whsec_8c5fcad5220f298b2ea446b73c6a557f78167bee3d4fc328bc0f0022c7fbb551";
 
-exports.web = (express.raw({type: 'application/json'}), (req, res) => {
+app.use(bodyParser.json({
+  verify:(req, res, buf) =>{
+    req.body = buf;
+    // console.log(req.body, buf);
+  },
+  raw:true
+}));
+
+exports.web = (req, res) => {
   // express.raw({type: 'application/json'});
   // app.use(bodyParser.raw({type:'*/*'}));
   // app.use(bodyParser.json());
   // express.raw({type: '*/*'});
+  // console.log(req.body);
+  // console.log(req.headers);
+// console.log([req.body.toString()]);
+
+const rawBody = req.body.toString();
+const payload = JSON.stringify(rawBody);
+console.log(payload);
+
+console.log(req.originalUrl)
   const sig = req.headers['stripe-signature'];
 
-  // const sg = Buffer.from(sig, 'utf16le');
-  // console.log(sg)
+  // const sg = sig.split(',');
   let event;
 
-  // console.log(req.headers);
+  console.log();
   try {
     event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
     console.log(event);
@@ -166,4 +182,4 @@ exports.web = (express.raw({type: 'application/json'}), (req, res) => {
 
   // Return a 200 response to acknowledge receipt of the event
   res.send();
-});
+};
