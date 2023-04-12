@@ -130,6 +130,7 @@ exports.myorders = catchAsync(async(req, res, next) =>{
 exports.myorderdetails = catchAsync(async(req, res, next)=>{
     const orders = await Order.findById(req.params.id);
 
+    // console.log(orders)
     // for(var i=0; i<orders.length; i++){
     //      temp[i] = orders[i];
     //     // console.log(temp);

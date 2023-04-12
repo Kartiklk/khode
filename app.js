@@ -12,11 +12,16 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
+// const bodyParser = require('body-parser');
 
 const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'))
+
+// express.raw({type: 'application/json'});
+// app.use(bodyParser.raw({type:'*/*'}));
+// app.use(bodyParser.json());
 
 //serving static file
 app.use(express.json());
