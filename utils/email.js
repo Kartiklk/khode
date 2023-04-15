@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const pug = require('pug');
 const { htmlToText }= require('html-to-text');
+const mailjet = require('node-mailjet');
 
 module.exports = class Email {
   constructor(user, url) {
@@ -34,6 +35,33 @@ module.exports = class Email {
     });
   }
 
+  newMailjet(){
+    if(process.env.NODE_ENV === 'production'){
+        mailjet.apiConnect(
+        process.env.MAILJET_APIKEY,
+        process.env.MAILJET_API_SECRET,
+      )
+    }
+    // const request = mailjet.post('send').request({
+    //   Messages: [
+    //     {
+    //       From: {
+    //         Email:process.env.EMAIL_FROM,
+    //         Name: "khode"
+    //       },
+    //       To: [
+    //         {
+    //           Email:this.to,
+    //           Name:this.firstName
+    //         }
+    //       ],
+    //       Subject
+    //     }
+    //   ]
+    // })
+  };
+  
+
   //send the actual email
   async send(template, subject) {
     //render html based on a pug template
@@ -52,9 +80,32 @@ module.exports = class Email {
       // text: htmlToText.fromString(html)
     };
 
+    const request = {
+      Messages: [
+        {
+          From: {
+            Email:process.env.EMAIL_FROM,
+            Name: "khode"
+          },
+          To: [
+            {
+              Email:this.to,
+              Name:this.firstName
+            }
+          ],
+          subject,
+          html
+        }
+      ]
+    }
+
+    // console.log(request)
     //create a transport and send email
-    await this.newTransport().sendMail(mailOptions);
+    // await this.newTransport().sendMail(mailOptions);
+    await this.newMailjet().sendMail(request);
   }
+
+  
 
   async sendWelcome() {
     await this.send('welcome', 'Welcome to the Khodes Family!');
