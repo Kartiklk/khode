@@ -6,6 +6,7 @@ const orderRoute = require('./routes/orderRoute');
 const AppError = require('./utils/appError');
 const viewRoute = require('./routes/viewRoute');
 const cartRoute = require('./routes/cartRoute');
+const webhook = require('./routes/webhook');
 const orderController = require('./controllers/orderController')
 const path = require('path');
 const morgan = require('morgan');
@@ -23,6 +24,7 @@ app.set('views', path.join(__dirname, 'views'))
 // express.raw({type: 'application/json'});
 // app.use(bodyParser.raw({type:'*/*'}));
 // app.use(bodyParser.json());
+
 
 //serving static file
 app.use(express.json());
@@ -63,7 +65,8 @@ app.use('/api/v1/users', userRoute);
 app.use('/api/v1/address', addressRoute);
 app.use('/api/v1/order', orderRoute);
 app.use('/api/v1/cart', cartRoute);
-app.use('/webhook', orderRoute)
+app.use('/webhook', webhook);
+
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

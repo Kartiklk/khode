@@ -68800,8 +68800,7 @@ var card = /*#__PURE__*/function () {
           });
         case 3:
           session = _context.sent;
-          res = window.location = session.data.url;
-          console.log(res);
+          res = window.location = session.data.url; // console.log(res)
           //create checkout form + chanre credit card
           // await stripe.redirectToCheckout({
           //     sessionId: session.data.session.id
@@ -68812,18 +68811,18 @@ var card = /*#__PURE__*/function () {
           //         location.assign('/cart');
           //     }, 1000);
           // }
-          _context.next = 12;
+          _context.next = 11;
           break;
-        case 8:
-          _context.prev = 8;
+        case 7:
+          _context.prev = 7;
           _context.t0 = _context["catch"](0);
           console.log(_context.t0);
           (0, _alerts.showAlert)('error', _context.t0);
-        case 12:
+        case 11:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return function card(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
@@ -69133,7 +69132,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61689" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51450" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

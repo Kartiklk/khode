@@ -18,7 +18,7 @@ export const card = async(carts, user, address, payment)=>{
             }
         });
         const res =  window.location = session.data.url;    
-        console.log(res)
+        // console.log(res)
     //create checkout form + chanre credit card
         // await stripe.redirectToCheckout({
         //     sessionId: session.data.session.id
