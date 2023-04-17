@@ -1,6 +1,7 @@
 /* eslint-disable*/
 import axios from "axios";
 import { showAlert } from "./alerts";
+import { Error } from "mongoose";
 // const showAlert = require('./alerts');
 
 export const login = async (email, password) => {
@@ -14,7 +15,7 @@ export const login = async (email, password) => {
                 password
             }
         });
-        // console.log(email, password);
+        // console.log(res);
         if (res.data.status = 'success') {
             showAlert('success','Logged in successfully!');
             window.setTimeout(() => {
@@ -23,7 +24,10 @@ export const login = async (email, password) => {
             // alert('success');
         }
     } catch (err) {
-        showAlert('error',err.response.data.message);
+        console.log(Error);
+        console.error(err);
+        // console.log(err.response)
+        showAlert('error', err.response.data.message);
         // alert(err);
         // console.log(err);
     }

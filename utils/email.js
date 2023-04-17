@@ -24,15 +24,16 @@ module.exports = class Email {
         }
       });
     }
-
-    return nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD
-      }
-    });
+else{
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    auth: {
+      user: process.env.EMAIL_USERNAME,
+      pass: process.env.EMAIL_PASSWORD
+    }
+  });
+}
   }
 
   newMailjet(){
@@ -99,7 +100,7 @@ module.exports = class Email {
     //   ]
     // }
 
-    // console.log(request)
+    // console.log(mailOptions);
     //create a transport and send email
     await this.newTransport().sendMail(mailOptions);
     // await this.newMailjet().sendMail(request);
