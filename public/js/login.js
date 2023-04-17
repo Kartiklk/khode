@@ -1,5 +1,5 @@
 /* eslint-disable*/
-import { Axios } from 'axios';
+import axios from "axios";
 import { showAlert } from "./alerts";
 // const showAlert = require('./alerts');
 
@@ -31,7 +31,6 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
     try {
-        console.log('click')
         const res = await axios({
             method: 'GET',
             url: '/api/v1/users/logout',

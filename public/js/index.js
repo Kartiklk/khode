@@ -5,6 +5,7 @@ import { cart, removeId } from "./cart";
 import { added } from "./address";
 import { noworder, cancelorder } from "./order";
 import { card } from "./stripe";
+import { contentSecurityPolicy } from 'helmet';
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -28,7 +29,7 @@ const ordernow = document.querySelector('#order');
 const no = document.querySelector('#empty')
 const next = document.querySelector('#next')
 const cancel = document.querySelector('#cancel')
-// console.log(cancel);
+console.log(logOutBtn);
 
 
 if (loginForm) 

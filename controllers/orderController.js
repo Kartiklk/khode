@@ -103,6 +103,7 @@ exports.CreateOrder = catchAsync(async(req, res, next) => {
     // const user = newOrder.populate("user");
     // const query = await Order.find();
     // console.log(newOrder)
+    const url = `${req.protocol}://${req.get('host')}/myorders`;
     await new Email(user).orderConform();
 
 
@@ -166,7 +167,7 @@ exports.deleteOrder = catchAsync(async(req, res, next) =>{
 
 //   WEBHOOK
 
-const ordercreate = async(customer, req, res) => {
+const ordercreate = async(customer, data, res) => {
   let temp = customer.metadata.carts;
   let cart = new Array();
   cart=temp.split(',');
@@ -182,7 +183,8 @@ const ordercreate = async(customer, req, res) => {
     // const user = newOrder.populate("user");
     // const query = await Order.find();
     // console.log(newOrder)
-    await new Email(user).orderConform();
+    const url = data.success_url;
+    await new Email(user, url).orderConform();
 
 
     res.status(201).json({
@@ -260,7 +262,7 @@ exports.web = (req, res) => {
   if(eventtype === "checkout.session.completed"){
     // console.log(eventtype)
     stripe.customers.retrieve(data.customer).then((customer)=>{
-      ordercreate(customer)
+      ordercreate(customer, data)
       // console.log(customer),
       // console.log(data)
     })

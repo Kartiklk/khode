@@ -11979,8 +11979,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.signup = exports.logout = exports.login = void 0;
-var _axios = require("axios");
+var _axios = _interopRequireDefault(require("axios"));
 var _alerts = require("./alerts");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -11995,7 +11996,7 @@ var login = /*#__PURE__*/function () {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return axios({
+          return (0, _axios.default)({
             method: 'POST',
             url: '/api/v1/users/login',
             data: {
@@ -12039,26 +12040,25 @@ var logout = /*#__PURE__*/function () {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           _context2.prev = 0;
-          console.log('click');
-          _context2.next = 4;
-          return axios({
+          _context2.next = 3;
+          return (0, _axios.default)({
             method: 'GET',
             url: '/api/v1/users/logout'
           });
-        case 4:
+        case 3:
           res = _context2.sent;
           if (res.data.status = 'success') location.reload(true);
-          _context2.next = 11;
+          _context2.next = 10;
           break;
-        case 8:
-          _context2.prev = 8;
+        case 7:
+          _context2.prev = 7;
           _context2.t0 = _context2["catch"](0);
           (0, _alerts.showAlert)('error', 'Error Logging out! Try again later');
-        case 11:
+        case 10:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[0, 8]]);
+    }, _callee2, null, [[0, 7]]);
   }));
   return function logout() {
     return _ref2.apply(this, arguments);
@@ -12073,7 +12073,7 @@ var signup = /*#__PURE__*/function () {
         case 0:
           _context3.prev = 0;
           _context3.next = 3;
-          return axios({
+          return (0, _axios.default)({
             method: 'POST',
             url: '/api/v1/users/signup',
             data: {
@@ -68829,7 +68829,547 @@ var card = /*#__PURE__*/function () {
   };
 }();
 exports.card = card;
-},{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js","stripe":"../../node_modules/stripe/cjs/stripe.cjs.node.js"}],"index.js":[function(require,module,exports) {
+},{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js","stripe":"../../node_modules/stripe/cjs/stripe.cjs.node.js"}],"../../node_modules/helmet/dist/esm/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.contentSecurityPolicy = void 0;
+exports.crossOriginEmbedderPolicy = crossOriginEmbedderPolicy;
+exports.crossOriginOpenerPolicy = crossOriginOpenerPolicy;
+exports.crossOriginResourcePolicy = crossOriginResourcePolicy;
+exports.default = void 0;
+exports.dnsPrefetchControl = xDnsPrefetchControl;
+exports.expectCt = expectCt;
+exports.frameguard = xFrameOptions;
+exports.hidePoweredBy = xPoweredBy;
+exports.hsts = strictTransportSecurity;
+exports.ieNoOpen = xDownloadOptions;
+exports.noSniff = xContentTypeOptions;
+exports.originAgentCluster = originAgentCluster;
+exports.permittedCrossDomainPolicies = xPermittedCrossDomainPolicies;
+exports.referrerPolicy = referrerPolicy;
+exports.xssFilter = xXssProtection;
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+var dangerouslyDisableDefaultSrc = Symbol("dangerouslyDisableDefaultSrc");
+var DEFAULT_DIRECTIVES = {
+  "default-src": ["'self'"],
+  "base-uri": ["'self'"],
+  "font-src": ["'self'", "https:", "data:"],
+  "form-action": ["'self'"],
+  "frame-ancestors": ["'self'"],
+  "img-src": ["'self'", "data:"],
+  "object-src": ["'none'"],
+  "script-src": ["'self'"],
+  "script-src-attr": ["'none'"],
+  "style-src": ["'self'", "https:", "'unsafe-inline'"],
+  "upgrade-insecure-requests": []
+};
+var getDefaultDirectives = function getDefaultDirectives() {
+  return Object.assign({}, DEFAULT_DIRECTIVES);
+};
+var dashify = function dashify(str) {
+  return str.replace(/[A-Z]/g, function (capitalLetter) {
+    return "-" + capitalLetter.toLowerCase();
+  });
+};
+var isDirectiveValueInvalid = function isDirectiveValueInvalid(directiveValue) {
+  return /;|,/.test(directiveValue);
+};
+var has = function has(obj, key) {
+  return Object.prototype.hasOwnProperty.call(obj, key);
+};
+function normalizeDirectives(options) {
+  var defaultDirectives = getDefaultDirectives();
+  var _options$useDefaults = options.useDefaults,
+    useDefaults = _options$useDefaults === void 0 ? true : _options$useDefaults,
+    _options$directives = options.directives,
+    rawDirectives = _options$directives === void 0 ? defaultDirectives : _options$directives;
+  var result = new Map();
+  var directiveNamesSeen = new Set();
+  var directivesExplicitlyDisabled = new Set();
+  for (var rawDirectiveName in rawDirectives) {
+    if (!has(rawDirectives, rawDirectiveName)) {
+      continue;
+    }
+    if (rawDirectiveName.length === 0 || /[^a-zA-Z0-9-]/.test(rawDirectiveName)) {
+      throw new Error("Content-Security-Policy received an invalid directive name ".concat(JSON.stringify(rawDirectiveName)));
+    }
+    var directiveName = dashify(rawDirectiveName);
+    if (directiveNamesSeen.has(directiveName)) {
+      throw new Error("Content-Security-Policy received a duplicate directive ".concat(JSON.stringify(directiveName)));
+    }
+    directiveNamesSeen.add(directiveName);
+    var rawDirectiveValue = rawDirectives[rawDirectiveName];
+    var directiveValue = void 0;
+    if (rawDirectiveValue === null) {
+      if (directiveName === "default-src") {
+        throw new Error("Content-Security-Policy needs a default-src but it was set to `null`. If you really want to disable it, set it to `contentSecurityPolicy.dangerouslyDisableDefaultSrc`.");
+      }
+      directivesExplicitlyDisabled.add(directiveName);
+      continue;
+    } else if (typeof rawDirectiveValue === "string") {
+      directiveValue = [rawDirectiveValue];
+    } else if (!rawDirectiveValue) {
+      throw new Error("Content-Security-Policy received an invalid directive value for ".concat(JSON.stringify(directiveName)));
+    } else if (rawDirectiveValue === dangerouslyDisableDefaultSrc) {
+      if (directiveName === "default-src") {
+        directivesExplicitlyDisabled.add("default-src");
+        continue;
+      } else {
+        throw new Error("Content-Security-Policy: tried to disable ".concat(JSON.stringify(directiveName), " as if it were default-src; simply omit the key"));
+      }
+    } else {
+      directiveValue = rawDirectiveValue;
+    }
+    var _iterator = _createForOfIteratorHelper(directiveValue),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var element = _step.value;
+        if (typeof element === "string" && isDirectiveValueInvalid(element)) {
+          throw new Error("Content-Security-Policy received an invalid directive value for ".concat(JSON.stringify(directiveName)));
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+    result.set(directiveName, directiveValue);
+  }
+  if (useDefaults) {
+    Object.entries(defaultDirectives).forEach(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+        defaultDirectiveName = _ref2[0],
+        defaultDirectiveValue = _ref2[1];
+      if (!result.has(defaultDirectiveName) && !directivesExplicitlyDisabled.has(defaultDirectiveName)) {
+        result.set(defaultDirectiveName, defaultDirectiveValue);
+      }
+    });
+  }
+  if (!result.size) {
+    throw new Error("Content-Security-Policy has no directives. Either set some or disable the header");
+  }
+  if (!result.has("default-src") && !directivesExplicitlyDisabled.has("default-src")) {
+    throw new Error("Content-Security-Policy needs a default-src but none was provided. If you really want to disable it, set it to `contentSecurityPolicy.dangerouslyDisableDefaultSrc`.");
+  }
+  return result;
+}
+function getHeaderValue(req, res, normalizedDirectives) {
+  var err;
+  var result = [];
+  normalizedDirectives.forEach(function (rawDirectiveValue, directiveName) {
+    var directiveValue = "";
+    var _iterator2 = _createForOfIteratorHelper(rawDirectiveValue),
+      _step2;
+    try {
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var element = _step2.value;
+        directiveValue += " " + (element instanceof Function ? element(req, res) : element);
+      }
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
+    }
+    if (!directiveValue) {
+      result.push(directiveName);
+    } else if (isDirectiveValueInvalid(directiveValue)) {
+      err = new Error("Content-Security-Policy received an invalid directive value for ".concat(JSON.stringify(directiveName)));
+    } else {
+      result.push("".concat(directiveName).concat(directiveValue));
+    }
+  });
+  return err ? err : result.join(";");
+}
+var contentSecurityPolicy = function contentSecurityPolicy() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerName = options.reportOnly ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy";
+  var normalizedDirectives = normalizeDirectives(options);
+  return function contentSecurityPolicyMiddleware(req, res, next) {
+    var result = getHeaderValue(req, res, normalizedDirectives);
+    if (result instanceof Error) {
+      next(result);
+    } else {
+      res.setHeader(headerName, result);
+      next();
+    }
+  };
+};
+exports.contentSecurityPolicy = contentSecurityPolicy;
+contentSecurityPolicy.getDefaultDirectives = getDefaultDirectives;
+contentSecurityPolicy.dangerouslyDisableDefaultSrc = dangerouslyDisableDefaultSrc;
+var ALLOWED_POLICIES$2 = new Set(["require-corp", "credentialless"]);
+function getHeaderValueFromOptions$7(_ref3) {
+  var _ref3$policy = _ref3.policy,
+    policy = _ref3$policy === void 0 ? "require-corp" : _ref3$policy;
+  if (ALLOWED_POLICIES$2.has(policy)) {
+    return policy;
+  } else {
+    throw new Error("Cross-Origin-Embedder-Policy does not support the ".concat(JSON.stringify(policy), " policy"));
+  }
+}
+function crossOriginEmbedderPolicy() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$7(options);
+  return function crossOriginEmbedderPolicyMiddleware(_req, res, next) {
+    res.setHeader("Cross-Origin-Embedder-Policy", headerValue);
+    next();
+  };
+}
+var ALLOWED_POLICIES$1 = new Set(["same-origin", "same-origin-allow-popups", "unsafe-none"]);
+function getHeaderValueFromOptions$6(_ref4) {
+  var _ref4$policy = _ref4.policy,
+    policy = _ref4$policy === void 0 ? "same-origin" : _ref4$policy;
+  if (ALLOWED_POLICIES$1.has(policy)) {
+    return policy;
+  } else {
+    throw new Error("Cross-Origin-Opener-Policy does not support the ".concat(JSON.stringify(policy), " policy"));
+  }
+}
+function crossOriginOpenerPolicy() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$6(options);
+  return function crossOriginOpenerPolicyMiddleware(_req, res, next) {
+    res.setHeader("Cross-Origin-Opener-Policy", headerValue);
+    next();
+  };
+}
+var ALLOWED_POLICIES = new Set(["same-origin", "same-site", "cross-origin"]);
+function getHeaderValueFromOptions$5(_ref5) {
+  var _ref5$policy = _ref5.policy,
+    policy = _ref5$policy === void 0 ? "same-origin" : _ref5$policy;
+  if (ALLOWED_POLICIES.has(policy)) {
+    return policy;
+  } else {
+    throw new Error("Cross-Origin-Resource-Policy does not support the ".concat(JSON.stringify(policy), " policy"));
+  }
+}
+function crossOriginResourcePolicy() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$5(options);
+  return function crossOriginResourcePolicyMiddleware(_req, res, next) {
+    res.setHeader("Cross-Origin-Resource-Policy", headerValue);
+    next();
+  };
+}
+function parseMaxAge$1() {
+  var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  if (value >= 0 && Number.isFinite(value)) {
+    return Math.floor(value);
+  } else {
+    throw new Error("Expect-CT: ".concat(JSON.stringify(value), " is not a valid value for maxAge. Please choose a positive integer."));
+  }
+}
+function getHeaderValueFromOptions$4(options) {
+  var directives = ["max-age=".concat(parseMaxAge$1(options.maxAge))];
+  if (options.enforce) {
+    directives.push("enforce");
+  }
+  if (options.reportUri) {
+    directives.push("report-uri=\"".concat(options.reportUri, "\""));
+  }
+  return directives.join(", ");
+}
+function expectCt() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$4(options);
+  return function expectCtMiddleware(_req, res, next) {
+    res.setHeader("Expect-CT", headerValue);
+    next();
+  };
+}
+function originAgentCluster() {
+  return function originAgentClusterMiddleware(_req, res, next) {
+    res.setHeader("Origin-Agent-Cluster", "?1");
+    next();
+  };
+}
+var ALLOWED_TOKENS = new Set(["no-referrer", "no-referrer-when-downgrade", "same-origin", "origin", "strict-origin", "origin-when-cross-origin", "strict-origin-when-cross-origin", "unsafe-url", ""]);
+function getHeaderValueFromOptions$3(_ref6) {
+  var _ref6$policy = _ref6.policy,
+    policy = _ref6$policy === void 0 ? ["no-referrer"] : _ref6$policy;
+  var tokens = typeof policy === "string" ? [policy] : policy;
+  if (tokens.length === 0) {
+    throw new Error("Referrer-Policy received no policy tokens");
+  }
+  var tokensSeen = new Set();
+  tokens.forEach(function (token) {
+    if (!ALLOWED_TOKENS.has(token)) {
+      throw new Error("Referrer-Policy received an unexpected policy token ".concat(JSON.stringify(token)));
+    } else if (tokensSeen.has(token)) {
+      throw new Error("Referrer-Policy received a duplicate policy token ".concat(JSON.stringify(token)));
+    }
+    tokensSeen.add(token);
+  });
+  return tokens.join(",");
+}
+function referrerPolicy() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$3(options);
+  return function referrerPolicyMiddleware(_req, res, next) {
+    res.setHeader("Referrer-Policy", headerValue);
+    next();
+  };
+}
+var DEFAULT_MAX_AGE = 180 * 24 * 60 * 60;
+function parseMaxAge() {
+  var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : DEFAULT_MAX_AGE;
+  if (value >= 0 && Number.isFinite(value)) {
+    return Math.floor(value);
+  } else {
+    throw new Error("Strict-Transport-Security: ".concat(JSON.stringify(value), " is not a valid value for maxAge. Please choose a positive integer."));
+  }
+}
+function getHeaderValueFromOptions$2(options) {
+  if ("maxage" in options) {
+    throw new Error("Strict-Transport-Security received an unsupported property, `maxage`. Did you mean to pass `maxAge`?");
+  }
+  if ("includeSubdomains" in options) {
+    console.warn('Strict-Transport-Security middleware should use `includeSubDomains` instead of `includeSubdomains`. (The correct one has an uppercase "D".)');
+  }
+  if ("setIf" in options) {
+    console.warn("Strict-Transport-Security middleware no longer supports the `setIf` parameter. See the documentation and <https://github.com/helmetjs/helmet/wiki/Conditionally-using-middleware> if you need help replicating this behavior.");
+  }
+  var directives = ["max-age=".concat(parseMaxAge(options.maxAge))];
+  if (options.includeSubDomains === undefined || options.includeSubDomains) {
+    directives.push("includeSubDomains");
+  }
+  if (options.preload) {
+    directives.push("preload");
+  }
+  return directives.join("; ");
+}
+function strictTransportSecurity() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$2(options);
+  return function strictTransportSecurityMiddleware(_req, res, next) {
+    res.setHeader("Strict-Transport-Security", headerValue);
+    next();
+  };
+}
+function xContentTypeOptions() {
+  return function xContentTypeOptionsMiddleware(_req, res, next) {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    next();
+  };
+}
+function xDnsPrefetchControl() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = options.allow ? "on" : "off";
+  return function xDnsPrefetchControlMiddleware(_req, res, next) {
+    res.setHeader("X-DNS-Prefetch-Control", headerValue);
+    next();
+  };
+}
+function xDownloadOptions() {
+  return function xDownloadOptionsMiddleware(_req, res, next) {
+    res.setHeader("X-Download-Options", "noopen");
+    next();
+  };
+}
+function getHeaderValueFromOptions$1(_ref7) {
+  var _ref7$action = _ref7.action,
+    action = _ref7$action === void 0 ? "sameorigin" : _ref7$action;
+  var normalizedAction = typeof action === "string" ? action.toUpperCase() : action;
+  switch (normalizedAction) {
+    case "SAME-ORIGIN":
+      return "SAMEORIGIN";
+    case "DENY":
+    case "SAMEORIGIN":
+      return normalizedAction;
+    default:
+      throw new Error("X-Frame-Options received an invalid action ".concat(JSON.stringify(action)));
+  }
+}
+function xFrameOptions() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions$1(options);
+  return function xFrameOptionsMiddleware(_req, res, next) {
+    res.setHeader("X-Frame-Options", headerValue);
+    next();
+  };
+}
+var ALLOWED_PERMITTED_POLICIES = new Set(["none", "master-only", "by-content-type", "all"]);
+function getHeaderValueFromOptions(_ref8) {
+  var _ref8$permittedPolici = _ref8.permittedPolicies,
+    permittedPolicies = _ref8$permittedPolici === void 0 ? "none" : _ref8$permittedPolici;
+  if (ALLOWED_PERMITTED_POLICIES.has(permittedPolicies)) {
+    return permittedPolicies;
+  } else {
+    throw new Error("X-Permitted-Cross-Domain-Policies does not support ".concat(JSON.stringify(permittedPolicies)));
+  }
+}
+function xPermittedCrossDomainPolicies() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var headerValue = getHeaderValueFromOptions(options);
+  return function xPermittedCrossDomainPoliciesMiddleware(_req, res, next) {
+    res.setHeader("X-Permitted-Cross-Domain-Policies", headerValue);
+    next();
+  };
+}
+function xPoweredBy() {
+  return function xPoweredByMiddleware(_req, res, next) {
+    res.removeHeader("X-Powered-By");
+    next();
+  };
+}
+function xXssProtection() {
+  return function xXssProtectionMiddleware(_req, res, next) {
+    res.setHeader("X-XSS-Protection", "0");
+    next();
+  };
+}
+function getArgs(option) {
+  var middlewareConfig = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  switch (option) {
+    case undefined:
+    case true:
+      return [];
+    case false:
+      return null;
+    default:
+      if (middlewareConfig.takesOptions === false) {
+        console.warn("".concat(middlewareConfig.name, " does not take options. Remove the property to silence this warning."));
+        return [];
+      } else {
+        return [option];
+      }
+  }
+}
+function getMiddlewareFunctionsFromOptions(options) {
+  var result = [];
+  var contentSecurityPolicyArgs = getArgs(options.contentSecurityPolicy);
+  if (contentSecurityPolicyArgs) {
+    result.push(contentSecurityPolicy.apply(void 0, _toConsumableArray(contentSecurityPolicyArgs)));
+  }
+  var crossOriginEmbedderPolicyArgs = getArgs(options.crossOriginEmbedderPolicy);
+  if (crossOriginEmbedderPolicyArgs) {
+    result.push(crossOriginEmbedderPolicy.apply(void 0, _toConsumableArray(crossOriginEmbedderPolicyArgs)));
+  }
+  var crossOriginOpenerPolicyArgs = getArgs(options.crossOriginOpenerPolicy);
+  if (crossOriginOpenerPolicyArgs) {
+    result.push(crossOriginOpenerPolicy.apply(void 0, _toConsumableArray(crossOriginOpenerPolicyArgs)));
+  }
+  var crossOriginResourcePolicyArgs = getArgs(options.crossOriginResourcePolicy);
+  if (crossOriginResourcePolicyArgs) {
+    result.push(crossOriginResourcePolicy.apply(void 0, _toConsumableArray(crossOriginResourcePolicyArgs)));
+  }
+  var xDnsPrefetchControlArgs = getArgs(options.dnsPrefetchControl);
+  if (xDnsPrefetchControlArgs) {
+    result.push(xDnsPrefetchControl.apply(void 0, _toConsumableArray(xDnsPrefetchControlArgs)));
+  }
+  var expectCtArgs = options.expectCt && getArgs(options.expectCt);
+  if (expectCtArgs) {
+    result.push(expectCt.apply(void 0, _toConsumableArray(expectCtArgs)));
+  }
+  var xFrameOptionsArgs = getArgs(options.frameguard);
+  if (xFrameOptionsArgs) {
+    result.push(xFrameOptions.apply(void 0, _toConsumableArray(xFrameOptionsArgs)));
+  }
+  var xPoweredByArgs = getArgs(options.hidePoweredBy, {
+    name: "hidePoweredBy",
+    takesOptions: false
+  });
+  if (xPoweredByArgs) {
+    result.push(xPoweredBy());
+  }
+  var strictTransportSecurityArgs = getArgs(options.hsts);
+  if (strictTransportSecurityArgs) {
+    result.push(strictTransportSecurity.apply(void 0, _toConsumableArray(strictTransportSecurityArgs)));
+  }
+  var xDownloadOptionsArgs = getArgs(options.ieNoOpen, {
+    name: "ieNoOpen",
+    takesOptions: false
+  });
+  if (xDownloadOptionsArgs) {
+    result.push(xDownloadOptions());
+  }
+  var xContentTypeOptionsArgs = getArgs(options.noSniff, {
+    name: "noSniff",
+    takesOptions: false
+  });
+  if (xContentTypeOptionsArgs) {
+    result.push(xContentTypeOptions());
+  }
+  var originAgentClusterArgs = getArgs(options.originAgentCluster, {
+    name: "originAgentCluster",
+    takesOptions: false
+  });
+  if (originAgentClusterArgs) {
+    result.push(originAgentCluster());
+  }
+  var xPermittedCrossDomainPoliciesArgs = getArgs(options.permittedCrossDomainPolicies);
+  if (xPermittedCrossDomainPoliciesArgs) {
+    result.push(xPermittedCrossDomainPolicies.apply(void 0, _toConsumableArray(xPermittedCrossDomainPoliciesArgs)));
+  }
+  var referrerPolicyArgs = getArgs(options.referrerPolicy);
+  if (referrerPolicyArgs) {
+    result.push(referrerPolicy.apply(void 0, _toConsumableArray(referrerPolicyArgs)));
+  }
+  var xXssProtectionArgs = getArgs(options.xssFilter, {
+    name: "xssFilter",
+    takesOptions: false
+  });
+  if (xXssProtectionArgs) {
+    result.push(xXssProtection());
+  }
+  return result;
+}
+var helmet = Object.assign(function helmet() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var _a;
+  if (((_a = options.constructor) === null || _a === void 0 ? void 0 : _a.name) === "IncomingMessage") {
+    throw new Error("It appears you have done something like `app.use(helmet)`, but it should be `app.use(helmet())`.");
+  }
+  var middlewareFunctions = getMiddlewareFunctionsFromOptions(options);
+  return function helmetMiddleware(req, res, next) {
+    var middlewareIndex = 0;
+    (function internalNext(err) {
+      if (err) {
+        next(err);
+        return;
+      }
+      var middlewareFunction = middlewareFunctions[middlewareIndex];
+      if (middlewareFunction) {
+        middlewareIndex++;
+        middlewareFunction(req, res, internalNext);
+      } else {
+        next();
+      }
+    })();
+  };
+}, {
+  contentSecurityPolicy: contentSecurityPolicy,
+  crossOriginEmbedderPolicy: crossOriginEmbedderPolicy,
+  crossOriginOpenerPolicy: crossOriginOpenerPolicy,
+  crossOriginResourcePolicy: crossOriginResourcePolicy,
+  dnsPrefetchControl: xDnsPrefetchControl,
+  expectCt: expectCt,
+  frameguard: xFrameOptions,
+  hidePoweredBy: xPoweredBy,
+  hsts: strictTransportSecurity,
+  ieNoOpen: xDownloadOptions,
+  noSniff: xContentTypeOptions,
+  originAgentCluster: originAgentCluster,
+  permittedCrossDomainPolicies: xPermittedCrossDomainPolicies,
+  referrerPolicy: referrerPolicy,
+  xssFilter: xXssProtection
+});
+exports.default = helmet;
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("core-js/modules/es6.array.copy-within.js");
@@ -68969,6 +69509,7 @@ var _cart3 = require("./cart");
 var _address = require("./address");
 var _order = require("./order");
 var _stripe = require("./stripe");
+var _helmet = require("helmet");
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -68991,8 +69532,7 @@ var ordernow = document.querySelector('#order');
 var no = document.querySelector('#empty');
 var next = document.querySelector('#next');
 var cancel = document.querySelector('#cancel');
-// console.log(cancel);
-
+console.log(logOutBtn);
 if (loginForm) log.addEventListener('click', function (e) {
   // console.log(loginForm);
   // window.location.href='/'
@@ -69107,7 +69647,7 @@ if (cancel) {
     (0, _order.cancelorder)(id);
   });
 }
-},{"core-js/modules/es6.array.copy-within.js":"../../node_modules/core-js/modules/es6.array.copy-within.js","core-js/modules/es6.array.fill.js":"../../node_modules/core-js/modules/es6.array.fill.js","core-js/modules/es6.array.filter.js":"../../node_modules/core-js/modules/es6.array.filter.js","core-js/modules/es6.array.find.js":"../../node_modules/core-js/modules/es6.array.find.js","core-js/modules/es6.array.find-index.js":"../../node_modules/core-js/modules/es6.array.find-index.js","core-js/modules/es7.array.flat-map.js":"../../node_modules/core-js/modules/es7.array.flat-map.js","core-js/modules/es6.array.from.js":"../../node_modules/core-js/modules/es6.array.from.js","core-js/modules/es7.array.includes.js":"../../node_modules/core-js/modules/es7.array.includes.js","core-js/modules/es6.array.iterator.js":"../../node_modules/core-js/modules/es6.array.iterator.js","core-js/modules/es6.array.map.js":"../../node_modules/core-js/modules/es6.array.map.js","core-js/modules/es6.array.of.js":"../../node_modules/core-js/modules/es6.array.of.js","core-js/modules/es6.array.slice.js":"../../node_modules/core-js/modules/es6.array.slice.js","core-js/modules/es6.array.sort.js":"../../node_modules/core-js/modules/es6.array.sort.js","core-js/modules/es6.array.species.js":"../../node_modules/core-js/modules/es6.array.species.js","core-js/modules/es6.date.to-primitive.js":"../../node_modules/core-js/modules/es6.date.to-primitive.js","core-js/modules/es6.function.has-instance.js":"../../node_modules/core-js/modules/es6.function.has-instance.js","core-js/modules/es6.function.name.js":"../../node_modules/core-js/modules/es6.function.name.js","core-js/modules/es6.map.js":"../../node_modules/core-js/modules/es6.map.js","core-js/modules/es6.math.acosh.js":"../../node_modules/core-js/modules/es6.math.acosh.js","core-js/modules/es6.math.asinh.js":"../../node_modules/core-js/modules/es6.math.asinh.js","core-js/modules/es6.math.atanh.js":"../../node_modules/core-js/modules/es6.math.atanh.js","core-js/modules/es6.math.cbrt.js":"../../node_modules/core-js/modules/es6.math.cbrt.js","core-js/modules/es6.math.clz32.js":"../../node_modules/core-js/modules/es6.math.clz32.js","core-js/modules/es6.math.cosh.js":"../../node_modules/core-js/modules/es6.math.cosh.js","core-js/modules/es6.math.expm1.js":"../../node_modules/core-js/modules/es6.math.expm1.js","core-js/modules/es6.math.fround.js":"../../node_modules/core-js/modules/es6.math.fround.js","core-js/modules/es6.math.hypot.js":"../../node_modules/core-js/modules/es6.math.hypot.js","core-js/modules/es6.math.imul.js":"../../node_modules/core-js/modules/es6.math.imul.js","core-js/modules/es6.math.log1p.js":"../../node_modules/core-js/modules/es6.math.log1p.js","core-js/modules/es6.math.log10.js":"../../node_modules/core-js/modules/es6.math.log10.js","core-js/modules/es6.math.log2.js":"../../node_modules/core-js/modules/es6.math.log2.js","core-js/modules/es6.math.sign.js":"../../node_modules/core-js/modules/es6.math.sign.js","core-js/modules/es6.math.sinh.js":"../../node_modules/core-js/modules/es6.math.sinh.js","core-js/modules/es6.math.tanh.js":"../../node_modules/core-js/modules/es6.math.tanh.js","core-js/modules/es6.math.trunc.js":"../../node_modules/core-js/modules/es6.math.trunc.js","core-js/modules/es6.number.constructor.js":"../../node_modules/core-js/modules/es6.number.constructor.js","core-js/modules/es6.number.epsilon.js":"../../node_modules/core-js/modules/es6.number.epsilon.js","core-js/modules/es6.number.is-finite.js":"../../node_modules/core-js/modules/es6.number.is-finite.js","core-js/modules/es6.number.is-integer.js":"../../node_modules/core-js/modules/es6.number.is-integer.js","core-js/modules/es6.number.is-nan.js":"../../node_modules/core-js/modules/es6.number.is-nan.js","core-js/modules/es6.number.is-safe-integer.js":"../../node_modules/core-js/modules/es6.number.is-safe-integer.js","core-js/modules/es6.number.max-safe-integer.js":"../../node_modules/core-js/modules/es6.number.max-safe-integer.js","core-js/modules/es6.number.min-safe-integer.js":"../../node_modules/core-js/modules/es6.number.min-safe-integer.js","core-js/modules/es6.number.parse-float.js":"../../node_modules/core-js/modules/es6.number.parse-float.js","core-js/modules/es6.number.parse-int.js":"../../node_modules/core-js/modules/es6.number.parse-int.js","core-js/modules/es6.object.assign.js":"../../node_modules/core-js/modules/es6.object.assign.js","core-js/modules/es7.object.define-getter.js":"../../node_modules/core-js/modules/es7.object.define-getter.js","core-js/modules/es7.object.define-setter.js":"../../node_modules/core-js/modules/es7.object.define-setter.js","core-js/modules/es7.object.entries.js":"../../node_modules/core-js/modules/es7.object.entries.js","core-js/modules/es6.object.freeze.js":"../../node_modules/core-js/modules/es6.object.freeze.js","core-js/modules/es6.object.get-own-property-descriptor.js":"../../node_modules/core-js/modules/es6.object.get-own-property-descriptor.js","core-js/modules/es7.object.get-own-property-descriptors.js":"../../node_modules/core-js/modules/es7.object.get-own-property-descriptors.js","core-js/modules/es6.object.get-own-property-names.js":"../../node_modules/core-js/modules/es6.object.get-own-property-names.js","core-js/modules/es6.object.get-prototype-of.js":"../../node_modules/core-js/modules/es6.object.get-prototype-of.js","core-js/modules/es7.object.lookup-getter.js":"../../node_modules/core-js/modules/es7.object.lookup-getter.js","core-js/modules/es7.object.lookup-setter.js":"../../node_modules/core-js/modules/es7.object.lookup-setter.js","core-js/modules/es6.object.prevent-extensions.js":"../../node_modules/core-js/modules/es6.object.prevent-extensions.js","core-js/modules/es6.object.to-string.js":"../../node_modules/core-js/modules/es6.object.to-string.js","core-js/modules/es6.object.is.js":"../../node_modules/core-js/modules/es6.object.is.js","core-js/modules/es6.object.is-frozen.js":"../../node_modules/core-js/modules/es6.object.is-frozen.js","core-js/modules/es6.object.is-sealed.js":"../../node_modules/core-js/modules/es6.object.is-sealed.js","core-js/modules/es6.object.is-extensible.js":"../../node_modules/core-js/modules/es6.object.is-extensible.js","core-js/modules/es6.object.keys.js":"../../node_modules/core-js/modules/es6.object.keys.js","core-js/modules/es6.object.seal.js":"../../node_modules/core-js/modules/es6.object.seal.js","core-js/modules/es6.object.set-prototype-of.js":"../../node_modules/core-js/modules/es6.object.set-prototype-of.js","core-js/modules/es7.object.values.js":"../../node_modules/core-js/modules/es7.object.values.js","core-js/modules/es6.promise.js":"../../node_modules/core-js/modules/es6.promise.js","core-js/modules/es7.promise.finally.js":"../../node_modules/core-js/modules/es7.promise.finally.js","core-js/modules/es6.reflect.apply.js":"../../node_modules/core-js/modules/es6.reflect.apply.js","core-js/modules/es6.reflect.construct.js":"../../node_modules/core-js/modules/es6.reflect.construct.js","core-js/modules/es6.reflect.define-property.js":"../../node_modules/core-js/modules/es6.reflect.define-property.js","core-js/modules/es6.reflect.delete-property.js":"../../node_modules/core-js/modules/es6.reflect.delete-property.js","core-js/modules/es6.reflect.get.js":"../../node_modules/core-js/modules/es6.reflect.get.js","core-js/modules/es6.reflect.get-own-property-descriptor.js":"../../node_modules/core-js/modules/es6.reflect.get-own-property-descriptor.js","core-js/modules/es6.reflect.get-prototype-of.js":"../../node_modules/core-js/modules/es6.reflect.get-prototype-of.js","core-js/modules/es6.reflect.has.js":"../../node_modules/core-js/modules/es6.reflect.has.js","core-js/modules/es6.reflect.is-extensible.js":"../../node_modules/core-js/modules/es6.reflect.is-extensible.js","core-js/modules/es6.reflect.own-keys.js":"../../node_modules/core-js/modules/es6.reflect.own-keys.js","core-js/modules/es6.reflect.prevent-extensions.js":"../../node_modules/core-js/modules/es6.reflect.prevent-extensions.js","core-js/modules/es6.reflect.set.js":"../../node_modules/core-js/modules/es6.reflect.set.js","core-js/modules/es6.reflect.set-prototype-of.js":"../../node_modules/core-js/modules/es6.reflect.set-prototype-of.js","core-js/modules/es6.regexp.constructor.js":"../../node_modules/core-js/modules/es6.regexp.constructor.js","core-js/modules/es6.regexp.flags.js":"../../node_modules/core-js/modules/es6.regexp.flags.js","core-js/modules/es6.regexp.match.js":"../../node_modules/core-js/modules/es6.regexp.match.js","core-js/modules/es6.regexp.replace.js":"../../node_modules/core-js/modules/es6.regexp.replace.js","core-js/modules/es6.regexp.split.js":"../../node_modules/core-js/modules/es6.regexp.split.js","core-js/modules/es6.regexp.search.js":"../../node_modules/core-js/modules/es6.regexp.search.js","core-js/modules/es6.regexp.to-string.js":"../../node_modules/core-js/modules/es6.regexp.to-string.js","core-js/modules/es6.set.js":"../../node_modules/core-js/modules/es6.set.js","core-js/modules/es6.symbol.js":"../../node_modules/core-js/modules/es6.symbol.js","core-js/modules/es7.symbol.async-iterator.js":"../../node_modules/core-js/modules/es7.symbol.async-iterator.js","core-js/modules/es6.string.anchor.js":"../../node_modules/core-js/modules/es6.string.anchor.js","core-js/modules/es6.string.big.js":"../../node_modules/core-js/modules/es6.string.big.js","core-js/modules/es6.string.blink.js":"../../node_modules/core-js/modules/es6.string.blink.js","core-js/modules/es6.string.bold.js":"../../node_modules/core-js/modules/es6.string.bold.js","core-js/modules/es6.string.code-point-at.js":"../../node_modules/core-js/modules/es6.string.code-point-at.js","core-js/modules/es6.string.ends-with.js":"../../node_modules/core-js/modules/es6.string.ends-with.js","core-js/modules/es6.string.fixed.js":"../../node_modules/core-js/modules/es6.string.fixed.js","core-js/modules/es6.string.fontcolor.js":"../../node_modules/core-js/modules/es6.string.fontcolor.js","core-js/modules/es6.string.fontsize.js":"../../node_modules/core-js/modules/es6.string.fontsize.js","core-js/modules/es6.string.from-code-point.js":"../../node_modules/core-js/modules/es6.string.from-code-point.js","core-js/modules/es6.string.includes.js":"../../node_modules/core-js/modules/es6.string.includes.js","core-js/modules/es6.string.italics.js":"../../node_modules/core-js/modules/es6.string.italics.js","core-js/modules/es6.string.iterator.js":"../../node_modules/core-js/modules/es6.string.iterator.js","core-js/modules/es6.string.link.js":"../../node_modules/core-js/modules/es6.string.link.js","core-js/modules/es7.string.pad-start.js":"../../node_modules/core-js/modules/es7.string.pad-start.js","core-js/modules/es7.string.pad-end.js":"../../node_modules/core-js/modules/es7.string.pad-end.js","core-js/modules/es6.string.raw.js":"../../node_modules/core-js/modules/es6.string.raw.js","core-js/modules/es6.string.repeat.js":"../../node_modules/core-js/modules/es6.string.repeat.js","core-js/modules/es6.string.small.js":"../../node_modules/core-js/modules/es6.string.small.js","core-js/modules/es6.string.starts-with.js":"../../node_modules/core-js/modules/es6.string.starts-with.js","core-js/modules/es6.string.strike.js":"../../node_modules/core-js/modules/es6.string.strike.js","core-js/modules/es6.string.sub.js":"../../node_modules/core-js/modules/es6.string.sub.js","core-js/modules/es6.string.sup.js":"../../node_modules/core-js/modules/es6.string.sup.js","core-js/modules/es7.string.trim-left.js":"../../node_modules/core-js/modules/es7.string.trim-left.js","core-js/modules/es7.string.trim-right.js":"../../node_modules/core-js/modules/es7.string.trim-right.js","core-js/modules/es6.typed.array-buffer.js":"../../node_modules/core-js/modules/es6.typed.array-buffer.js","core-js/modules/es6.typed.int8-array.js":"../../node_modules/core-js/modules/es6.typed.int8-array.js","core-js/modules/es6.typed.uint8-array.js":"../../node_modules/core-js/modules/es6.typed.uint8-array.js","core-js/modules/es6.typed.uint8-clamped-array.js":"../../node_modules/core-js/modules/es6.typed.uint8-clamped-array.js","core-js/modules/es6.typed.int16-array.js":"../../node_modules/core-js/modules/es6.typed.int16-array.js","core-js/modules/es6.typed.uint16-array.js":"../../node_modules/core-js/modules/es6.typed.uint16-array.js","core-js/modules/es6.typed.int32-array.js":"../../node_modules/core-js/modules/es6.typed.int32-array.js","core-js/modules/es6.typed.uint32-array.js":"../../node_modules/core-js/modules/es6.typed.uint32-array.js","core-js/modules/es6.typed.float32-array.js":"../../node_modules/core-js/modules/es6.typed.float32-array.js","core-js/modules/es6.typed.float64-array.js":"../../node_modules/core-js/modules/es6.typed.float64-array.js","core-js/modules/es6.weak-map.js":"../../node_modules/core-js/modules/es6.weak-map.js","core-js/modules/es6.weak-set.js":"../../node_modules/core-js/modules/es6.weak-set.js","core-js/modules/web.timers.js":"../../node_modules/core-js/modules/web.timers.js","core-js/modules/web.immediate.js":"../../node_modules/core-js/modules/web.immediate.js","core-js/modules/web.dom.iterable.js":"../../node_modules/core-js/modules/web.dom.iterable.js","regenerator-runtime/runtime.js":"../../node_modules/regenerator-runtime/runtime.js","./login":"login.js","./cart":"cart.js","./address":"address.js","./order":"order.js","./stripe":"stripe.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"core-js/modules/es6.array.copy-within.js":"../../node_modules/core-js/modules/es6.array.copy-within.js","core-js/modules/es6.array.fill.js":"../../node_modules/core-js/modules/es6.array.fill.js","core-js/modules/es6.array.filter.js":"../../node_modules/core-js/modules/es6.array.filter.js","core-js/modules/es6.array.find.js":"../../node_modules/core-js/modules/es6.array.find.js","core-js/modules/es6.array.find-index.js":"../../node_modules/core-js/modules/es6.array.find-index.js","core-js/modules/es7.array.flat-map.js":"../../node_modules/core-js/modules/es7.array.flat-map.js","core-js/modules/es6.array.from.js":"../../node_modules/core-js/modules/es6.array.from.js","core-js/modules/es7.array.includes.js":"../../node_modules/core-js/modules/es7.array.includes.js","core-js/modules/es6.array.iterator.js":"../../node_modules/core-js/modules/es6.array.iterator.js","core-js/modules/es6.array.map.js":"../../node_modules/core-js/modules/es6.array.map.js","core-js/modules/es6.array.of.js":"../../node_modules/core-js/modules/es6.array.of.js","core-js/modules/es6.array.slice.js":"../../node_modules/core-js/modules/es6.array.slice.js","core-js/modules/es6.array.sort.js":"../../node_modules/core-js/modules/es6.array.sort.js","core-js/modules/es6.array.species.js":"../../node_modules/core-js/modules/es6.array.species.js","core-js/modules/es6.date.to-primitive.js":"../../node_modules/core-js/modules/es6.date.to-primitive.js","core-js/modules/es6.function.has-instance.js":"../../node_modules/core-js/modules/es6.function.has-instance.js","core-js/modules/es6.function.name.js":"../../node_modules/core-js/modules/es6.function.name.js","core-js/modules/es6.map.js":"../../node_modules/core-js/modules/es6.map.js","core-js/modules/es6.math.acosh.js":"../../node_modules/core-js/modules/es6.math.acosh.js","core-js/modules/es6.math.asinh.js":"../../node_modules/core-js/modules/es6.math.asinh.js","core-js/modules/es6.math.atanh.js":"../../node_modules/core-js/modules/es6.math.atanh.js","core-js/modules/es6.math.cbrt.js":"../../node_modules/core-js/modules/es6.math.cbrt.js","core-js/modules/es6.math.clz32.js":"../../node_modules/core-js/modules/es6.math.clz32.js","core-js/modules/es6.math.cosh.js":"../../node_modules/core-js/modules/es6.math.cosh.js","core-js/modules/es6.math.expm1.js":"../../node_modules/core-js/modules/es6.math.expm1.js","core-js/modules/es6.math.fround.js":"../../node_modules/core-js/modules/es6.math.fround.js","core-js/modules/es6.math.hypot.js":"../../node_modules/core-js/modules/es6.math.hypot.js","core-js/modules/es6.math.imul.js":"../../node_modules/core-js/modules/es6.math.imul.js","core-js/modules/es6.math.log1p.js":"../../node_modules/core-js/modules/es6.math.log1p.js","core-js/modules/es6.math.log10.js":"../../node_modules/core-js/modules/es6.math.log10.js","core-js/modules/es6.math.log2.js":"../../node_modules/core-js/modules/es6.math.log2.js","core-js/modules/es6.math.sign.js":"../../node_modules/core-js/modules/es6.math.sign.js","core-js/modules/es6.math.sinh.js":"../../node_modules/core-js/modules/es6.math.sinh.js","core-js/modules/es6.math.tanh.js":"../../node_modules/core-js/modules/es6.math.tanh.js","core-js/modules/es6.math.trunc.js":"../../node_modules/core-js/modules/es6.math.trunc.js","core-js/modules/es6.number.constructor.js":"../../node_modules/core-js/modules/es6.number.constructor.js","core-js/modules/es6.number.epsilon.js":"../../node_modules/core-js/modules/es6.number.epsilon.js","core-js/modules/es6.number.is-finite.js":"../../node_modules/core-js/modules/es6.number.is-finite.js","core-js/modules/es6.number.is-integer.js":"../../node_modules/core-js/modules/es6.number.is-integer.js","core-js/modules/es6.number.is-nan.js":"../../node_modules/core-js/modules/es6.number.is-nan.js","core-js/modules/es6.number.is-safe-integer.js":"../../node_modules/core-js/modules/es6.number.is-safe-integer.js","core-js/modules/es6.number.max-safe-integer.js":"../../node_modules/core-js/modules/es6.number.max-safe-integer.js","core-js/modules/es6.number.min-safe-integer.js":"../../node_modules/core-js/modules/es6.number.min-safe-integer.js","core-js/modules/es6.number.parse-float.js":"../../node_modules/core-js/modules/es6.number.parse-float.js","core-js/modules/es6.number.parse-int.js":"../../node_modules/core-js/modules/es6.number.parse-int.js","core-js/modules/es6.object.assign.js":"../../node_modules/core-js/modules/es6.object.assign.js","core-js/modules/es7.object.define-getter.js":"../../node_modules/core-js/modules/es7.object.define-getter.js","core-js/modules/es7.object.define-setter.js":"../../node_modules/core-js/modules/es7.object.define-setter.js","core-js/modules/es7.object.entries.js":"../../node_modules/core-js/modules/es7.object.entries.js","core-js/modules/es6.object.freeze.js":"../../node_modules/core-js/modules/es6.object.freeze.js","core-js/modules/es6.object.get-own-property-descriptor.js":"../../node_modules/core-js/modules/es6.object.get-own-property-descriptor.js","core-js/modules/es7.object.get-own-property-descriptors.js":"../../node_modules/core-js/modules/es7.object.get-own-property-descriptors.js","core-js/modules/es6.object.get-own-property-names.js":"../../node_modules/core-js/modules/es6.object.get-own-property-names.js","core-js/modules/es6.object.get-prototype-of.js":"../../node_modules/core-js/modules/es6.object.get-prototype-of.js","core-js/modules/es7.object.lookup-getter.js":"../../node_modules/core-js/modules/es7.object.lookup-getter.js","core-js/modules/es7.object.lookup-setter.js":"../../node_modules/core-js/modules/es7.object.lookup-setter.js","core-js/modules/es6.object.prevent-extensions.js":"../../node_modules/core-js/modules/es6.object.prevent-extensions.js","core-js/modules/es6.object.to-string.js":"../../node_modules/core-js/modules/es6.object.to-string.js","core-js/modules/es6.object.is.js":"../../node_modules/core-js/modules/es6.object.is.js","core-js/modules/es6.object.is-frozen.js":"../../node_modules/core-js/modules/es6.object.is-frozen.js","core-js/modules/es6.object.is-sealed.js":"../../node_modules/core-js/modules/es6.object.is-sealed.js","core-js/modules/es6.object.is-extensible.js":"../../node_modules/core-js/modules/es6.object.is-extensible.js","core-js/modules/es6.object.keys.js":"../../node_modules/core-js/modules/es6.object.keys.js","core-js/modules/es6.object.seal.js":"../../node_modules/core-js/modules/es6.object.seal.js","core-js/modules/es6.object.set-prototype-of.js":"../../node_modules/core-js/modules/es6.object.set-prototype-of.js","core-js/modules/es7.object.values.js":"../../node_modules/core-js/modules/es7.object.values.js","core-js/modules/es6.promise.js":"../../node_modules/core-js/modules/es6.promise.js","core-js/modules/es7.promise.finally.js":"../../node_modules/core-js/modules/es7.promise.finally.js","core-js/modules/es6.reflect.apply.js":"../../node_modules/core-js/modules/es6.reflect.apply.js","core-js/modules/es6.reflect.construct.js":"../../node_modules/core-js/modules/es6.reflect.construct.js","core-js/modules/es6.reflect.define-property.js":"../../node_modules/core-js/modules/es6.reflect.define-property.js","core-js/modules/es6.reflect.delete-property.js":"../../node_modules/core-js/modules/es6.reflect.delete-property.js","core-js/modules/es6.reflect.get.js":"../../node_modules/core-js/modules/es6.reflect.get.js","core-js/modules/es6.reflect.get-own-property-descriptor.js":"../../node_modules/core-js/modules/es6.reflect.get-own-property-descriptor.js","core-js/modules/es6.reflect.get-prototype-of.js":"../../node_modules/core-js/modules/es6.reflect.get-prototype-of.js","core-js/modules/es6.reflect.has.js":"../../node_modules/core-js/modules/es6.reflect.has.js","core-js/modules/es6.reflect.is-extensible.js":"../../node_modules/core-js/modules/es6.reflect.is-extensible.js","core-js/modules/es6.reflect.own-keys.js":"../../node_modules/core-js/modules/es6.reflect.own-keys.js","core-js/modules/es6.reflect.prevent-extensions.js":"../../node_modules/core-js/modules/es6.reflect.prevent-extensions.js","core-js/modules/es6.reflect.set.js":"../../node_modules/core-js/modules/es6.reflect.set.js","core-js/modules/es6.reflect.set-prototype-of.js":"../../node_modules/core-js/modules/es6.reflect.set-prototype-of.js","core-js/modules/es6.regexp.constructor.js":"../../node_modules/core-js/modules/es6.regexp.constructor.js","core-js/modules/es6.regexp.flags.js":"../../node_modules/core-js/modules/es6.regexp.flags.js","core-js/modules/es6.regexp.match.js":"../../node_modules/core-js/modules/es6.regexp.match.js","core-js/modules/es6.regexp.replace.js":"../../node_modules/core-js/modules/es6.regexp.replace.js","core-js/modules/es6.regexp.split.js":"../../node_modules/core-js/modules/es6.regexp.split.js","core-js/modules/es6.regexp.search.js":"../../node_modules/core-js/modules/es6.regexp.search.js","core-js/modules/es6.regexp.to-string.js":"../../node_modules/core-js/modules/es6.regexp.to-string.js","core-js/modules/es6.set.js":"../../node_modules/core-js/modules/es6.set.js","core-js/modules/es6.symbol.js":"../../node_modules/core-js/modules/es6.symbol.js","core-js/modules/es7.symbol.async-iterator.js":"../../node_modules/core-js/modules/es7.symbol.async-iterator.js","core-js/modules/es6.string.anchor.js":"../../node_modules/core-js/modules/es6.string.anchor.js","core-js/modules/es6.string.big.js":"../../node_modules/core-js/modules/es6.string.big.js","core-js/modules/es6.string.blink.js":"../../node_modules/core-js/modules/es6.string.blink.js","core-js/modules/es6.string.bold.js":"../../node_modules/core-js/modules/es6.string.bold.js","core-js/modules/es6.string.code-point-at.js":"../../node_modules/core-js/modules/es6.string.code-point-at.js","core-js/modules/es6.string.ends-with.js":"../../node_modules/core-js/modules/es6.string.ends-with.js","core-js/modules/es6.string.fixed.js":"../../node_modules/core-js/modules/es6.string.fixed.js","core-js/modules/es6.string.fontcolor.js":"../../node_modules/core-js/modules/es6.string.fontcolor.js","core-js/modules/es6.string.fontsize.js":"../../node_modules/core-js/modules/es6.string.fontsize.js","core-js/modules/es6.string.from-code-point.js":"../../node_modules/core-js/modules/es6.string.from-code-point.js","core-js/modules/es6.string.includes.js":"../../node_modules/core-js/modules/es6.string.includes.js","core-js/modules/es6.string.italics.js":"../../node_modules/core-js/modules/es6.string.italics.js","core-js/modules/es6.string.iterator.js":"../../node_modules/core-js/modules/es6.string.iterator.js","core-js/modules/es6.string.link.js":"../../node_modules/core-js/modules/es6.string.link.js","core-js/modules/es7.string.pad-start.js":"../../node_modules/core-js/modules/es7.string.pad-start.js","core-js/modules/es7.string.pad-end.js":"../../node_modules/core-js/modules/es7.string.pad-end.js","core-js/modules/es6.string.raw.js":"../../node_modules/core-js/modules/es6.string.raw.js","core-js/modules/es6.string.repeat.js":"../../node_modules/core-js/modules/es6.string.repeat.js","core-js/modules/es6.string.small.js":"../../node_modules/core-js/modules/es6.string.small.js","core-js/modules/es6.string.starts-with.js":"../../node_modules/core-js/modules/es6.string.starts-with.js","core-js/modules/es6.string.strike.js":"../../node_modules/core-js/modules/es6.string.strike.js","core-js/modules/es6.string.sub.js":"../../node_modules/core-js/modules/es6.string.sub.js","core-js/modules/es6.string.sup.js":"../../node_modules/core-js/modules/es6.string.sup.js","core-js/modules/es7.string.trim-left.js":"../../node_modules/core-js/modules/es7.string.trim-left.js","core-js/modules/es7.string.trim-right.js":"../../node_modules/core-js/modules/es7.string.trim-right.js","core-js/modules/es6.typed.array-buffer.js":"../../node_modules/core-js/modules/es6.typed.array-buffer.js","core-js/modules/es6.typed.int8-array.js":"../../node_modules/core-js/modules/es6.typed.int8-array.js","core-js/modules/es6.typed.uint8-array.js":"../../node_modules/core-js/modules/es6.typed.uint8-array.js","core-js/modules/es6.typed.uint8-clamped-array.js":"../../node_modules/core-js/modules/es6.typed.uint8-clamped-array.js","core-js/modules/es6.typed.int16-array.js":"../../node_modules/core-js/modules/es6.typed.int16-array.js","core-js/modules/es6.typed.uint16-array.js":"../../node_modules/core-js/modules/es6.typed.uint16-array.js","core-js/modules/es6.typed.int32-array.js":"../../node_modules/core-js/modules/es6.typed.int32-array.js","core-js/modules/es6.typed.uint32-array.js":"../../node_modules/core-js/modules/es6.typed.uint32-array.js","core-js/modules/es6.typed.float32-array.js":"../../node_modules/core-js/modules/es6.typed.float32-array.js","core-js/modules/es6.typed.float64-array.js":"../../node_modules/core-js/modules/es6.typed.float64-array.js","core-js/modules/es6.weak-map.js":"../../node_modules/core-js/modules/es6.weak-map.js","core-js/modules/es6.weak-set.js":"../../node_modules/core-js/modules/es6.weak-set.js","core-js/modules/web.timers.js":"../../node_modules/core-js/modules/web.timers.js","core-js/modules/web.immediate.js":"../../node_modules/core-js/modules/web.immediate.js","core-js/modules/web.dom.iterable.js":"../../node_modules/core-js/modules/web.dom.iterable.js","regenerator-runtime/runtime.js":"../../node_modules/regenerator-runtime/runtime.js","./login":"login.js","./cart":"cart.js","./address":"address.js","./order":"order.js","./stripe":"stripe.js","helmet":"../../node_modules/helmet/dist/esm/index.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -69132,7 +69672,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64723" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61435" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

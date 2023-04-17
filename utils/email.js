@@ -80,29 +80,29 @@ module.exports = class Email {
       // text: htmlToText.fromString(html)
     };
 
-    const request = {
-      Messages: [
-        {
-          From: {
-            Email:process.env.EMAIL_FROM,
-            Name: "khode"
-          },
-          To: [
-            {
-              Email:this.to,
-              Name:this.firstName
-            }
-          ],
-          subject,
-          html
-        }
-      ]
-    }
+    // const request = {
+    //   Messages: [
+    //     {
+    //       From: {
+    //         Email:process.env.EMAIL_FROM,
+    //         Name: "khode"
+    //       },
+    //       To: [
+    //         {
+    //           Email:this.to,
+    //           Name:this.firstName
+    //         }
+    //       ],
+    //       subject,
+    //       html
+    //     }
+    //   ]
+    // }
 
     // console.log(request)
     //create a transport and send email
-    // await this.newTransport().sendMail(mailOptions);
-    await this.newMailjet().sendMail(request);
+    await this.newTransport().sendMail(mailOptions);
+    // await this.newMailjet().sendMail(request);
   }
 
   
