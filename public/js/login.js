@@ -1,12 +1,9 @@
 /* eslint-disable*/
 import axios from "axios";
 import { showAlert } from "./alerts";
-import { Error } from "mongoose";
-// const showAlert = require('./alerts');
 
 export const login = async (email, password) => {
     try {
-        // console.log(res);
         const res = await axios({
             method: 'POST',
             url: '/api/v1/users/login',
@@ -15,21 +12,23 @@ export const login = async (email, password) => {
                 password
             }
         });
-        // console.log(res);
         if (res.data.status = 'success') {
             showAlert('success','Logged in successfully!');
             window.setTimeout(() => {
                 location.assign('/');
             }, 1000);
-            // alert('success');
         }
     } catch (err) {
-        console.log(Error);
-        console.error(err);
-        // console.log(err.response)
-        showAlert('error', err.response.data.message);
-        // alert(err);
-        // console.log(err);
+        if(err.response.status === 400){
+            showAlert('error', 'Please Provide email and password!');
+        }
+        else if(err.response.status === 401){
+            showAlert('error', 'Incorrect email or password');
+        }
+        else{
+            showAlert('error', 'Something went wrong!, please try later');
+        }
+        // showAlert('error', 'Please Provide email and password!');
     }
 };
 
