@@ -6,6 +6,7 @@ import { added } from "./address";
 import { noworder, cancelorder } from "./order";
 import { card } from "./stripe";
 import { contentSecurityPolicy } from 'helmet';
+import { showAlert } from "./alerts";
 // import { remove } from "./main";
 
 // require('@babel/polyfill');
@@ -26,21 +27,24 @@ const address = document.querySelector('.address');
 const add = document.querySelector('#Addaddress');
 const order = document.querySelector('.payment');
 const ordernow = document.querySelector('#order');
-const no = document.querySelector('#empty')
-const next = document.querySelector('#next')
-const cancel = document.querySelector('#cancel')
-console.log(logOutBtn);
+const no = document.querySelector('#empty');
+const next = document.querySelector('#next');
+const cancel = document.querySelector('#cancel');
+const back = document.querySelector('#backback');
+const bk = document.querySelector('#backbk');
+// console.log(logOutBtn);
 
 
 if (loginForm) 
   log.addEventListener('click', e => {
-    // console.log(loginForm);
-    // window.location.href='/'
     e.preventDefault();
     const email = document.getElementById('email').value;
     // console.log(email);
     const password = document.getElementById('password').value;
     // console.log(password);
+    document.getElementById('email').value="";
+    document.getElementById('password').value="";
+
     login(email, password);
 });
 
@@ -53,6 +57,10 @@ if (SignupForm)
     // console.log(email);
     const password = document.getElementById('signuppassword').value;
     // console.log(password);
+    document.getElementById('name').value ="";
+    document.getElementById('signupemail').value="";
+    document.getElementById('signuppassword').value="";
+
     signup(name, email, password);
 });
 
@@ -64,7 +72,7 @@ if (logOutBtn)
       e.preventDefault();
       const item = document.getElementById('it').innerText;
       const userId = document.getElementById('us');
-      console.log(item, userId);
+      Addcart.disabled = true;
       if(userId == null)
         alert('Please Login')
       else
@@ -116,6 +124,7 @@ if(order)
     var pay = document.getElementsByName('pay');
     for(var i=0; i<pay.length; i++){
       if(pay[i].checked){
+        ordernow.disabled = true;
         if(pay[i].value === 'Card'){
           var payment = pay[i].value
           const cart = document.querySelectorAll('#cart');
@@ -139,7 +148,11 @@ if(order)
           noworder(carts, user, address, payment);
         }
       }
+      else if(pay.length === i+1){
+        showAlert('error', 'Please select payment method')
+      }
     }
+
     // console.log(carts[0]);
   })
 
@@ -156,7 +169,7 @@ if(order)
         window.location.assign('/orderdetails')
       }
       else{
-        window.alert('Please Add Items to Cart for Order')
+        showAlert('error', 'Please Add Items to Cart for Order')
       }
     })
   }
@@ -164,6 +177,18 @@ if(order)
 if(cancel){
   cancel.addEventListener('click', e=>{
     const id = document.getElementById('orderid').innerText;
+    cancel.disabled = true;
     cancelorder(id);
+  })
+}
+
+if(back){
+  back.addEventListener('click', e=>{
+    window.location.assign('/myorders')
+  })
+}
+if(bk){
+  bk.addEventListener('click', e=>{
+    window.location.assign('/cart')
   })
 }

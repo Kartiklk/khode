@@ -3,6 +3,7 @@ const crypt = require('crypto');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const { stringify } = require('querystring');
+const AppError = require('./../utils/appError')
 // const { stringify } = require('querystring');
 
 
@@ -13,8 +14,8 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: [true, 'Enter the password'],
-        unique: true,
+        required: [true, 'Ente the Email'],
+        unique: [true, 'Email is already exist.'],
         lowercase: true,
         validator: [validator.isEmail, 'Please enter valid email']
     },

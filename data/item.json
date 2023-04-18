@@ -7,6 +7,7 @@
         "photo":"ruchi.jpg",
         "quantity":"1 ltr",
         "stock": 30,
+        "offer":"no",
         "description": "Ruchi Gold Refined Palm Oil is rich in Vitamin E, a natural antioxidant that prevents cell deterioration. The goodness of natural vitamins makes it a nutritious and healthy option. Refined palmolein oil. Free from argemone oil."
     },
     {
@@ -17,6 +18,7 @@
         "photo":"sunrich.jpg",
         "quantity":"1 ltr",
         "stock": 30,
+        "offer":"yes",
         "description": "Patanjali Foods Ltd Sunrich Refined Sunflower Oil is made with high quality ingredients. It is a rich source of stearic acid, oleic acid, selenium, and linoleic acid. Sunflower oil is one of the healthiest oils for cooking and is preferred for its multiple health benefits. It is healthy and perfectly easy to digest"
     },
     {
@@ -27,6 +29,7 @@
         "photo":"redlabel.jpg",
         "quantity":"100 gm",
         "stock": 30,
+        "offer":"no",
         "description": "Johnnie Walker Red Label is crackling with spice and bursting with vibrant, smoky flavours. It's a blend that combines light whiskies from Scotland's East Coast and more peaty whiskies from the West, creating an extraordinary depth of flavour."
     },
     {
@@ -38,6 +41,7 @@
         "photo":"idli.jpg",
         "quantity":"1 KG",
         "stock": 30,
+        "offer":"no",
         "description": "Vijay Gold Idli Rava is a must-have for all Indian kitchens. This premium product not only helps you prepare pillowy, soft idlis but many more delicacies like dhokla, uttapams and upmas."
     },
     {
@@ -49,6 +53,7 @@
         "photo":"sugar.jpg",
         "quantity":"1 KG",
         "stock": 50,
+        "offer":"no",
         "description": "A sweet substance that is made up wholly or mostly of sucrose, is colorless or white when pure, is obtained from plants (as sugarcane or sugar beets), is a source of dietary carbohydrate, and is used as a sweetener and preservative of other foods."
     },
     {
@@ -59,6 +64,7 @@
         "photo":"rava.jpg",
         "quantity":"1 KG",
         "stock": 50,
+        "offer":"no",
         "description": "The Special Kesari Rava offered by us are of very good quality. Our in-depth knowledge and experience of procurement procedures with advance techniques applied in production processes ensures that our food product maintains highest standards."
     },
     {
@@ -69,6 +75,7 @@
         "photo":"avalakki.jpg",
         "quantity":"1 KG",
         "stock": 50,
+        "offer":"no",
         "description": "Pohaa, also known as pauwa, sira, chira, aval or avalakki, among many other names, is flattened rice originating from the Indian subcontinent. Rice is parboiled before flattening so that it can be consumed with very little to no cooking."
     },
     {
@@ -79,17 +86,173 @@
         "photo":"aashirvaad.jpg",
         "quantity":"1 KG",
         "stock": 50,
+        "offer":"yes",
         "description": "AASHIRVAAD Whole Wheat Atta is made from the grains which are heavy on the palm, golden amber in colour and hard in bite. It is carefully ground using modern 'chakki - grinding' process which ensures that AASHIRVAAD Atta contains 0% Maida and is 100% Sampoorna Atta."
     },
     {
-        "name":"MTR Sambar Powder",
-        "price": 45,
-        "OriginalPrice": 55,
+        "name":"MTR Sambar Powder(200g)",
+        "price": 119,
+        "OriginalPrice": 135,
         "discout":"6%",
         "photo":"sambar.jpg",
+        "quantity":"200 gm",
+        "stock": 50,
+        "offer":"yes",
+        "description": "Sit back and savour the established flavor of home-made sambar. All with MTR Foods' signature recipe ended the real South Indian way. Pleasure your taste buds with this new variant of Sambar with an additional spice."
+    },
+    {
+        "name":"MTR Puliogare powder(100g)",
+        "price": 52,
+        "OriginalPrice": 65,
+        "discout":"6%",
+        "photo":"puliogare.jpg",
         "quantity":"100 gm",
         "stock": 50,
-        "description": "Sit back and savour the established flavor of home-made sambar. All with MTR Foods' signature recipe ended the real South Indian way. Pleasure your taste buds with this new variant of Sambar with an additional spice."
-    }
+        "offer":"yes",
+        "description": "MTR Puliogare Powder is completed of the superiority of well ingredients. Puliyogare or Tamarind Rice is a sharp spicy South Indian Rice range, which is identified for its long shelf life and great journey food. It will give very peppery and tangy flavour to the rice. This dish is regularly served with chutneys, pappadums, and pickles."
+    },
+    {
+        "name":"MTR Gulab Jamun(175g each)",
+        "price": 145,
+        "OriginalPrice": 208,
+        "discout":"9%",
+        "photo":"gulabjamun.jpg",
+        "quantity":"175 gm",
+        "stock": 50,
+        "offer":"no",
+        "description": "Simply make the dough into round balls, fry them until golden brown, and soak them in syrup. Its that easy. Gulab jamuns taste like pancakes saturated in a fragrant rose syrup. Serve them warm with vanilla ice cream for an extra special dessert."
+    },
+    {
+        "name":"MTR Haldi Powder(200g)",
+        "price": 65,
+        "OriginalPrice": 90,
+        "discout":"9%",
+        "photo":"haldi.jpg",
+        "quantity":"200 gm",
+        "stock": 50,
+        "offer":"no",
+        "description": "MTR turmeric powder is one of the most reliable spices as the powder is extracted from high quality turmeric known as Sangali. They are packed with care so that the spice retains its freshness, colour and flavour till it reaches your home."
+    },
+    {
+        "name":"MTR Chili Powder(500g)",
+        "price": 190,
+        "OriginalPrice": 250,
+        "discout":"9%",
+        "photo":"chili.jpg",
+        "quantity":"500 gm",
+        "stock": 50,
+        "offer":"no",
+        "description": "Chilli is the dried ripe fruit of the genus Capsicum. Capsicum annuum is an annual sub –shrub, the flowers of which are borne singly and fruits usually pendent, which provide red peppers, cayenne, paprika and chillies and sweet pepper (bell pepper) a mild form with large inflated fruits."
+    },
+    {
+        "name":"3 Roses (100g)",
+        "price": 90,
+        "OriginalPrice": 115,
+        "discout":"7%",
+        "photo":"3roses500.jpg",
+        "quantity":"100 gm",
+        "stock": 50,
+        "offer":"yes",
+        "description": " Brooke Bond 3 Roses tea is tested by professional tea tasters. It is graded and perfectly blended in Brooke Bond's unique Tea Excellence Centre giving it the perfect taste, colour, flavour and irresistible aroma."
+    },
+    {
+        "name":"Kanan Devan (250g)",
+        "price": 140,
+        "OriginalPrice": 199,
+        "discout":"9%",
+        "photo":"kanandevan.jpg",
+        "quantity":"250 gm",
+        "stock": 50,
+        "offer":"no",
+        "description": "Tata Tea Kanan Devan has handpicked teas that are grown in the Kanan Devan Hills, in Munnar, at an elevation of 5600 feet.Teas grown at this elevation and pristine nature conditions, blended by the experts, give Kanan Devan Classic the distinct fresh flavour that it is famous for Country of Origin: India"
+    },
+    {
+        "name":"Gemini (1ltr)",
+        "price": 140,
+        "OriginalPrice": 179,
+        "discout":"9%",
+        "photo":"gemini.jpg",
+        "quantity":"1 Ltr",
+        "stock": 50,
+        "offer":"no",
+        "description": " It comes with NutriFreshLock technology which helps retain the freshness and nutrients of the food for a long time. It is enriched with the added goodness of Vitamins A, D & E."
+    },
+    {
+        "name":"Bullet Rice (26 KG)",
+        "price": 1150,
+        "OriginalPrice": 1300,
+        "discout":"9%",
+        "photo":"bulletrice.jpg",
+        "quantity":"26 Kg",
+        "stock": 50,
+        "offer":"no",
+        "description": "It Is A Medium-Grain, Sweet-Smelling Rice That Is Trivial And Low In Starch. Sona Masoori Is Naturally Used In Dishes Such As Biryani, Sweet Pongal, Fried Rice And Idlis. Significant Its Nutrition Information Can Assist You Decide How It Fits Into Your Meal Plan."
+    },
+    {
+        "name":"GRB Ghee (500 gm)",
+        "price": 400,
+        "OriginalPrice": 450,
+        "discout":"9%",
+        "photo":"grb500.jpg",
+        "quantity":"500 gm",
+        "stock": 50,
+        "offer":"yes",
+        "description": "GRB Ghee is clarified butter that is usually prepared from cow's milk. It is the clean butterfat left over after the milk solids and water are removed from butter. Ghee is good supply of energy and gives energy to human body. GRB Ghee is used for cooking, garnishing and making Sweets."
+    },
+    {
+        "name":"GRB Ghee (250 gm)",
+        "price": 210,
+        "OriginalPrice": 270,
+        "discout":"9%",
+        "photo":"grb250.jpg",
+        "quantity":"250 gm",
+        "stock": 50,
+        "offer":"no",
+        "description": "GRB Ghee is clarified butter that is usually prepared from cow's milk. It is the clean butterfat left over after the milk solids and water are removed from butter. Ghee is good supply of energy and gives energy to human body. GRB Ghee is used for cooking, garnishing and making Sweets."
+    },
+    {
+        "name":"Honey (200 gm)",
+        "price": 60,
+        "OriginalPrice": 85,
+        "discout":"9%",
+        "photo":"honey.jpg",
+        "quantity":"200 gm",
+        "stock": 50,
+        "offer":"yes",
+        "description": "Honey, sweet, viscous liquid food, dark golden in colour, produced in the honey sacs of various bees from the nectar of flowers. Flavour and colour are determined by the flowers from which the nectar is gathered."
+    },
+    {
+        "name":"IndiaGate Basmati (1 Kg)",
+        "price": 260,
+        "OriginalPrice": 350,
+        "discout":"9%",
+        "photo":"indiangate.jpg",
+        "quantity":"1 Kg",
+        "stock": 50,
+        "offer":"yes",
+        "description": "India Gate Classic Basmati Rice is aged for two years which gives the grains 20% more length and 30% more servings than non-aged rice. When cooked, the grains elongate up to three times in length."
+    },
+    {
+        "name":"NO1 soap pack of 4 (100g each)",
+        "price": 109,
+        "OriginalPrice": 139,
+        "discout":"9%",
+        "photo":"no1.jpg",
+        "quantity":"100 gm each",
+        "stock": 50,
+        "offer":"yes",
+        "description": "Contains: 5 units of Godrej No. 1 Bathing Soap, Sandal & Turmeric (100g each), HIGH QUALITY: high TFM (Grade 1 soap) that keeps your skin healthy and glowing ,NATURAL INGREDIENTS: enriched with natural ingredients to make your skin naturally beautiful"
+    },
+    {
+        "name":"Santoor soap pack of 4 (100g each)",
+        "price": 109,
+        "OriginalPrice": 139,
+        "discout":"9%",
+        "photo":"no1.jpg",
+        "quantity":"100 gm each",
+        "stock": 50,
+        "offer":"yes",
+        "description": "Contains: 5 units of Godrej No. 1 Bathing Soap, Sandal & Turmeric (100g each), HIGH QUALITY: high TFM (Grade 1 soap) that keeps your skin healthy and glowing ,NATURAL INGREDIENTS: enriched with natural ingredients to make your skin naturally beautiful"
+    },
 
 ]

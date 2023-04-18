@@ -93,6 +93,7 @@ module.exports = (err, req, res, next) => {
     let error = JSON.stringify(err);
     error = JSON.parse(error);
     error.message = err.message;
+    console.log(error.message);
     if (error.name === 'CastError') error = handleCastErrorDB(error);
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
     if (error.name === 'ValidationError')

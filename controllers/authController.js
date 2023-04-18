@@ -35,6 +35,13 @@ const createsendToken = (user, statuscode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res , next)=> {
+    const {name, email, password} = req.body;
+    if(name==='' || email==='' || password===''){
+      return next(new AppError('Please enter the name, email and password!', 400))
+    }
+    if(await User.findOne({ email })){
+      return next(new AppError('Please enter the name, email and password!', 401))
+    }
     const newUser = await User.create(req.body);
 
     const url = `${req.protocol}://${req.get('host')}/itemslist`;

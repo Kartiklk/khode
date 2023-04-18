@@ -32,7 +32,7 @@ exports.item = catchAsync(async(req, res, next) => {
 
     const item = await query;
     res.status(201).render('item', {
-        title: "One item",
+        title: item.name,
         item
     })
 });

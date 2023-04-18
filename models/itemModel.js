@@ -33,6 +33,10 @@ const itemSchema = new mongoose.Schema(
             type: Number,
             requied: [true, 'Mention the stock']
         },
+        offer:{
+            type:String,
+            default:'no'
+        },
         description: {
             type: String,
         }

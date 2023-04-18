@@ -28,7 +28,7 @@ export const login = async (email, password) => {
         else{
             showAlert('error', 'Something went wrong!, please try later');
         }
-        // showAlert('error', 'Please Provide email and password!');
+        // showAlert('error', err.response.data.message);
     }
 };
 
@@ -56,7 +56,7 @@ export const signup = async (name, email, password) => {
                 password
             }
         });
-        // console.log(email, password);
+        console.log(res);
         if (res.data.status === 'success') {
             showAlert('success','Signup in successfully!');
             window.setTimeout(() => {
@@ -66,8 +66,16 @@ export const signup = async (name, email, password) => {
     } 
    }
       catch (err) {
-        showAlert('error',err.response.data.message);
-        // alert('error')
+        if(err.response.status === 400){
+            showAlert('error', 'Please Provide name, email and password!');
+        }
+        else if(err.response.status === 401){
+            showAlert('error', 'Email is already exist!, Login now');
+        }
+        else{
+            showAlert('error', 'Something went wrong!, please try again later');
+        }
+        // showAlert('error',err.response.data.message);
     }
 
 };
