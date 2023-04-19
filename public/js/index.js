@@ -122,6 +122,7 @@ if(order)
     const user = document.getElementById('user').innerText;
     const address = document.getElementById('addr').innerText;
     var pay = document.getElementsByName('pay');
+    console.log(pay);
     for(var i=0; i<pay.length; i++){
       if(pay[i].checked){
         ordernow.disabled = true;

@@ -240,19 +240,63 @@
         "photo":"no1.jpg",
         "quantity":"100 gm each",
         "stock": 50,
-        "offer":"yes",
+        "offer":"no",
         "description": "Contains: 5 units of Godrej No. 1 Bathing Soap, Sandal & Turmeric (100g each), HIGH QUALITY: high TFM (Grade 1 soap) that keeps your skin healthy and glowing ,NATURAL INGREDIENTS: enriched with natural ingredients to make your skin naturally beautiful"
     },
     {
-        "name":"Santoor soap pack of 4 (100g each)",
-        "price": 109,
-        "OriginalPrice": 139,
+        "name":"Santoor soap pack of 4 (150g each)",
+        "price": 152,
+        "OriginalPrice": 199,
         "discout":"9%",
-        "photo":"no1.jpg",
-        "quantity":"100 gm each",
+        "photo":"santore.jpg",
+        "quantity":"150 gm each",
+        "stock": 50,
+        "offer":"no",
+        "description":"It consists of Sandalwood, which is suitable for dry and oily skin types. It has antimicrobial properties, making it a popular herbal antiseptic for treating minor skin abrasions. It also removes tanning, cures skin itching and detoxifies the skin."
+        },
+    {
+        "name":"Rin soap pack of 6 (250g each)",
+        "price": 104,
+        "OriginalPrice": 120,
+        "discout":"9%",
+        "photo":"rin.jpg",
+        "quantity":"250 gm each",
         "stock": 50,
         "offer":"yes",
-        "description": "Contains: 5 units of Godrej No. 1 Bathing Soap, Sandal & Turmeric (100g each), HIGH QUALITY: high TFM (Grade 1 soap) that keeps your skin healthy and glowing ,NATURAL INGREDIENTS: enriched with natural ingredients to make your skin naturally beautiful"
-    },
+        "description":"Rin soap bar removes the dirt from the toughest places like cuff and collar with just one stroke. It also leaves your clothes with a pleasant fragrance to keep you feeling fresh all day long"
+        },
+    {
+        "name":"Wheel soap pack of 6 (180g each)",
+        "price": 55,
+        "OriginalPrice": 60,
+        "discout":"9%",
+        "photo":"wheel.jpg",
+        "quantity":"180 gm each",
+        "stock": 50,
+        "offer":"yes",
+        "description":"Active Wheel comes packed with the power of real lemons and flowers. It removes visible dirt and kills invisible bacteria, and leaves behind a trail of floral freshness."
+        },
+    {
+        "name":"SurfExcel soap pack of 6 (150 each)",
+        "price": 120,
+        "OriginalPrice": 132,
+        "discout":"5%",
+        "photo":"surfexecl.jpg",
+        "quantity":"150 gm each",
+        "stock": 50,
+        "offer":"yes",
+        "description":"Surf Excel is one of the famed names for removing stubborn stains or grease from the clothes, making them look new and shinier everytime. Surf Excel Detergent Bar 250g is a powerful combination of bleach, vinegar, lemon and blue which altogether offers great cleaning."
+        },
+    {
+        "name":"SurfExcel Detergent (500 gm)",
+        "price": 120,
+        "OriginalPrice": 132,
+        "discout":"5%",
+        "photo":"surfpowder.jpg",
+        "quantity":"500 gm",
+        "stock": 50,
+        "offer":"no",
+        "description":"The superior technology of Surf excel Quick Wash removes a variety of common tough stains like oil, ketchup, chocolate, curry stains, tea etc. With X-tra cleaning particles, it makes for the perfect wash."
+        }
 
 ]

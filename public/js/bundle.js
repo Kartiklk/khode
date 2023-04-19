@@ -69611,6 +69611,7 @@ if (order) ordernow.addEventListener('click', function (e) {
   var user = document.getElementById('user').innerText;
   var address = document.getElementById('addr').innerText;
   var pay = document.getElementsByName('pay');
+  console.log(pay);
   for (var i = 0; i < pay.length; i++) {
     if (pay[i].checked) {
       ordernow.disabled = true;
@@ -69701,7 +69702,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65083" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59722" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

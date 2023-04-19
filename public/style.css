@@ -116,7 +116,7 @@ button.btn{
 }
 #s2 .card{
     width: 6cm;
-    height: 8cm;
+    height: 9cm;
     padding: 5px;
     border: 1px black;
     border-style: solid;
@@ -245,7 +245,7 @@ footer .links a{
 }
 #i1 .item{
     width: 5.5cm;
-    height: 9cm;
+    height: 9.5cm;
     border-radius: 5px;
     margin: 1cm;
     transition: .5s ease;
@@ -274,8 +274,7 @@ footer .links a{
 #d1 img{
     width: 30%;
     height: 400px;
-    margin-left: 10cm;
-
+    margin-left: 13cm;
 }
 #d2 h1{
     font-size: 1cm;
