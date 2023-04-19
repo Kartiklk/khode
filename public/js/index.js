@@ -9,10 +9,6 @@ import { contentSecurityPolicy } from 'helmet';
 import { showAlert } from "./alerts";
 // import { remove } from "./main";
 
-// require('@babel/polyfill');
-// const { login, logout } = require('./login')
-
-
 //dom elements
 const loginForm = document.querySelector('.loginform');
 const SignupForm = document.querySelector('.signupfrom');
@@ -32,16 +28,15 @@ const next = document.querySelector('#next');
 const cancel = document.querySelector('#cancel');
 const back = document.querySelector('#backback');
 const bk = document.querySelector('#backbk');
-// console.log(logOutBtn);
+const ct = document.querySelector('#signnow');
+const my = document.querySelector('#lognow');
 
 
 if (loginForm) 
   log.addEventListener('click', e => {
     e.preventDefault();
     const email = document.getElementById('email').value;
-    // console.log(email);
     const password = document.getElementById('password').value;
-    // console.log(password);
     document.getElementById('email').value="";
     document.getElementById('password').value="";
 
@@ -52,11 +47,8 @@ if (SignupForm)
   sign.addEventListener('click', e => {
     e.preventDefault();
     const name = document.getElementById('name').value;
-    // console.log(name);
     const email = document.getElementById('signupemail').value;
-    // console.log(email);
     const password = document.getElementById('signuppassword').value;
-    // console.log(password);
     document.getElementById('name').value ="";
     document.getElementById('signupemail').value="";
     document.getElementById('signuppassword').value="";
@@ -70,15 +62,16 @@ if (logOutBtn)
   if(Item)
     Addcart.addEventListener('click', e=>{
       e.preventDefault();
-      const item = document.getElementById('it').innerText;
       const userId = document.getElementById('us');
-      Addcart.disabled = true;
-      if(userId == null)
-        alert('Please Login')
-      else
+      if(userId === null){
+        showAlert('error', 'Your not logged in!, Please login now')
+      }
+      else{
         var user = userId.innerText
-        // console.log(user);
+        const item = document.getElementById('it').innerText;
+        Addcart.disabled = true;
         cart(item, user)
+      }
     })
 
 if(remove)
@@ -100,7 +93,6 @@ if(total)
     var price = total[i].innerText;
     tprice=parseInt(tprice)+parseInt(price);
     document.getElementById('total').innerText= tprice;
-    // order(tprice);
   }
 
 if(address)
@@ -141,11 +133,7 @@ if(order)
           var carts = new Array();
           for(var j=0; j<cart.length; j++){
             carts[j]=cart[j].innerText;
-            // console.log(cart[j].innerText, user, address, pay[i].value);
-            // console.log(carts[0]);
           }
-          // return carts;
-          // console.log(carts);
           noworder(carts, user, address, payment);
         }
       }
@@ -153,15 +141,7 @@ if(order)
         showAlert('error', 'Please select payment method')
       }
     }
-
-    // console.log(carts[0]);
   })
-
-  // function temp(carts){
-  //   for(var j=0; j<carts.length; j++){
-  //     console.log(carts[j]);
-  //   }
-  // }
 
   if(next){
     next.addEventListener('click', e=>{
@@ -185,11 +165,26 @@ if(cancel){
 
 if(back){
   back.addEventListener('click', e=>{
+    e.preventDefault();
     window.location.assign('/myorders')
   })
 }
 if(bk){
   bk.addEventListener('click', e=>{
+    e.preventDefault();
     window.location.assign('/cart')
+  })
+}
+
+if(ct){
+  ct.addEventListener('click', e=>{
+    e.preventDefault();
+    showAlert('error', 'Please Login to See Cart')
+  })
+}
+if(my){
+  my.addEventListener('click', e=>{
+    e.preventDefault();
+    showAlert('error', 'Please Login to See Your Orders')
   })
 }

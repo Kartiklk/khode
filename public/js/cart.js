@@ -41,7 +41,6 @@ export const removeId = async (id) => {
             }, 1000);
         }
     } catch (err) {
-        // showAlert('error',err.response.data.message);
-        console.log(err);
+        showAlert('error',err.response.data.message);
     }
 };

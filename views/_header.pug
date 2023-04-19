@@ -7,9 +7,15 @@ section#header
     li
       a(href='/itemslist') Items
     li
-      a(href='/cart') Cart
+      if user
+        a(href='/cart') Cart
+      else 
+        a#signnow(href='#') Cart
     li
-      a(href='/myorders') My Order
+      if user
+        a(href='/myorders') My Order
+      else 
+        a#lognow(href='#') My Order
   .right
     input#search(type='text' placeholder='search')
     button.btn(type='submit') SEARCH
