@@ -24,6 +24,12 @@ export const added = async (name, phone, address, city, state, citycode, user) =
             }, 1000);
         }
     } catch (err) {
-        showAlert('error',err.response.data.message);
+        if(err.response.status === 401){
+            showAlert('error', 'User Address Already Exist!');
+        }
+        else{
+            showAlert('error', 'Something Went Worng!');
+        }
+        // showAlert('error',err.response.data.message);
     }
 };

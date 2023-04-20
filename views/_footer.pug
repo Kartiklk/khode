@@ -21,6 +21,10 @@ footer
     h1 Links
     a(href='/') Home
     a(href='/itemslist') Shop
-    a(href='/cart') Cart
-    a(href='/myorders') My orders
+    if user
+      a(href='/cart') Cart
+      a(href='/myorders') My Orders
+    else 
+      a(href='#') Cart
+      a(href='#') My Orders
   p Khode &copy 2023. All right reserved

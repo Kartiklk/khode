@@ -33,7 +33,7 @@ block content
           #card.card
             img(src=`img/genaral/${item.photo}` alt='')
             h3#title=item.name
-            h4#itemprice=item.price
+            h4#itemprice=`Rs.${item.price}`
             //- a.item(href='#') Add Cart
             button.btn(type='button') Add Cart
   //- script(src='js/main.js')

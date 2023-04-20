@@ -9,7 +9,7 @@ block content
           img(src=`img/genaral/${item.photo}` alt='')
           ul
             li=item.name
-            li=item.price 
+            li=`Rs.${item.price}`
             li=item.discount
             li Hurry Up
 //- script(src='js/main.js')

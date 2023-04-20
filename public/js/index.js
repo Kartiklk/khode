@@ -105,7 +105,11 @@ if(address)
     const state = document.getElementById('state').value;
     const pincode = document.getElementById('pincode').value;
     const user = document.getElementById('user').innerText;
-    added(name, phone, addre, city, state, pincode, user);
+    if(name===""||phone===""||addre===""||city===""||state===""||pincode===""){
+      showAlert('error', 'Please fill the address form correctly!')
+    }else{
+      added(name, phone, addre, city, state, pincode, user);
+    }
   })
   
 if(order)
@@ -115,7 +119,7 @@ if(order)
     const address = document.getElementById('addr').innerText;
     var pay = document.getElementsByName('pay');
     console.log(pay);
-    for(var i=0; i<pay.length; i++){
+    for(var i=0; i<=pay.length; i++){
       if(pay[i].checked){
         ordernow.disabled = true;
         if(pay[i].value === 'Card'){
@@ -137,7 +141,7 @@ if(order)
           noworder(carts, user, address, payment);
         }
       }
-      else if(pay.length === i+1){
+      else if(pay.length >= i+1){
         showAlert('error', 'Please select payment method')
       }
     }
