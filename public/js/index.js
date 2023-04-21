@@ -30,6 +30,7 @@ const back = document.querySelector('#backback');
 const bk = document.querySelector('#backbk');
 const ct = document.querySelector('#signnow');
 const my = document.querySelector('#lognow');
+const menu = document.querySelector('#menu');
 
 
 if (loginForm) 
@@ -119,33 +120,36 @@ if(order)
     const address = document.getElementById('addr').innerText;
     var pay = document.getElementsByName('pay');
     console.log(pay);
-    for(var i=0; i<=pay.length; i++){
-      if(pay[i].checked){
-        ordernow.disabled = true;
-        if(pay[i].value === 'Card'){
-          var payment = pay[i].value
-          const cart = document.querySelectorAll('#cart');
-          var carts = new Array();
-          for(var j=0; j<cart.length; j++){
-            carts[j]=cart[j].innerText;
+    for(var i=0; i<pay.length; i++){
+      console.log(pay[i].checked, i);
+        if(pay[i].checked){
+          ordernow.disabled = true;
+          if(pay[i].value === 'Card'){
+            var payment = pay[i].value
+            const cart = document.querySelectorAll('#cart');
+            var carts = new Array();
+            for(var j=0; j<cart.length; j++){
+              carts[j]=cart[j].innerText;
+            }
+            card(carts, user, address, payment);
+            break;
           }
-          card(carts, user, address, payment);
+          else{
+            var payment = pay[i].value
+            const cart = document.querySelectorAll('#cart');
+            var carts = new Array();
+            for(var j=0; j<cart.length; j++){
+              carts[j]=cart[j].innerText;
+            }
+            noworder(carts, user, address, payment);
+            break;
+          }
         }
-        else{
-          var payment = pay[i].value
-          const cart = document.querySelectorAll('#cart');
-          var carts = new Array();
-          for(var j=0; j<cart.length; j++){
-            carts[j]=cart[j].innerText;
-          }
-          noworder(carts, user, address, payment);
+        else if(i+1>=pay.length){
+          showAlert('error', 'Please select payment method')
         }
       }
-      else if(pay.length >= i+1){
-        showAlert('error', 'Please select payment method')
-      }
-    }
-  })
+    })
 
   if(next){
     next.addEventListener('click', e=>{
@@ -190,5 +194,25 @@ if(my){
   my.addEventListener('click', e=>{
     e.preventDefault();
     showAlert('error', 'Please Login to See Your Orders')
+  })
+}
+
+
+if(menu){
+  var right = document.getElementById('right').style.display = 'none';
+  var list = document.getElementById('list').style.display = 'none';
+  menu.addEventListener('click', e=>{
+    if(list == 'none' && right == 'none'){
+      list = document.getElementById('list').style.display = 'block';
+      right = document.getElementById('right').style.display = 'block';
+      document.getElementById('list').style.maxHeight = '130px';
+      document.getElementById('right').style.maxHeight = '130px';
+    }
+    else{
+      list = document.getElementById('list').style.display = 'none';
+      right = document.getElementById('right').style.display = 'none';
+      document.getElementById('list').style.maxHeight = '0px';
+      document.getElementById('right').style.maxHeight = '0px';
+    }
   })
 }

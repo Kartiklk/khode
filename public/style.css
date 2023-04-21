@@ -30,6 +30,9 @@ button.btn{
     height: 80px;
     padding: 10px 30px;
 }
+#header #menu{
+    display: none;
+}
 
 #header ul{
     display: flex;
@@ -719,12 +722,6 @@ footer .links a{
     font-size: .5cm;
     padding: 10px;
 }
-.cap{
-    background-image: url(img/back.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .alert {
     position: fixed;
     top: 0;
@@ -855,4 +852,78 @@ footer .links a{
 }
 #o2 h6{
     display: none;
+}
+
+@media only screen and (max-width:700px) {
+    body{
+        width: 100%;
+    }
+    #header{    
+        position: sticky;
+        display: flex;
+        width: 125%;
+        top: 0;
+        right: 0;
+        justify-content:space-between;
+    }
+    #header .logo img{
+        width: 150px;
+        height: 100px;
+        padding: 10px 30px;
+    }
+    #header #menu{
+        display: block;
+    }
+    #header ul{
+        display: none;
+        margin-top: 1cm;
+        justify-content: space-around;
+    }
+    #header ul li{
+        background-color: #f7f7f7;
+        overflow: auto;
+        padding: 20px;
+        width: 100%;
+    }
+    #header .right{
+        display: none;
+    }
+    #s1 h1{
+        font-size: .9cm;
+        text-align: center;
+        margin-right: -7cm;
+    }
+    #s2{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        margin-right: -5cm;
+        margin-left: -2cm;
+        /* gap: -2cm; */
+    }
+    #s3 h1{
+        font-size: 1.4cm;
+        text-align: center;
+        margin-right: -2cm;
+        margin-left: -4cm;
+    }
+    #s3 h2{
+        font-size: .9cm;
+        text-align: center;
+        margin-right: -7cm;
+    }
+    footer{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-right: -7cm;
+    }
+    footer p{
+        margin-bottom: 1cm;
+    }
+    #i1{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1cm;
+        align-items: center;
+    }
 }

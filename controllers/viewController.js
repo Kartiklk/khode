@@ -84,7 +84,7 @@ exports.myorders = catchAsync(async(req, res, next) =>{
         // }
         // const temp = orders.populate('carts');
         // const cart = cartID.map(el => el.item);
-        console.log(orders)
+        // console.log(orders)
         const temp = new Array();
         for(var i=0; i<orders.length; i++){
              temp[i] = orders[i];

@@ -24,3 +24,29 @@ section#header
     else 
       button.btn(type='submit' id='logout') Logout
       h3=user.name.split(' ')[0]
+
+  ul#list
+    li
+      a(href='/') Home
+    li
+      a(href='/itemslist') Items
+    li
+      if user
+        a(href='/cart') Cart
+      else 
+        a#signnow(href='#') Cart
+    li
+      if user
+        a(href='/myorders') My Order
+      else 
+        a#lognow(href='#') My Order
+  .right#right
+    input#search(type='text' placeholder='search')
+    button.btn(type='submit') SEARCH
+    if !user
+      a(href='/login') LOGIN
+    else 
+      button.btn(type='submit' id='logout') Logout
+      h3=user.name.split(' ')[0]
+  .logo#menu
+    img(src='/img/bar.png' alt='')
