@@ -15,6 +15,7 @@ const SignupForm = document.querySelector('.signupfrom');
 const log = document.querySelector('#loginnow');
 const sign = document.querySelector('#signup');
 const logOutBtn = document.querySelector('#logout');
+const logOut = document.querySelector('#logOut');
 const Item = document.querySelector('#d2');
 const Addcart = document.querySelector('#tocart');
 const total = document.querySelectorAll('.price')
@@ -30,6 +31,8 @@ const back = document.querySelector('#backback');
 const bk = document.querySelector('#backbk');
 const ct = document.querySelector('#signnow');
 const my = document.querySelector('#lognow');
+const CT = document.querySelector('#signNow');
+const MY = document.querySelector('#logNow');
 const menu = document.querySelector('#menu');
 
 
@@ -59,6 +62,9 @@ if (SignupForm)
 
 if (logOutBtn)
   logOutBtn.addEventListener('click', logout);
+
+if (logOut)
+  logOut.addEventListener('click', logout);
 
   if(Item)
     Addcart.addEventListener('click', e=>{
@@ -196,23 +202,35 @@ if(my){
     showAlert('error', 'Please Login to See Your Orders')
   })
 }
+if(CT){
+  CT.addEventListener('click', e=>{
+    e.preventDefault();
+    showAlert('error', 'Please Login to See Cart')
+  })
+}
+if(MY){
+  MY.addEventListener('click', e=>{
+    e.preventDefault();
+    showAlert('error', 'Please Login to See Your Orders')
+  })
+}
 
 
 if(menu){
-  var right = document.getElementById('right').style.display = 'none';
+  // var right = document.getElementById('right').style.display = 'none';
   var list = document.getElementById('list').style.display = 'none';
   menu.addEventListener('click', e=>{
-    if(list == 'none' && right == 'none'){
+    if(list == 'none'){
       list = document.getElementById('list').style.display = 'block';
-      right = document.getElementById('right').style.display = 'block';
-      document.getElementById('list').style.maxHeight = '130px';
-      document.getElementById('right').style.maxHeight = '130px';
+      // right = document.getElementById('right').style.display = 'block';
+      // document.getElementById('list').style.maxHeight = '130px';
+      // document.getElementById('right').style.maxHeight = '130px';
     }
     else{
       list = document.getElementById('list').style.display = 'none';
-      right = document.getElementById('right').style.display = 'none';
-      document.getElementById('list').style.maxHeight = '0px';
-      document.getElementById('right').style.maxHeight = '0px';
+      // right = document.getElementById('right').style.display = 'none';
+      // document.getElementById('list').style.maxHeight = '0px';s
+      // document.getElementById('right').style.maxHeight = '0px';
     }
   })
 }

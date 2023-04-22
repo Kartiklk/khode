@@ -69523,6 +69523,7 @@ var SignupForm = document.querySelector('.signupfrom');
 var log = document.querySelector('#loginnow');
 var sign = document.querySelector('#signup');
 var logOutBtn = document.querySelector('#logout');
+var logOut = document.querySelector('#logOut');
 var Item = document.querySelector('#d2');
 var Addcart = document.querySelector('#tocart');
 var total = document.querySelectorAll('.price');
@@ -69538,6 +69539,8 @@ var back = document.querySelector('#backback');
 var bk = document.querySelector('#backbk');
 var ct = document.querySelector('#signnow');
 var my = document.querySelector('#lognow');
+var CT = document.querySelector('#signNow');
+var MY = document.querySelector('#logNow');
 var menu = document.querySelector('#menu');
 if (loginForm) log.addEventListener('click', function (e) {
   e.preventDefault();
@@ -69558,6 +69561,7 @@ if (SignupForm) sign.addEventListener('click', function (e) {
   (0, _login.signup)(name, email, password);
 });
 if (logOutBtn) logOutBtn.addEventListener('click', _login.logout);
+if (logOut) logOut.addEventListener('click', _login.logout);
 if (Item) Addcart.addEventListener('click', function (e) {
   e.preventDefault();
   var userId = document.getElementById('us');
@@ -69676,20 +69680,32 @@ if (my) {
     (0, _alerts.showAlert)('error', 'Please Login to See Your Orders');
   });
 }
+if (CT) {
+  CT.addEventListener('click', function (e) {
+    e.preventDefault();
+    (0, _alerts.showAlert)('error', 'Please Login to See Cart');
+  });
+}
+if (MY) {
+  MY.addEventListener('click', function (e) {
+    e.preventDefault();
+    (0, _alerts.showAlert)('error', 'Please Login to See Your Orders');
+  });
+}
 if (menu) {
-  var right = document.getElementById('right').style.display = 'none';
+  // var right = document.getElementById('right').style.display = 'none';
   var list = document.getElementById('list').style.display = 'none';
   menu.addEventListener('click', function (e) {
-    if (list == 'none' && right == 'none') {
+    if (list == 'none') {
       list = document.getElementById('list').style.display = 'block';
-      right = document.getElementById('right').style.display = 'block';
-      document.getElementById('list').style.maxHeight = '130px';
-      document.getElementById('right').style.maxHeight = '130px';
+      // right = document.getElementById('right').style.display = 'block';
+      // document.getElementById('list').style.maxHeight = '130px';
+      // document.getElementById('right').style.maxHeight = '130px';
     } else {
       list = document.getElementById('list').style.display = 'none';
-      right = document.getElementById('right').style.display = 'none';
-      document.getElementById('list').style.maxHeight = '0px';
-      document.getElementById('right').style.maxHeight = '0px';
+      // right = document.getElementById('right').style.display = 'none';
+      // document.getElementById('list').style.maxHeight = '0px';s
+      // document.getElementById('right').style.maxHeight = '0px';
     }
   });
 }
@@ -69718,7 +69734,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58023" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52935" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

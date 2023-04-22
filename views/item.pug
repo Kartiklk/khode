@@ -6,14 +6,14 @@ block content
     img(src=`/img/genaral/${item.photo}` alt=item.name)
     hr
   section#d2
-    //- h1=item.name
-    h2=item.price
+    h1=item.name
+    h2=`Rs. ${item.price}`
     h4=item.discount
     h3 In Stock
     p#it=item.id
     button#tocart(type='button') Add cart
     if user
-      h1#us=user.id
+      h6#us=user.id
   hr
   section#desc
     p

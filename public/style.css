@@ -322,7 +322,7 @@ footer .links a{
 #d2 p{
     display: none;
 }
-#d2 h1{
+#d2 h6{
     display: none;
 }
 #d2 button:hover{
@@ -853,43 +853,70 @@ footer .links a{
 #o2 h6{
     display: none;
 }
+#drop{
+    display: none;
+}
 
 @media only screen and (max-width:700px) {
     body{
         width: 100%;
     }
-    #header{    
+    #drop{    
         position: sticky;
         display: flex;
-        width: 90%;
+        width: 100%;
         top: 0;
         right: 0;
         justify-content:space-between;
     }
     #header .logo img{
-        width: 100px;
+        width: 80px;
         height: 80px;
         padding: 10px 10px;
+        position: static;
     }
     #header #menu{
+        position: sticky;
         display: block;
     }
     #header ul{
         display: none;
-        margin-top: 1cm;
-        justify-content: space-around;
     }
-    #header ul li{
-        background-color: #f7f7f7;
-        overflow: auto;
-        padding: 20px;
+    #drop #list{
         width: 100%;
+        display: none;
+        /* margin-top: 1cm; */
+        justify-content: space-around;
+        background-color: #f7f7f7;
+        backdrop-filter: blur(25px);
+        overflow: auto;
+        text-align: center;
+        font-size: .5cm;
+    }
+    #drop ul li{
+        /* background-color: transparent;
+        backdrop-filter: blur(10px);
+        overflow: auto; */
+        padding: 10px;
+        list-style: none;
+        /* width: 100%; */
+    }
+    #drop ul li a{
+        color: #000000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    #drop ul li h3{
+        padding: 20px 10px;
+        font-size: 25px;
+        color: black;
+        transition: .3s ease;
     }
     #header .right{
         display: none;
     }
     #s1 h1{
-        width: 90%;
+        width: 100%;
         font-size: .5cm;
         text-align: center;
         margin-right: 0cm;
@@ -916,20 +943,20 @@ footer .links a{
         margin-bottom: 20px;
     }
     #s3 h1{
-        width: 90%;
+        width: 100%;
         font-size: 1cm;
         text-align: center;
         /* margin-right: 2cm; */
         /* margin-left: -4cm; */
     }
     #s3 h2{
-        width: 90%;
+        width: 100%;
         font-size: .7cm;
         text-align: center;
         /* margin-right: -7cm; */
     }
     footer{
-        width: 90%;
+        width: 100%;
         display: grid;
         grid-template-columns: auto;
         /* margin-right: -7cm; */
@@ -947,7 +974,435 @@ footer .links a{
     #i1{
         display: grid;
         grid-template-columns: auto auto;
-        gap: 1cm;
-        align-items: center;
     }
+    #i1 .item{
+        margin-bottom: -1.2cm;
+        margin-left: .4cm;
+        width: 3cm;
+        height: 5.4cm;
+    }
+    #i1 .item img{
+        width: 100%;
+        height: 2.5cm;
+        border: 1px black;
+        border-style: solid;
+        border-radius: 2px;
+    }
+    #i1 .item a ul li{
+        list-style: none;
+        font-size: .4cm;
+        font-family: 'Times New Roman', Times, serif;
+        padding-top: 5px;
+        color: black;
+        margin-left: 10px;
+    }
+    #d1 img{
+        width: 60%;
+        height: 200px;
+        margin-left: 1.5cm;
+    }
+    #d2 h1{
+        font-size: .7cm;
+        margin-left: .5cm;
+        padding: 10px 0 0 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #d2 h2{
+        font-size: .5cm;
+        margin-left: .5cm;
+        padding: 10px 0 0 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #d2 h4{
+        font-size: .4cm;
+        margin-left: .5cm;
+        padding: 10px 0 0 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #d2 h3{
+        font-size: .6cm;
+        margin-left: .5cm;
+        padding: 10px 0 0 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #d2 a{
+        font-size: .8cm;
+        margin-left: .5cm;
+        transition: 1s ease;
+        color: black;
+        padding: 7px;
+    }
+    #d2 button{
+        font-size: .6cm;
+        padding: 5px;
+        margin-left: .5cm;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        transition: 1s ease;
+    }
+    #desc p{
+        padding: 10px 0;
+        margin-left: .5cm;
+        font-size: .5cm;
+    }
+    #c1{
+        font-size: .8cm;
+        text-align: center;
+    }
+    #c1 h2{
+        font-size: .6cmss;
+    }
+    #c3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    #c3 .total{
+        width: 2cm;
+        height: 1cm;
+        border: 1px black;
+        border-style: solid;
+        border-radius: 3px;
+    }
+    #c3 .total h1, h2{
+        font-size: .4cm;
+    }
+    #c3 a{
+        color: black;
+        font-size: .5cm;
+        padding: 10px;
+        text-decoration: none;
+        border: 1px black;
+        border-style: solid;
+        border-radius: 3px;
+        /* margin-right: 50px; */
+        transition: 1s ease;
+    }
+    #c4 .cart-content{
+        margin-left: .4cm;
+        width: 90%;
+        background-color: rgb(240, 240, 240);
+        margin-top: .5cm;
+        margin-bottom: .5cm;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s ease;
+    }
+    #c4 img{
+        height: 80px;
+        width: 80px;
+        padding: 10px;
+    }
+    #c4 h1{
+        font-size: .4cm;
+    }
+    #c4 a{
+        color: black;
+        font-size: .4cm;
+        transition: 1s ease;
+    }
+    #o1 h1{
+        text-align: center;
+        font-size: 1cm;
+        padding: 8px 0;
+        font-weight: bold;
+    }
+    #o1 table{
+        align-items: center;
+        font-size: .4cm;
+        margin-left: .5cm;
+    }
+    #o1 table th{
+        font-size: .7cm;
+        font-weight: bold;
+        padding: 8px 0;
+    }
+    #o1 table td{
+        padding: 8px 0;
+    }
+    #o1 table input{
+        padding: 3px;
+    }
+    #o1 table select{
+        padding: 3px;
+    }
+    #o1 table button{
+        padding: 3px;
+        font-size: .4cm;
+        font-weight: bold;
+    }
+    #o1 .total_price p{
+        text-align: center;
+        padding: 9px 0;
+        font-size: .7cm;
+    }
+    #o2 h1{
+        text-align: center;
+        font-size: .8cm;
+        font-weight: bold;
+        padding: 8px 0;
+    }
+    #o2 table{
+        font-size: .6cm;
+        padding: 8px 4px;
+        margin-left: .5cm;
+    }
+    #o2 table input{
+        margin-right: 3px;
+        size: .7cm;
+    }
+    #o2 table td{
+        padding: 8px;
+        size: .7cm;
+    }
+    #o2 .order_footer{
+        margin-left: .5cm;
+    }
+    #o2 .order_footer button{
+        font-size: .5cm;
+        padding: 6px;
+        margin: .5cm;
+        justify-content: space-around;
+    }
+    #o3 {
+        text-align: center;
+        padding: 8px 0;
+    }
+    .headline h1{
+        text-align: center;
+        font-size: 1cm;
+        font-weight: bold;
+        padding: 8px 0px;
+    }
+    .no-orders h1{
+        text-align: center;
+        font-size: .8cm;
+        font-weight: bold;
+        padding: 8px 0px;
+
+    }
+    #my1 .my-content{
+        margin-left: .5cm;
+        width: 90%;
+        height: 2cm;
+        background-color: rgb(240, 240, 240);
+        margin-top: .5cm;
+        margin-bottom: .5cm;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s ease;
+    }
+    #my1 a{
+        color: black;
+        font-size: .4cm;
+        text-decoration: none;
+        gap: 1cm;
+    }
+    .heading h1{
+        text-align: center;
+        font-size: 1cm;
+        font-weight: bold;
+    }
+    #m1 h1{
+        text-align: center;
+        font-size: .7cm;
+        font-weight: bold;
+    }
+    #m1 .mybody{
+        /* align-items; */
+        display: grid;
+        grid-template-columns:auto auto;
+        justify-content: center;
+        /* margin-bottom: -1cm; */
+    }
+    #m1 .item{
+        width: 3cm;
+        height: 5cm;
+        border-radius: 5px;
+        margin-bottom: -.5cm;
+        transition: .5s ease;
+    }
+    #m1 .item:hover{
+        box-shadow: 0px 0px 0px 4px rgb(172, 161, 161);
+    }
+    #m1 .item img{
+        width: 100px;
+        height: 100px;
+        border: 1px black;
+        border-style: solid;
+        border-radius: 3px;
+    }
+    #m1 .item a ul li{
+        list-style: none;
+        font-size: .4cm;
+        font-family: 'Times New Roman', Times, serif;
+        padding-top: 10px;
+        color: black;
+        margin-left: 8px;
+    }
+    #m1 .details{
+        text-align: center;
+        font-size: .4cm;
+    }
+    #m1 .myfoote{
+        text-align: center;
+        padding: 8px;
+    }
+    #m1 .myfoote button{
+        font-size: .5cm;
+        font-weight: bold;
+        padding: 8px;
+    }
+    #header .overley{
+        align-items: center;
+        justify-content: center;
+        /* width: 6cm;
+        height: 5cm; */
+        text-align: center;
+        position: fixed;
+        width: 75%;
+        height: 75%;
+        top: 25%;
+        left: 12%;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+    #header .loginform h1{
+        font-size: .7cm;
+        text-align: center;
+        font-weight: bold;
+        padding: 7px 15px;
+    }
+    #header .loginform label{
+        font-size: .6cm;
+        padding: 8px;
+        font-weight: bold;
+    }
+    #header .loginform input{
+        margin-left: .2cm;
+        padding: 5px;
+        font-size: .5cm;
+        width: 4cm;
+        border-radius: 1%;
+        color: black;
+        background-color: transparent;
+        border-radius: 2px 15px 15px 15px;
+    }
+    #header .loginform a{
+        font-size: .4cm;
+        color: black;
+        text-decoration: none;
+    }
+    #header .loginform button{
+        font-size: .4cm;
+        padding: 8px;
+        margin-top: 18px;
+        margin-left: 18px;
+        border-radius: 4px;
+        color: #000000;
+        background-color: white;
+        transition: 1s ease;
+    }
+    #header .loginform h2{
+        font-size: .4cm;
+        color: black;
+        text-decoration: none;
+        padding: 5px;
+    }
+    #header .loginform a.close{
+        border: 1px solid black;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: .5cm;
+        padding: 5px;
+    }
+    #header .signupfrom{
+        background-color: white;
+        color: black;
+        border: 1px black;
+        border-style: solid;
+        display: none;
+    }
+    #header .signupfrom h1{
+        font-size: .8cm;
+        text-align: center;
+        font-weight: bold;
+        padding: 8px 15px;
+    }
+    #header .signupfrom label{
+        font-size: .6cm;
+        padding: 8px;
+        font-weight: bold;
+    }
+    #header .signupfrom input{
+        margin-left: .2cm;
+        padding: 5px;
+        font-size: .4cm;
+        width: 4cm;
+        background-color: transparent;
+        color: #000000;
+        border-radius: 2px 15px 15px 15px;
+    }
+    #header .signupfrom a{
+        font-size: .4cm;
+        color: black;
+        text-decoration: none;
+    }
+    #header .signupfrom a.close{
+        border: 1px solid black;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: .5cm;
+        padding: 5px;
+    }
+    #header .signupfrom button{
+        font-size: .4cm;
+        transition: 1s ease;
+        padding: 8px;
+        margin-top: 8px;
+        margin-left: 8px;
+        border-radius: 3px;
+        color: #000000;
+        background-color: white;
+    }
+    #header .signupfrom h2{
+        font-size: .4cm;
+        color: black;
+        text-decoration: none;
+        padding: 5px;
+    }
+    .alert {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: 9999;
+        color: #fff;
+        font-size: .8cm;
+        font-weight: 400;
+        text-align: center;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 5px 8px;
+        -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+        box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+      }
+      .alert--success {
+        background-color: #20bf6b;
+      }
+      .alert--error {
+        background-color: #eb4d4b;
+      }
 }
