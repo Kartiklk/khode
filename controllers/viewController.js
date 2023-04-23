@@ -159,6 +159,9 @@ exports.myorderdetails = catchAsync(async(req, res, next)=>{
        }
     }
     const address = await Address.findById(orders.address);
+    var date = orders.orderDate;
+    date = date.split("T")[0];
+    console.log(date);
 
     // console.log(total)
     res.status(201).render('myorderdetails',{

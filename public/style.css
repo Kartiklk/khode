@@ -49,6 +49,7 @@ button.btn{
     transition: .3s ease;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Caveat', cursive;
 }
 #header .right a{
     font-size: 20px;
@@ -69,7 +70,7 @@ button.btn{
 }
 #header .right h3{
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Caveat', cursive;
     text-transform: uppercase;
     padding: 7px;
     margin-left: 7.1cm;
@@ -104,7 +105,7 @@ button.btn{
     text-align: center;
     color: black;
     font-size: 1cm;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poltawski Nowy', serif;
     font-weight: bold;
     padding: 15px 0px;
 }
@@ -127,6 +128,8 @@ button.btn{
     transition: .5s ease;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: 'Lora', serif;
+    font-weight: none;
 }
 #s2 .card:hover{
     box-shadow: 0px 0px 0px 4px rgb(143, 143, 143);
@@ -143,14 +146,14 @@ button.btn{
 #s2 .card h3{
     font-size: .6cm;
     color: rgb(0, 0, 0);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     text-align: center;
     padding: 5px;
 }
 #s2 .card h4{
     font-size: .5cm;
     color: rgb(0, 0, 0);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     text-align: center;
     padding-bottom: 10px;
 }
@@ -170,7 +173,7 @@ button.btn{
     margin-top: 0px;
     font-size: .3cm;
     color: rgb(0, 0, 0);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     margin-left: 2cm;
     padding: 5px;
     text-decoration: none;
@@ -182,7 +185,7 @@ button.btn{
     margin-top: 0px;
     font-size: .3cm;
     color: rgb(0, 0, 0);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     margin-left: 2cm;
     padding: 5px;
     text-decoration: none;
@@ -197,9 +200,12 @@ button.btn{
     text-align: center;
     padding: 20px 0px;
 }
+#s3 h2{
+    font-family: 'Kalam', cursive;
+}
 #s3 h1{
     font-size: 2cm;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Alkatra', cursive;
     font-weight: bolder;
     padding: 10px 0px;
 }
@@ -269,7 +275,8 @@ footer .links a{
 #i1 .item a ul li{
     list-style: none;
     font-size: .5cm;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Chivo Mono', monospace;
+    font-weight: bold;
     padding-top: 10px;
     color: black;
     margin-left: 10px;
