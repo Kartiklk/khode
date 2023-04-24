@@ -162,7 +162,7 @@ exports.web = (express.raw({type: 'application/json'}),(req, res) => {
 
   let endpointSecret;
   // endpointSecret = "whsec_8c5fcad5220f298b2ea446b73c6a557f78167bee3d4fc328bc0f0022c7fbb551";
-  endpointSecret = "whsec_bnh76qDVOZrZgqh5J6u0L9C1ovEVLU6b";
+  // endpointSecret = "whsec_bnh76qDVOZrZgqh5J6u0L9C1ovEVLU6b";
 
   // express.raw({type: 'application/json'});
   const sig = req.headers['stripe-signature'];
@@ -189,6 +189,7 @@ exports.web = (express.raw({type: 'application/json'}),(req, res) => {
     eventtype = req.body.type
   }
 
+  console.log(eventtype);
   // Handle the event
   if(eventtype === "checkout.session.completed"){
     stripe.customers.retrieve(data.customer).then((customer)=>{
