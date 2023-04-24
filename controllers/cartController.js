@@ -27,14 +27,8 @@ exports.AllCartItem = catchAsync(async(req, res, next) => {
 
 exports.OneCartItem = catchAsync(async(req, res, next) =>{
 
-  // const query = cart.findById(req.params.id);
-
-  
-  // const item = await query;
-  // console.log(item);
   const cart = await cart.find({ user: req.user.id });
 
-  // console.log(cart);
   //find tours with the returned ids
   const itemID = cart.map(el => el.item);
   const items = await Item.find({ _id: { $in: itemID } });

@@ -4,8 +4,6 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const { stringify } = require('querystring');
 const AppError = require('./../utils/appError')
-// const { stringify } = require('querystring');
-
 
 const userSchema = new mongoose.Schema({
     name: {

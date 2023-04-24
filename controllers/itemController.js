@@ -1,7 +1,5 @@
-// const mongoose = require("mongoose");
 const Item = require('./../models/itemModel')
 const catchAsync = require("./../utils/catchAsync");
-// const APIFeatures = require('./../utils/apiFeatures');
 
 exports.createItem = catchAsync(async (req, res, next) => {
     const newItem = await Item.create(req.body);

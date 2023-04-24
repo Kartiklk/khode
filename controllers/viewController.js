@@ -38,12 +38,7 @@ exports.item = catchAsync(async(req, res, next) => {
 });
 
 exports.loginform = catchAsync(async(req, res, next)=>{
-    // res
-    // .status(200)
-    // .set(
-    //   'Content-Security-Policy',
-    //   "connect-src 'self' https://cdnjs.cloudflare.com"
-    // ) 
+
     res.status(200).render('login', {
         title: 'Login into your account'
     });
@@ -52,13 +47,10 @@ exports.loginform = catchAsync(async(req, res, next)=>{
 exports.getMycart = catchAsync(async(req, res, next) => {
     const carts = await Cart.find({ user: req.user.id });
 
-    // console.log(cart);
     //find tours with the returned ids
     const itemID = carts.map(el => el.item);
     const items = await Item.find({ _id: { $in: itemID } });
-    // const cart = await Cart.findById({user:req.user.id});
-    // console.log(carts);
-    // console.log(items);
+
     res.status(201).render('cart', {
         title: 'cart',
        carts,items
@@ -73,55 +65,25 @@ exports.Orderdetails = catchAsync(async(req, res, next) =>{
         title: 'Order Now',
         addresses, carts
     });
-    // console.log(addresses, carts);
 })
 
 exports.myorders = catchAsync(async(req, res, next) =>{
     const orders = await Order.find({user:req.user.id});
-    // const carts = orders.carts;
-    // for(var i=0; i<carts.lenght; i++){
-            // console.log(orders[0])
-        // }
-        // const temp = orders.populate('carts');
-        // const cart = cartID.map(el => el.item);
-        // console.log(orders)
+
         const temp = new Array();
         for(var i=0; i<orders.length; i++){
              temp[i] = orders[i];
-            // console.log(temp);
         }
         const items = temp.map(el => el.carts);
-        //    console.log(items.length);
-        // console.log(items.length)
-        // console.log(items.length != 0)
         const carts = new Array();
         if(items.length != 0){
-        //    console.log(items[0][1]);
-        //   for(var i=0; i<items[0].length; i++){
-        //     carts[i] = await Item.findById(items[0][i]);
-            
-        //    }
-        // console.log(items[0][1])
-        var a=0;
-        // console.log(items[1]);
+          var a=0;
            for(var j=0; j<items.length; j++){
-            // carts[carts.length+1] = await Item.findById(items[j][]);
-            //   console.log(j);
               for(var i=0; i<items[j].length; i++){
-                // console.log(i)
                 carts[a++] = await Item.findById(items[j][i]);
                }
            }
-        // console.log(items[1][1]);
         }
-        // console.log(orders)
-        // const temp = items;
-        // console.log(items.name)
-        // const carts = await Item.find({ _id: { $in: orders.carts } });
-        // const doc = orders.popuplate('');
-        // console.log(orders);
-        // console.log(carts.length === 0);
-        // const doc = await orders;
 
     res.status(201).render('myorders',{
         title: 'Your Orders',
@@ -132,26 +94,8 @@ exports.myorders = catchAsync(async(req, res, next) =>{
 exports.myorderdetails = catchAsync(async(req, res, next)=>{
     const orders = await Order.findById(req.params.id);
 
-    // console.log(orders)
-    // for(var i=0; i<orders.length; i++){
-    //      temp[i] = orders[i];
-    //     // console.log(temp);
-    // }
-    // const items = orders.map(el => el.carts);
-    //    console.log(items.length);
-    // console.log(orders.carts.length)
-    // console.log(items.length != 0)
     const carts = new Array();
     if(orders.carts.length != 0){
-    //    console.log(items[0][1]);
-    //   for(var i=0; i<items[0].length; i++){
-    //     carts[i] = await Item.findById(items[0][i]);
-        
-    //    }
-    // console.log(items[0][1])
-    // console.log(items[1]);
-        // carts[carts.length+1] = await Item.findById(items[j][]);
-        //   console.log(j);
           var total=0;
           for(var i=0; i<orders.carts.length; i++){
             carts[i] = await Item.findById(orders.carts[i]);
@@ -165,7 +109,6 @@ exports.myorderdetails = catchAsync(async(req, res, next)=>{
     date = date.split('T')[0]
     date = date.split('"')[1]
 
-    // console.log(total)
     res.status(201).render('myorderdetails',{
         title:'My Order Details',
         carts, address, orders, total, date
