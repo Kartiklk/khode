@@ -161,7 +161,8 @@ const ordercreate = async(customer, data, res) => {
 exports.web = (req, res) => {
 
   let endpointSecret;
-  endpointSecret = "whsec_8c5fcad5220f298b2ea446b73c6a557f78167bee3d4fc328bc0f0022c7fbb551";
+  // endpointSecret = "whsec_8c5fcad5220f298b2ea446b73c6a557f78167bee3d4fc328bc0f0022c7fbb551";
+  endpointSecret = "whsec_bnh76qDVOZrZgqh5J6u0L9C1ovEVLU6b";
 
   express.raw({type: 'application/json'});
   const sig = req.headers['stripe-signature'];
