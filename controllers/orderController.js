@@ -158,13 +158,13 @@ const ordercreate = async(customer, data, res) => {
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 
-exports.web = (req, res) => {
+exports.web = (express.raw({type: 'application/json'}),(req, res) => {
 
   let endpointSecret;
   // endpointSecret = "whsec_8c5fcad5220f298b2ea446b73c6a557f78167bee3d4fc328bc0f0022c7fbb551";
   endpointSecret = "whsec_bnh76qDVOZrZgqh5J6u0L9C1ovEVLU6b";
 
-  express.raw({type: 'application/json'});
+  // express.raw({type: 'application/json'});
   const sig = req.headers['stripe-signature'];
 
   let data;
@@ -202,5 +202,5 @@ exports.web = (req, res) => {
 
   // Return a 200 response to acknowledge receipt of the event
   res.send().end();
-};
+});
 
