@@ -192,7 +192,9 @@ exports.web = (express.raw({type: 'application/json'}),(req, res) => {
   console.log(eventtype);
   // Handle the event
   if(eventtype === "checkout.session.completed"){
+    console.log(stripe.customers)
     stripe.customers.retrieve(data.customer).then((customer)=>{
+      console.log(customer)
       ordercreate(customer, data)
     })
     .catch((err)=>
