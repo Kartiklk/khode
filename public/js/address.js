@@ -33,3 +33,25 @@ export const added = async (name, phone, address, city, state, citycode, user) =
         // showAlert('error',err.response.data.message);
     }
 };
+
+export const dele = async (id) => {
+    try {
+        console.log(id);
+        const res = await axios({
+            method: 'DELETE',
+            url: `/api/v1/address/${id}`,
+            data: {
+            }
+        });
+        
+        if (res.data.status === 'success') {
+            showAlert('success','Address is Removed');
+            window.setTimeout(() => {
+                location.reload();
+            }, 1000);
+        }
+    } catch (err) {
+        console.log(err)
+        showAlert('error',err.response.data.message);
+    }
+};

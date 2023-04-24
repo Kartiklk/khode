@@ -2,10 +2,11 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
 button.btn{
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     padding: 5px;
     border-radius: 5px;
     border: 1px solid rgb(0, 0, 0);
@@ -191,11 +192,6 @@ button.btn{
     text-decoration: none;
     transition: .5s ease;
 }
-/* #s2 .card button:hover{
-    color: rgb(69, 69, 235);
-    font-size: .32cm;
-    border-radius: 5px;
-} */
 #s3{
     text-align: center;
     padding: 20px 0px;
@@ -686,7 +682,12 @@ footer .links a{
     text-align: center;
     padding: 10px 0;
 }
-
+#o3 h2{
+    display: none;
+}
+#o3 button{
+    margin: 5px;
+}
 .captcha{
     text-align: center;
     background-color:transparent;
@@ -825,14 +826,14 @@ footer .links a{
     padding: 10px;
 }
 #my1 .my-content{
-    margin-left: 9cm;
-    width: 20cm;
+    margin-left: 10cm;
+    width: 15cm;
     height: 2cm;
     background-color: rgb(240, 240, 240);
     margin-top: .5cm;
     margin-bottom: .5cm;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     gap: 20px;
     align-items: center;
     justify-content: space-around;
@@ -892,7 +893,6 @@ footer .links a{
     #drop #list{
         width: 100%;
         display: none;
-        /* margin-top: 1cm; */
         justify-content: space-around;
         background-color: #f7f7f7;
         backdrop-filter: blur(25px);
@@ -901,23 +901,21 @@ footer .links a{
         font-size: .5cm;
     }
     #drop ul li{
-        /* background-color: transparent;
-        backdrop-filter: blur(10px);
-        overflow: auto; */
         padding: 10px;
         list-style: none;
-        /* width: 100%; */
     }
     #drop ul li a{
         color: #000000;
         text-decoration: none;
         font-weight: bold;
+        font-family: 'Caveat', cursive;
     }
     #drop ul li h3{
         padding: 20px 10px;
         font-size: 25px;
         color: black;
         transition: .3s ease;
+        font-family: 'Caveat', cursive;
     }
     #header .right{
         display: none;
@@ -931,11 +929,7 @@ footer .links a{
     #s2{
         display: grid;
         grid-template-columns: auto;
-        /* margin-left: -2cm; */
         align-items: center;
-        /* margin-right: -5cm;
-        margin-left: -5cm; */
-        /* gap: -2cm; */
     }
     #s2 .card{
         margin-left: -2.5cm;
@@ -953,20 +947,16 @@ footer .links a{
         width: 100%;
         font-size: 1cm;
         text-align: center;
-        /* margin-right: 2cm; */
-        /* margin-left: -4cm; */
     }
     #s3 h2{
         width: 100%;
         font-size: .7cm;
         text-align: center;
-        /* margin-right: -7cm; */
     }
     footer{
         width: 100%;
         display: grid;
         grid-template-columns: auto;
-        /* margin-right: -7cm; */
     }
     footer .shop{
         font-size: .3cm;
@@ -1224,11 +1214,9 @@ footer .links a{
         font-weight: bold;
     }
     #m1 .mybody{
-        /* align-items; */
         display: grid;
         grid-template-columns:auto auto;
         justify-content: center;
-        /* margin-bottom: -1cm; */
     }
     #m1 .item{
         width: 3cm;

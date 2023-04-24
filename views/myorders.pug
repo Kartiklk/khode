@@ -15,8 +15,8 @@ block content
     each order in orders
       a(href=`myorderdetails/${order.id}`)
         .my-content
-          h1 Your Order
-          h1=`${order.carts.length} Items`
+          //- h1 Your Order
+          h1=`Your Order of ${order.carts.length} Items`
       //- img(src=`img/genaral/${cart.photo}` alt=cart.name)
       //- h2.Price=`Rs. ${cart.price}`
   hr

@@ -5,6 +5,6 @@ const authController = require('./../controllers/authController');
 const router = express.Router();
 
 router.route('/').get(addressController.getAllAddress).post(authController.protect, addressController.createAddress);
-router.route('/:id').get(addressController.getOneAddress);
+router.route('/:id').get(addressController.getOneAddress).delete(addressController.deleteOne);
 
 module.exports = router;

@@ -2,7 +2,7 @@
 import '@babel/polyfill'
 import { login, logout, signup } from "./login";
 import { cart, removeId } from "./cart";
-import { added } from "./address";
+import { added, dele } from "./address";
 import { noworder, cancelorder } from "./order";
 import { card } from "./stripe";
 import { contentSecurityPolicy } from 'helmet';
@@ -34,6 +34,8 @@ const my = document.querySelector('#lognow');
 const CT = document.querySelector('#signNow');
 const MY = document.querySelector('#logNow');
 const menu = document.querySelector('#menu');
+const reset = document.querySelector('#reset');
+const del = document.querySelector('#deladd');
 
 
 if (loginForm) 
@@ -118,6 +120,13 @@ if(address)
       added(name, phone, addre, city, state, pincode, user);
     }
   })
+
+if(del){
+  del.addEventListener('click', e=>{
+    const id = document.getElementById('delete').innerText;
+    dele(id);
+  })
+}
   
 if(order)
   ordernow.addEventListener('click', e=>{
@@ -215,22 +224,26 @@ if(MY){
   })
 }
 
-
 if(menu){
-  // var right = document.getElementById('right').style.display = 'none';
   var list = document.getElementById('list').style.display = 'none';
   menu.addEventListener('click', e=>{
     if(list == 'none'){
       list = document.getElementById('list').style.display = 'block';
-      // right = document.getElementById('right').style.display = 'block';
-      // document.getElementById('list').style.maxHeight = '130px';
-      // document.getElementById('right').style.maxHeight = '130px';
     }
     else{
       list = document.getElementById('list').style.display = 'none';
-      // right = document.getElementById('right').style.display = 'none';
-      // document.getElementById('list').style.maxHeight = '0px';s
-      // document.getElementById('right').style.maxHeight = '0px';
     }
+  })
+}
+
+if(reset){
+  reset.addEventListener('click', e=>{
+    e.preventDefault();
+    document.getElementById('name').value = "";
+    document.getElementById('phone').value = "";
+    document.getElementById('addre').value = "";
+    document.getElementById('city').value = "";
+    document.getElementById('state').value = "";
+    document.getElementById('pincode').value = "";
   })
 }

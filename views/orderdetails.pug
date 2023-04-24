@@ -43,7 +43,7 @@ block content
           td State
           td
             select#state.form-control(name='state')
-              option(value='select' selected='' disabled='') Select
+              option(value='select' selected disabled) Select
               option(value='Andhra Pradesh') Andhra Pradesh, India
               option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands, India
               option(value='Arunachal Pradesh') Arunachal Pradesh, India
@@ -86,7 +86,7 @@ block content
             input#pincode(type='number' name='pincode')
         tr(align='center')
           td
-            button(type='reset') Clear
+            button(type='reset' id='reset') Clear
           td
             button(type='submit' id='Addaddress') Add
     hr
@@ -107,6 +107,8 @@ block content
         =address.state
         br
         =`Pincode: ${address.citycode}`
+      h2#delete=address.id
+      button.btn(type='button' id='deladd') Change Address
       hr
     // Payment Method
     section#o2

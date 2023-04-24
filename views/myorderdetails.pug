@@ -36,7 +36,8 @@ block content
       h4=`Total Price:- ${total}`
       h3=`Payment Method:- ${orders.payment}`
       //- h3=`Order Date:- ${orders.orderDate}`
-      h3=orders.orderDate.split(' ')[0]
+      //- h3=`Order Date:- ${date.split('T')[0]}`
+      h3=`Order Date:- ${date}`
     hr
     .myfoote
       button.btn(type='submit' id='backback') Back
